@@ -1,0 +1,8 @@
+country,variable,label,n,n_missing,missing_pct,dominant_category,dominant_n,dominant_share
+Croatia,voteprsp_HR,Prospective vote choice,43,0,0,MOŽEMO!,11,0.2558139534883721
+France,voteprsp_FR,Prospective vote choice,53,0,0,Parti socialiste,9,0.16981132075471697
+Germany,voteprsp_DE,Prospective vote choice,50,3,6,Christlich Demokratische Union Deutschlands/ Christlich Soziale Union (CDU/CSU),19,0.40425531914893614
+Italy,voteprsp_IT,Prospective vote choice,50,0,0,Partito Democratico,14,0.28
+Poland,voteprsp_PL,Prospective vote choice,40,5,12.5,Koalicja Obywatelska,19,0.5428571428571428
+Spain,voteprsp_ES,Prospective vote choice,39,0,0,PSOE,10,0.2564102564102564
+Sweden,voteprsp_SE,Prospective vote choice,39,0,0,Annat,17,0.4358974358974359

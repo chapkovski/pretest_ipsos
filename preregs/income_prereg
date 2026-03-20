@@ -1,0 +1,43 @@
+Preregistration Template from AsPredicted.org
+Data collection
+No, no data have been collected for this study yet.
+
+Hypothesis
+We test whether individual economic resources (income, financial resilience, subjective financial situation) are associated with political solidarity, defined as willingness to pay for public benefits and services for specific territorial communities and social groups. We also test whether this relationship differs by political ideology and by household dependants, and whether economic insecurity is linked to welfare chauvinism.
+
+Dependent variable
+Primary dependent variable: General political solidarity index (mean of the three territorial willingness-to-pay items).
+Coding and index construction: All items will be recoded so higher values always indicate higher solidarity. Indices will be computed as the mean of available items if at least half of the items needed for that index are non-missing.
+
+Conditions
+ None. This is an observational survey study with 8 country samples (East Germany, West Germany, France, Italy, Spain, Croation, Poland, Sweden) with no experimental conditions.
+
+Analyses
+For our main dependent variable (general political solidarity index), we will estimate regression models with economic resources as predictors (income rank within country, financial resilience, subjective financial situation). We will include political ideology, household dependants, and the preregistered interactions: resources × ideology and resources × dependants. We will include country fixed effects and standard sociodemographic controls (age, gender, education, and employment status). We will use heteroskedasticity-robust standard errors, and cluster standard errors at the respondent level when repeated observations exist.
+
+Secondary analyses:
+
+•	Estimate the same models for the secondary outcomes (overall group solidarity and welfare chauvinism, plus the deserving and migrant sub-indices).
+•	Basic construct checks: test whether territorial and group solidarity are best treated as one measure or two related measures (internal consistency and factor-based checks).
+•	Item-level robustness: estimate ordered models for individual items and compare conclusions to the index-based OLS models.
+•	Correction for multiple comparisons: Because we test several related outcomes, we will clearly distinguish the primary outcome from secondary outcomes and, as a robustness check, apply a false-discovery-rate correction across the preregistered family of outcomes (for example, Benjamini-Hochberg).
+
+Outliers and Exclusions
+ Exclusions: we will exclude respondents who do not meet study eligibility, fail linkage needed to construct the outcomes, or provide insufficient data to compute the primary dependent variable. We will also exclude respondents flagged by the survey provider for failing quality checks, if such flags are provided.
+
+Weighting: if design weights are provided (including for oversamples), we will report weighted results as the main specification and provide unweighted robustness checks.
+
+Sample Size
+ We recruit samples from existing probability-based respondent pools in seven countries (Germany, France, Italy, Poland, Sweden, Spain, Croatia). Target sample size is at least 1,000 completed interviews per country. Germany includes an East–West oversample (1,100 in West Germany, 500 in East Germany). In each country, the study population comprises non-institutionalised residents aged 18 and over who can read and write the dominant national language.
+
+Other
+Inequality: if we include a country-level inequality measure (for example a harmonised Gini of equivalised disposable income), we will treat it as a secondary contextual predictor and interpret it cautiously given the small number of countries. 
+
+Name
+POLITSOLID: Income, wealth and inequality as drivers of political solidarity (PEPS-Y Income)
+
+Type of Project
+Survey
+
+Other
+No data

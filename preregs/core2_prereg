@@ -1,0 +1,58 @@
+Preregistration Template from AsPredicted.org
+Data collection
+No, no data have been collected for this study yet.
+
+Hypothesis
+Main question: How is governance quality related to individuals’ willingness to financially contribute to public redistribution in favour of other people?
+Through which perceptual and contextual channels does governance quality translate into willingness to contribute to redistribution in favour of other people?
+Regional governance quality is measured as the average public perception in a region of fair, honest, and effective government. We examine whether higher governance quality is associated with stronger political solidarity (willingness to support redistribution), and whether this relationship depends on perceptions, welfare-state size, ideology, and changes in governance over time.
+Hypotheses:
+H1: The regional governance quality is positively associated with higher individual willingness to contribute to public redistribution.
+H2: The individual perception of governance quality is positively associated with higher individual willingness to contribute to public redistribution.
+H3: The association between regional governance quality and willingness to contribute to public redistribution is attenuated when perceived government quality is included (consistent with mediation).
+H4: The association between perceived governance quality and willingness to contribute to redistribution is moderated by ideology: it is negative among right-wing citizens and positive among left-wing citizens.
+H5: Improvements in regional governance quality (ΔEQI = EQIt2 - EQIt1 at NUTS2) are positively associated with willingness to contribute to redistribution.
+
+Dependent variable
+The primary outcome is a generalized index  of political solidarity, operationalised as a mean value of willingness to contribute to public redistribution at the territorial level (local area, own country, other EU countries).
+Supplementary outcomes include group-specific judgments about whether government should ensure a decent standard of living for each target group, and a conditional item capturing preferred ways of funding redistribution.
+
+Conditions
+Not applicable. This is an observational cross-national survey; participants are not assigned to experimental conditions.
+
+Analyses
+We will estimate associations between willingness to contribute to redistribution and governance-related predictors using linear regression models. Because respondents are clustered within regions and countries, our primary approach will use random effects and/or fixed effects models that account for this nesting. Analyses will apply design and post-stratification weights to reflect the sampling design and population parameters. 
+Core analysis steps (applied to the generalized political solidarity index as the main outcome):
+1) H1 (regional governance quality): Estimate the association between regional governance quality and willingness to contribute to redistribution , adjusting for standard individual-level controls (age, gender, education, household income (controlling for household size), migration status).
+2) H2 (perceived governance quality): Add individuals’ evaluations of governance quality (e.g., perceived fairness and respect in services, efficiency and promptness, integrity and absence of abuse; institutional trust; and general service satisfaction). Estimate their associations with willingness to contribute to redistribution .
+3) H3  (multilevel mediation): We want to see whether better governance is linked to stronger support for redistribution mainly because people in those regions also perceive government as better. To do this, we compare two things: (1) differences between regions, and (2) differences between people within the same region.
+First, we test whether regions with higher governance quality also tend to have higher average perceived government quality. Second, we test whether support for redistribution is higher in regions where the average perception of government quality is higher, and also whether people who personally view government more positively than others in their region are more supportive of redistribution. Finally, we quantify how much of the governance–redistribution link can be explained by these average perceptions, and we report an uncertainty range for that estimate using a simulation-based method.
+4) H4 (welfare-state moderation): Test cross-level moderation by estimating interactions between regional governance quality and extensity of the welfare state (social spending as % of GDP per capita
+5) H5 (ideology moderation): Test whether the association between individuals’ perceived governance quality and willingness to contribute to redistribution differs by ideology using interaction terms between perceived governance quality measures and left–right orientation.
+6) H6 (change in regional governance quality): Link NUTS2-level ΔEQI (t2 – t1) to individual willingness to contribute to redistribution in the multilevel models (as an additional region-level predictor). Include baseline EQI as a control to separate “change” from “level”.
+We will report coefficient estimates with uncertainty intervals and focus on direction, robustness, and coherence across outcomes and specifications rather than causal claims.
+
+Outliers and Exclusions
+Exclusions: We will exclude respondents failing standard survey quality checks implemented by the fieldwork provider (where available). For the primary and secondary outcomes, we calculate indices by averaging non-missing responses, ensuring respondents with missing data on individual items remain included.  
+Missing data: The primary approach is listwise deletion when missingness is limited. If missingness is substantial for key covariates, we will use multiple imputation as a robustness check and compare results across approaches.
+
+Sample Size
+We recruit samples from existing probability-based respondent pools in seven countries (Germany, France, Italy, Poland, Sweden, Spain, Croatia). Target sample size is at least 800 completed interviews per country. Germany includes an East–West oversample (1,100 in West Germany, 500 in East Germany). In each country, the study population comprises non-institutionalised residents aged 18 and over who can read and write the dominant national language.  Analyses will apply design and post-stratification weights to reflect the sampling design and population parameters. 
+
+Other
+Interpretation: All results are interpreted as associations consistent with the theory, not as causal effects.
+
+Secondary analyses include: (i) item-level analyses to verify results are not driven by a single item, (ii) alternative operationalisations of perceptions (separating service experiences from political trust), (ii) descriptive country and regional comparisons and (iv) robustness checks for the ΔEQI change measure (e.g., not controlling for baseline EQI, and using a categorical improving vs stable vs declining specification).
+As a secondary outcome measure, we will also use willingness-to-pay/support items covering target groups (children, older people, the poor, EU migrants in the country, non-EU migrants in the country). We analyse both summary indices (averages across relevant items) and the underlying items.
+As a robustness check for H3, we will repeat the mediation using region-level aggregates (regional means of M and Y) to confirm that the between-region indirect association is not driven by within-region variation.
+
+Once the second wave of the panel becomes avaiable, we will also check whether changes in the main independent variables are associated with the corresponding changes in the dependent variable.
+
+Name
+POLITSOLID: Governance quality and support for public redistribution: virtuous vs. vicious cycles (PEPS-Y Core 2)
+
+Type of Project
+Survey
+
+Other
+No data

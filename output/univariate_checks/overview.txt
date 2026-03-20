@@ -1,0 +1,10 @@
+Raw rows in .sav: 628
+Rows retained for analysis (non-missing country): 314
+Countries in retained sample: Croatia, France, Germany, Italy, Poland, Spain, Sweden
+Items with more than 5% missing overall: 15
+Categorical items with one category above 50% overall: 52
+plsol1 weak decline share overall: 90.4%
+plsol2 share where children/older/poor are all at least as high as EU immigrants: 94.9%
+plsol2 share where children/older/poor are all at least as high as non-EU immigrants: 96.2%
+Open-text entries flagged for manual review or possible mismatch: 42
+ESS benchmark file present: FALSE

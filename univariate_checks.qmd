@@ -1,0 +1,1061 @@
+---
+title: "Univariate Checks for the PEPS-Y Pretest"
+format:
+  html:
+    toc: true
+    number-sections: true
+    theme: cosmo
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+## Setup
+
+This report reads the pretest `.sav` file, cleans labelled nonresponse codes, and answers the checks listed in `univariate_checks.docx`. The report assumes that `cld3` is installed and uses it for the open-text language check.
+
+```{r setup}
+pacman::p_load(
+  tidyverse,
+  haven,
+  fs,
+  cld3,
+  gt,
+  patchwork,
+  scales
+)
+
+input_file <- fs::path("data", "POLITSOLID_Pretest_interim_11032026.sav")
+ess_file <- fs::path("data", "ESS11e04_1.dta")
+
+nonresponse_regex <- regex(
+  "prefer not|do not know|don't know|blank or null|no answer|refusal|not available",
+  ignore_case = TRUE
+)
+
+labelled_nonresponse_values <- function(x) {
+  attr(x, "labels") %>%
+    `%||%`(c()) %>%
+    enframe(name = "label", value = "value") %>%
+    filter(str_detect(label, nonresponse_regex)) %>%
+    pull(value) %>%
+    as.numeric()
+}
+
+clean_vector <- function(x, as = c("numeric", "text")) {
+  as <- match.arg(as)
+
+  if (inherits(x, "POSIXt")) {
+    return(x)
+  }
+
+  if (is.character(x)) {
+    cleaned_text <- x %>% str_squish() %>% na_if("")
+    return(if (as == "text") cleaned_text else suppressWarnings(as.numeric(cleaned_text)))
+  }
+
+  if (is.logical(x)) {
+    return(if (as == "numeric") as.numeric(x) else as.character(x))
+  }
+
+  values_to_drop <- labelled_nonresponse_values(x)
+  x[x %in% values_to_drop] <- NA
+
+  if (inherits(x, c("haven_labelled", "labelled"))) {
+    x <- if (as == "numeric") haven::zap_labels(x) else haven::as_factor(x, levels = "labels")
+  }
+
+  if (as == "numeric") {
+    suppressWarnings(as.numeric(x))
+  } else {
+    as.character(x) %>% str_squish() %>% na_if("")
+  }
+}
+
+coalesce_clean_columns <- function(data, columns, as = c("numeric", "text")) {
+  as <- match.arg(as)
+  columns %>%
+    map(~ clean_vector(data[[.x]], as = as)) %>%
+    reduce(coalesce)
+}
+
+row_mean_or_na <- function(data) {
+  out <- rowMeans(data, na.rm = TRUE)
+  out[rowSums(!is.na(data)) == 0] <- NA_real_
+  out
+}
+
+mode_summary <- function(x) {
+  summary_table <- tibble(value = x) %>%
+    filter(!is.na(value)) %>%
+    count(value, sort = TRUE, name = "n") %>%
+    mutate(share = n / sum(n)) %>%
+    slice_head(n = 1)
+
+  if (nrow(summary_table) == 0) {
+    tibble(dominant_category = NA_character_, dominant_share = NA_real_)
+  } else {
+    summary_table %>%
+      transmute(
+        dominant_category = as.character(value),
+        dominant_share = share
+      )
+  }
+}
+
+variable_summary <- function(data, variables, group_value = "Overall") {
+  # For filtered questions, compute missingness only on the respondent base that should have seen the item.
+  asked_rules <- list(
+    econhour = function(d) clean_vector(d$EmploymentStatusKP, as = "numeric") == 1,
+    plsolfund = function(d) clean_vector(d$plsolfund_Ask, as = "text") == "Yes",
+    livtogr = function(d) clean_vector(d$partner, as = "numeric") == 1,
+    Hhchldu18 = function(d) clean_vector(d$hhsize, as = "numeric") > 1,
+    hincshare = function(d) clean_vector(d$hhsize, as = "numeric") > 1,
+    yrinccntry = function(d) clean_vector(d$borncntry, as = "numeric") == 2
+  )
+
+  # Some labelled values are substantively meaningful even if the export may treat them like user-missing.
+  substantive_text_overrides <- list(
+    poldiscol = function(v) {
+      if (inherits(v, c("haven_labelled", "labelled"))) {
+        as.character(haven::as_factor(v, levels = "labels")) %>%
+          str_squish() %>%
+          na_if("") %>%
+          na_if("Prefer not to say")
+      } else {
+        as.character(v) %>%
+          str_squish() %>%
+          na_if("")
+      }
+    }
+  )
+
+  map_dfr(
+    variables,
+    function(var_name) {
+      base_var_name <- str_remove(var_name, "_ts$")
+
+      asked <- if (var_name %in% names(asked_rules)) {
+        asked_rules[[var_name]](data)
+      } else if (base_var_name %in% names(asked_rules)) {
+        # Apply the same routing rule to timing variables such as yrinccntry_ts.
+        asked_rules[[base_var_name]](data)
+      } else {
+        rep(TRUE, nrow(data))
+      }
+
+      asked[is.na(asked)] <- FALSE
+
+      vector_numeric <- clean_vector(data[[var_name]], as = "numeric")[asked]
+      vector_text <- if (var_name %in% names(substantive_text_overrides)) {
+        substantive_text_overrides[[var_name]](data[[var_name]])[asked]
+      } else {
+        clean_vector(data[[var_name]], as = "text")[asked]
+      }
+      dominant <- mode_summary(vector_text)
+
+      tibble(
+        group = group_value,
+        variable = var_name,
+        label = attr(data[[var_name]], "label") %||% var_name,
+        n = length(vector_text),
+        missing_pct = if (length(vector_text) == 0) NA_real_ else mean(is.na(vector_text)),
+        mean = if (all(is.na(vector_numeric))) NA_real_ else mean(vector_numeric, na.rm = TRUE),
+        median = if (all(is.na(vector_numeric))) NA_real_ else median(vector_numeric, na.rm = TRUE),
+        dominant_category = dominant$dominant_category,
+        dominant_share = dominant$dominant_share
+      )
+    }
+  )
+}
+
+country_language_map <- tribble(
+  ~country, ~expected_language_code, ~expected_language,
+  "Croatia", "hr", "Croatian",
+  "France", "fr", "French",
+  "Germany", "de", "German",
+  "Italy", "it", "Italian",
+  "Poland", "pl", "Polish",
+  "Spain", "es", "Spanish",
+  "Sweden", "sv", "Swedish"
+)
+
+raw_data <- read_sav(input_file)
+
+# Keep track of country-specific timing variables so they can be collapsed to one common item later.
+voteprsp_ts_columns <- names(raw_data) %>%
+  keep(~ str_detect(.x, "^voteprsp_[A-Z]{2}_ts$"))
+
+hincome_ts_columns <- names(raw_data) %>%
+  keep(~ str_detect(.x, "^hincome_[A-Z]{2}_ts$"))
+
+# Keep only real interviews, then derive harmonized fields used repeatedly later in the report.
+analysis_data <- raw_data %>%
+  mutate(across(where(is.character), ~ .x %>% str_squish() %>% na_if(""))) %>%
+  mutate(country_numeric = clean_vector(Country, as = "numeric")) %>%
+  filter(!is.na(country_numeric)) %>%
+  mutate(
+    country = clean_vector(Country, as = "text"),
+    device_type = clean_vector(Sniffer_device_type_final, as = "text"),
+    device_group = case_when(
+      device_type %in% c("Smartphone", "Tablet") ~ "Mobile",
+      device_type == "Laptop/PC" ~ "Desktop",
+      TRUE ~ NA_character_
+    ),
+    voteprsp_open = {
+      vote_data <- pick(
+        voteprspopen_HR,
+        voteprspopen_FR,
+        voteprspopen_DE,
+        voteprspopen_IT,
+        voteprspopen_PL,
+        voteprspopen_ES,
+        voteprspopen_SE
+      )
+      coalesce_clean_columns(vote_data, names(vote_data), as = "text")
+    },
+    hincome = {
+      income_data <- pick(
+        hincome_HR,
+        hincome_FR,
+        hincome_DE,
+        hincome_IT,
+        hincome_PL,
+        hincome_ES,
+        hincome_SE
+      )
+      coalesce_clean_columns(income_data, names(income_data), as = "numeric")
+    },
+    comment = clean_vector(comment, as = "text"),
+    voteprsp_ts = if (length(voteprsp_ts_columns) > 0) {
+      ts_data <- pick(any_of(voteprsp_ts_columns))
+      coalesce_clean_columns(ts_data, names(ts_data), as = "numeric")
+    } else {
+      NA_real_
+    },
+    hincome_ts = if (length(hincome_ts_columns) > 0) {
+      ts_data <- pick(any_of(hincome_ts_columns))
+      coalesce_clean_columns(ts_data, names(ts_data), as = "numeric")
+    } else {
+      NA_real_
+    }
+  )
+
+metadata_vars <- names(analysis_data) %>%
+  keep(~ str_detect(.x, "^(Respondent_Serial|Respondent_ID|DataCollection_|FIELD_METHOD|Country$|Country_adjective$|Sniffer_|LPS_|LPSSS_|REGION_|country_numeric$)")) %>%
+  union(names(analysis_data) %>% keep(~ str_detect(.x, "(_capture_Order$|_Codes(_\\d+)?$|_Ask$)"))) %>%
+  union(names(analysis_data) %>% keep(~ str_detect(.x, "_ts$"))) %>%
+  union(c("country", "device_type", "device_group", "Rand_GROUP", "id_order"))
+
+open_text_vars <- c(
+  "voteprspopen_HR", "voteprspopen_FR", "voteprspopen_DE", "voteprspopen_IT",
+  "voteprspopen_PL", "voteprspopen_ES", "voteprspopen_SE", "voteprsp_open", "comment"
+)
+
+country_specific_vote_vars <- c(
+  "voteprsp_HR", "voteprsp_FR", "voteprsp_DE", "voteprsp_IT",
+  "voteprsp_PL", "voteprsp_ES", "voteprsp_SE"
+)
+
+country_specific_timing_vars <- c(voteprsp_ts_columns, hincome_ts_columns)
+
+background_vars <- c(
+  "Respondent_Gender", "Respondent_Age", "EducationAchievedKP", "ISCEDRecodeKP",
+  "ISCEDKP", "EmploymentStatusKP", "EMP01KP", "MARITALSTATUSKP", "econhour",
+  "eduyrs", "partner", "livtogr", "hhsize", "Hhchldu18", "hincome", "hincshare",
+  "fresil", "citiz", "borncntry", "yrinccntry", "bornfath", "bornmoth"
+) %>%
+  keep(~ .x %in% names(analysis_data))
+
+analysis_vars <- names(analysis_data) %>%
+  setdiff(metadata_vars) %>%
+  setdiff(open_text_vars) %>%
+  setdiff(country_specific_vote_vars) %>%
+  setdiff(country_specific_timing_vars) %>%
+  setdiff(c("hincome_HR", "hincome_FR", "hincome_DE", "hincome_IT", "hincome_PL", "hincome_ES", "hincome_SE"))
+
+attitude_vars <- setdiff(analysis_vars, background_vars)
+```
+
+## Data Coverage
+
+The `.sav` file contains `r nrow(raw_data)` rows. Of those, `r nrow(analysis_data)` have a valid country code and are used for the checks below. The remaining rows appear to be empty placeholders rather than completed interviews.
+
+```{r country-coverage}
+analysis_data %>%
+  count(country, name = "n") %>%
+  mutate(share = percent(n / sum(n), accuracy = 0.1)) %>%
+  gt()
+```
+
+## Public Healthcare Usage by Country
+
+Because `psuhlth` is the item of immediate interest, this section isolates the public-healthcare usage question and shows how its response pattern differs across countries. The heatmap gives the within-country distribution for each answer category, and the Italy panel makes the national pattern easier to inspect directly.
+
+```{r psuhlth-country-analysis}
+psuhlth_levels <- c(
+  "Neither I, nor someone from my family",
+  "Not I, but someone from my family",
+  "I have used it myself, but no one else from my family",
+  "I and someone from my family have used it"
+)
+
+psuhlth_labels <- c(
+  "Neither self nor family",
+  "Family member only",
+  "Self only",
+  "Self and family member"
+)
+
+psuhlth_country <- analysis_data %>%
+  transmute(
+    country,
+    psuhlth = clean_vector(psuhlth, as = "text")
+  ) %>%
+  filter(!is.na(psuhlth)) %>%
+  mutate(psuhlth = factor(psuhlth, levels = psuhlth_levels, labels = psuhlth_labels)) %>%
+  count(country, psuhlth, name = "n") %>%
+  group_by(country) %>%
+  complete(psuhlth, fill = list(n = 0)) %>%
+  mutate(
+    country_total = sum(n),
+    share = n / country_total
+  ) %>%
+  ungroup()
+
+country_levels <- c("Italy", sort(setdiff(unique(psuhlth_country$country), "Italy")))
+
+psuhlth_country <- psuhlth_country %>%
+  mutate(country = factor(country, levels = rev(country_levels)))
+
+psuhlth_overall <- analysis_data %>%
+  transmute(psuhlth = clean_vector(psuhlth, as = "text")) %>%
+  filter(!is.na(psuhlth)) %>%
+  mutate(psuhlth = factor(psuhlth, levels = psuhlth_levels, labels = psuhlth_labels)) %>%
+  count(psuhlth, name = "n") %>%
+  complete(psuhlth, fill = list(n = 0)) %>%
+  mutate(share = n / sum(n))
+
+psuhlth_italy <- psuhlth_country %>%
+  filter(country == "Italy")
+
+psuhlth_italy_stats <- psuhlth_italy %>%
+  select(psuhlth, share) %>%
+  deframe()
+
+psuhlth_overall_stats <- psuhlth_overall %>%
+  select(psuhlth, share) %>%
+  deframe()
+
+psuhlth_heatmap <- ggplot(psuhlth_country, aes(x = psuhlth, y = country, fill = share)) +
+  geom_tile(color = "white", linewidth = 0.8) +
+  geom_text(aes(label = percent(share, accuracy = 1)), size = 3.2) +
+  scale_fill_gradient(
+    low = "#E8F1F2",
+    high = "#B5523B",
+    labels = percent_format(accuracy = 1)
+  ) +
+  labs(
+    title = "Public healthcare usage patterns by country",
+    subtitle = "Within-country shares for psuhlth",
+    x = NULL,
+    y = NULL,
+    fill = "Share"
+  ) +
+  theme_minimal(base_size = 11) +
+  theme(
+    axis.text.x = element_text(angle = 25, hjust = 1),
+    panel.grid = element_blank()
+  )
+
+psuhlth_italy_plot <- ggplot(psuhlth_italy, aes(x = share, y = fct_rev(psuhlth))) +
+  geom_col(fill = "#2F5D7E") +
+  geom_text(
+    aes(label = paste0(n, " (", percent(share, accuracy = 1), ")")),
+    hjust = -0.05,
+    size = 3.5
+  ) +
+  scale_x_continuous(
+    labels = percent_format(accuracy = 1),
+    expand = expansion(mult = c(0, 0.18))
+  ) +
+  labs(
+    title = "Italy detail",
+    subtitle = paste0("Country n = ", unique(psuhlth_italy$country_total)),
+    x = "Share within Italy",
+    y = NULL
+  ) +
+  theme_minimal(base_size = 11)
+
+psuhlth_heatmap / psuhlth_italy_plot
+```
+
+In Italy, the largest `psuhlth` category is `Self only` at `r percent(psuhlth_italy_stats[["Self only"]], accuracy = 0.1)`, while the pooled sample is led by `Self and family member` at `r percent(psuhlth_overall_stats[["Self and family member"]], accuracy = 0.1)`. Italy's `Self and family member` share is only `r percent(psuhlth_italy_stats[["Self and family member"]], accuracy = 0.1)`, which is much lower than the pooled figure of `r percent(psuhlth_overall_stats[["Self and family member"]], accuracy = 0.1)`. That suggests the Italian interviews are less likely than the other countries to report joint respondent-plus-family contact with public healthcare, and more likely to report respondent-only contact. Given that the country sample is small, this should be treated as a signal to inspect rather than as a stable population pattern.
+
+```{r psuhlth-country-table}
+psuhlth_country %>%
+  mutate(
+    share = percent(share, accuracy = 0.1),
+    country = fct_rev(country)
+  ) %>%
+  select(country, psuhlth, n, share) %>%
+  pivot_wider(
+    names_from = psuhlth,
+    values_from = c(n, share),
+    names_sep = " - "
+  ) %>%
+  gt()
+```
+
+## Missingness and Dominant Categories
+
+This section checks two basic risks first: whether any item has more than 5% missing data, and whether any item is so concentrated that one answer category takes more than half the responses. For routed items, missingness is calculated only among respondents who should have received the question. In particular, `plsolfund` is evaluated only where `plsolfund_Ask == "Yes"`.
+
+```{r missingness-dominance-plots}
+# Summarize all closed-ended analysis variables for missingness and category concentration.
+item_summary <- variable_summary(analysis_data, analysis_vars)
+
+missing_plot <- item_summary %>%
+  slice_max(missing_pct, n = 20) %>%
+  mutate(label = fct_reorder(label, missing_pct)) %>%
+  ggplot(aes(x = missing_pct, y = label)) +
+  geom_col(fill = "#B5523B") +
+  geom_vline(xintercept = 0.05, linetype = 2, color = "grey40") +
+  scale_x_continuous(labels = percent_format(accuracy = 1)) +
+  labs(
+    title = "Top 20 items by missingness",
+    x = "Missing share",
+    y = NULL
+  ) +
+  theme_minimal(base_size = 11)
+
+dominance_plot <- item_summary %>%
+  filter(!is.na(dominant_share), dominant_share > 0.5) %>%
+  slice_max(dominant_share, n = 20) %>%
+  mutate(label = fct_reorder(label, dominant_share)) %>%
+  ggplot(aes(x = dominant_share, y = label)) +
+  geom_col(fill = "#366B8A") +
+  geom_vline(xintercept = 0.5, linetype = 2, color = "grey40") +
+  scale_x_continuous(labels = percent_format(accuracy = 1)) +
+  labs(
+    title = "Items with a dominant category above 50%",
+    x = "Largest category share",
+    y = NULL
+  ) +
+  theme_minimal(base_size = 11)
+
+missing_plot / dominance_plot
+```
+
+```{r missingness-table}
+item_summary %>%
+  filter(missing_pct > 0.05) %>%
+  arrange(desc(missing_pct)) %>%
+  select(label, missing_pct) %>%
+  mutate(missing_pct = percent(missing_pct, accuracy = 0.1)) %>%
+  gt()
+```
+
+## Core Attitudes and the Solidarity Batteries
+
+This section focuses on the substantive items. The main question is whether the solidarity batteries behave in the direction expected by the task brief.
+
+```{r plsol1-plot}
+# Reshape the first solidarity battery so the expected municipality-country-EU pattern is easy to plot.
+plsol1_long <- analysis_data %>%
+  transmute(
+    country,
+    Municipality = clean_vector(plsolmuni, as = "numeric"),
+    Country = clean_vector(plsolcntry, as = "numeric"),
+    `Other EU countries` = clean_vector(plsoleu, as = "numeric")
+  ) %>%
+  pivot_longer(-country, names_to = "target", values_to = "score") %>%
+  mutate(
+    target = factor(
+      target,
+      levels = c("Municipality", "Country", "Other EU countries")
+    )
+  )
+
+plsol1_summary <- plsol1_long %>%
+  group_by(country, target) %>%
+  summarise(mean_score = mean(score, na.rm = TRUE), .groups = "drop")
+
+# Add a pooled benchmark line so each country can be compared against the overall mean pattern.
+plsol1_overall <- plsol1_long %>%
+  group_by(target) %>%
+  summarise(mean_score = mean(score, na.rm = TRUE), .groups = "drop") %>%
+  mutate(country = "Overall")
+
+plsol1_check <- analysis_data %>%
+  transmute(
+    plsolmuni = clean_vector(plsolmuni, as = "numeric"),
+    plsolcntry = clean_vector(plsolcntry, as = "numeric"),
+    plsoleu = clean_vector(plsoleu, as = "numeric")
+  ) %>%
+  filter(if_all(everything(), ~ !is.na(.x))) %>%
+  summarise(
+    weak_decline = mean(plsolmuni >= plsolcntry & plsolcntry >= plsoleu),
+    strict_decline = mean(plsolmuni > plsolcntry & plsolcntry > plsoleu)
+  )
+
+ggplot(plsol1_summary, aes(x = target, y = mean_score, group = country, color = country)) +
+  geom_line(alpha = 0.5) +
+  geom_point(size = 1.8) +
+  geom_line(
+    data = plsol1_overall,
+    aes(x = target, y = mean_score, group = 1),
+    inherit.aes = FALSE,
+    color = "black",
+    linewidth = 1.2
+  ) +
+  geom_point(
+    data = plsol1_overall,
+    aes(x = target, y = mean_score),
+    inherit.aes = FALSE,
+    color = "black",
+    size = 2.8
+  ) +
+  labs(
+    title = "Willingness to pay should decline from local to wider targets",
+    subtitle = paste0(
+      "Weak decline holds for ",
+      percent(plsol1_check$weak_decline, accuracy = 0.1),
+      " of complete cases"
+    ),
+    x = NULL,
+    y = "Mean score"
+  ) +
+  theme_minimal(base_size = 11) +
+  theme(legend.position = "bottom")
+```
+
+```{r plsol2-plot}
+# Reshape the second solidarity battery and order target groups from lower to higher overall support.
+plsol2_long <- analysis_data %>%
+  transmute(
+    country,
+    Children = clean_vector(plsolchld, as = "numeric"),
+    `Older people` = clean_vector(plsolold, as = "numeric"),
+    `The poor` = clean_vector(plsolpoor, as = "numeric"),
+    `EU immigrants` = clean_vector(plsolimmeu, as = "numeric"),
+    `Non-EU immigrants` = clean_vector(plsolimmnoneu, as = "numeric")
+  ) %>%
+  pivot_longer(-country, names_to = "target", values_to = "score")
+
+plsol2_summary <- plsol2_long %>%
+  group_by(country, target) %>%
+  summarise(mean_score = mean(score, na.rm = TRUE), .groups = "drop")
+
+plsol2_overall <- plsol2_long %>%
+  group_by(target) %>%
+  summarise(mean_score = mean(score, na.rm = TRUE), .groups = "drop") %>%
+  mutate(country = "Overall")
+
+# Use the pooled means to control the y-axis order from lowest to highest support.
+plsol2_order <- plsol2_overall %>%
+  arrange(mean_score) %>%
+  pull(target)
+
+plsol2_summary <- plsol2_summary %>%
+  mutate(target = factor(target, levels = plsol2_order))
+
+plsol2_overall <- plsol2_overall %>%
+  mutate(target = factor(target, levels = plsol2_order))
+
+plsol2_check <- analysis_data %>%
+  transmute(
+    children = clean_vector(plsolchld, as = "numeric"),
+    older = clean_vector(plsolold, as = "numeric"),
+    poor = clean_vector(plsolpoor, as = "numeric"),
+    eu = clean_vector(plsolimmeu, as = "numeric"),
+    noneu = clean_vector(plsolimmnoneu, as = "numeric")
+  ) %>%
+  mutate(priority_mean = row_mean_or_na(pick(children, older, poor))) %>%
+  summarise(
+    priority_over_eu = mean(children >= eu & older >= eu & poor >= eu, na.rm = TRUE),
+    priority_over_noneu = mean(children >= noneu & older >= noneu & poor >= noneu, na.rm = TRUE)
+  )
+
+ggplot(plsol2_summary, aes(x = mean_score, y = target, color = country)) +
+  geom_point(size = 2, alpha = 0.75, position = position_jitter(height = 0.08, width = 0)) +
+  geom_point(
+    data = plsol2_overall,
+    aes(x = mean_score, y = target),
+    inherit.aes = FALSE,
+    color = "black",
+    size = 3.2
+  ) +
+  labs(
+    title = "Priority targets versus immigrants",
+    subtitle = paste0(
+      "Children/older/poor are all at least as high as EU immigrants for ",
+      percent(plsol2_check$priority_over_eu, accuracy = 0.1),
+      " of complete cases"
+    ),
+    x = "Mean score",
+    y = NULL
+  ) +
+  theme_minimal(base_size = 11) +
+  theme(legend.position = "bottom")
+```
+
+```{r attitude-summary-table}
+variable_summary(analysis_data, attitude_vars) %>%
+  select(label, mean, median, missing_pct) %>%
+  arrange(label) %>%
+  mutate(missing_pct = percent(missing_pct, accuracy = 0.1)) %>%
+  gt()
+```
+
+## Sociodemographic Alignment
+
+This section checks whether the realized pretest sample looks obviously skewed in gender, age, or income. These are not population benchmarks, only simple internal warning flags.
+
+```{r sociodemographic-plots}
+# Build simple internal balance checks for gender, age, and household income.
+
+sociodemographic_alignment <- analysis_data %>%
+  transmute(
+    country,
+    gender = clean_vector(Respondent_Gender, as = "text"),
+    age = clean_vector(Respondent_Age, as = "numeric"),
+    hincome = clean_vector(hincome, as = "numeric")
+  ) %>%
+  group_by(country) %>%
+  summarise(
+    n = n(),
+    female_share = mean(gender == "Female", na.rm = TRUE),
+    male_share = mean(gender == "Male", na.rm = TRUE),
+    median_age = median(age, na.rm = TRUE),
+    median_income_decile = median(hincome, na.rm = TRUE),
+    .groups = "drop"
+  )
+
+gender_plot <- analysis_data %>%
+  transmute(
+    country,
+    gender = clean_vector(Respondent_Gender, as = "text")
+  ) %>%
+  filter(gender %in% c("Male", "Female")) %>%
+  mutate(gender = factor(gender, levels = c("Male", "Female"))) %>%
+  count(country, gender) %>%
+  group_by(country) %>%
+  mutate(share = n / sum(n)) %>%
+  ungroup()
+
+female_labels <- gender_plot %>%
+  select(country, gender, share) %>%
+  pivot_wider(names_from = gender, values_from = share) %>%
+  transmute(
+    country,
+    # Place the label in the middle of the female segment, which sits above the male segment.
+    y = Male + Female / 2,
+    label = percent(Female, accuracy = 1)
+  )
+
+gender_plot <- gender_plot %>%
+  ggplot(aes(x = country, y = share, fill = gender)) +
+  geom_col(position = "fill") +
+  geom_text(
+    data = female_labels,
+    aes(x = country, y = y, label = label),
+    inherit.aes = FALSE,
+    color = "white",
+    fontface = "bold",
+    size = 3.2
+  ) +
+  scale_y_continuous(labels = percent_format()) +
+  labs(title = "Gender balance by country", x = NULL, y = "Share") +
+  theme_minimal(base_size = 11)
+
+age_plot <- analysis_data %>%
+  transmute(
+    country,
+    age = clean_vector(Respondent_Age, as = "numeric")
+  ) %>%
+  ggplot(aes(x = country, y = age)) +
+  geom_boxplot(fill = "#D9C59A", color = "#6E5A3A") +
+  labs(title = "Age distribution by country", x = NULL, y = "Age") +
+  theme_minimal(base_size = 11)
+
+gender_plot / age_plot
+```
+
+```{r sociodemographic-table}
+sociodemographic_alignment %>%
+  mutate(
+    female_share = percent(female_share, accuracy = 0.1),
+    male_share = percent(male_share, accuracy = 0.1)
+  ) %>%
+  gt()
+```
+
+## Open-Text Language Check
+
+The task brief asks whether open-text entries are written in the correct country language. Here the report checks the unified vote-open field and the final comment field, then flags entries whose detected language does not match the country.
+
+```{r open-text-flags-plot}
+# Detect the language of open-text fields and separate usable detections from texts that are too short.
+open_text_review <- analysis_data %>%
+  select(country, Respondent_ID, voteprsp_open, comment) %>%
+  rename(respondent_id = Respondent_ID) %>%
+  pivot_longer(c(voteprsp_open, comment), names_to = "text_field", values_to = "text") %>%
+  filter(!is.na(text)) %>%
+  left_join(country_language_map, by = "country") %>%
+  mutate(
+    token_n = str_count(text, boundary("word")),
+    detected_language_code = if_else(token_n >= 3, cld3::detect_language(text), NA_character_),
+    detected_language = case_match(
+      detected_language_code,
+      "hr" ~ "Croatian",
+      "fr" ~ "French",
+      "de" ~ "German",
+      "it" ~ "Italian",
+      "pl" ~ "Polish",
+      "es" ~ "Spanish",
+      "sv" ~ "Swedish",
+      "en" ~ "English",
+      .default = NA_character_
+    ),
+    review_flag = case_when(
+      token_n < 3 ~ "too_short_for_detection",
+      detected_language_code != expected_language_code ~ "possible_language_mismatch",
+      TRUE ~ "ok"
+    )
+  )
+
+open_text_plot <- open_text_review %>%
+  count(country, review_flag, name = "n") %>%
+  complete(
+    country,
+    review_flag = c("ok", "possible_language_mismatch", "too_short_for_detection"),
+    fill = list(n = 0)
+  ) %>%
+  group_by(country) %>%
+  mutate(
+    total_n = sum(n),
+    # Treat "ok" and "possible mismatch" as the comparable detected subset used in the label.
+    detectable_n = sum(n[review_flag %in% c("ok", "possible_language_mismatch")]),
+    ok_detectable_share = if_else(
+      detectable_n > 0,
+      n[review_flag == "ok"][1] / detectable_n,
+      NA_real_
+    ),
+    plot_share = case_when(
+      # Draw too-short entries below zero so they are visually separated from actual language detections.
+      review_flag == "too_short_for_detection" ~ -(n / total_n),
+      TRUE ~ n / total_n
+    )
+  ) %>%
+  ungroup()
+
+open_text_labels <- open_text_plot %>%
+  distinct(country, ok_detectable_share) %>%
+  mutate(
+    label = percent(ok_detectable_share, accuracy = 1),
+    label_y = c(1.04, 1.09, 1.04, 1.09, 1.04, 1.09, 1.04)
+  )
+
+ggplot(open_text_plot, aes(x = country, y = plot_share, fill = review_flag)) +
+  geom_col() +
+  geom_hline(yintercept = 0, color = "grey35") +
+  geom_label(
+    data = open_text_labels,
+    aes(x = country, y = label_y, label = label),
+    inherit.aes = FALSE,
+    size = 2.7,
+    label.size = 0.15,
+    fill = "white"
+  ) +
+  scale_y_continuous(labels = percent_format(accuracy = 1)) +
+  labs(
+    title = "Open-text review flags by country",
+    subtitle = "Labels show the share of OK texts among entries long enough to detect language",
+    x = NULL,
+    y = "Share of open-text entries",
+    fill = NULL
+  ) +
+  coord_cartesian(ylim = c(min(open_text_plot$plot_share) * 1.15, 1.14)) +
+  theme_minimal(base_size = 11)
+```
+
+```{r open-text-review-table}
+open_text_review %>%
+  filter(review_flag != "ok") %>%
+  select(country, respondent_id, text_field, detected_language, expected_language, text) %>%
+  slice_head(n = 25) %>%
+  gt()
+```
+
+## Mobile versus Desktop
+
+The task brief also asks whether mobile users behave differently on long 11-point scales. To check that, the report stacks all 11-point items into one long file and compares mobile and desktop users on high-end responding.
+
+```{r device-comparison-plot}
+# Stack all 11-point items into one long file so mobile and desktop users can be compared consistently.
+eleven_point_vars <- c(
+  "lifesat", "satdem", "trstparl", "trstmil", "trstjudi", "trstpltcns",
+  "trstparts", "trstmuni", "trstgov", "trsteucom", "psqhlth", "psqschl",
+  "psqtxath", "psqtrnsp", "psqbnft", "psqloc", "soctrst", "percfair",
+  "perchelp", "leftright", "euintgr", "taxwelf", "immicullife"
+) %>%
+  keep(~ .x %in% names(analysis_data))
+
+device_long <- analysis_data %>%
+  filter(!is.na(device_group)) %>%
+  select(country, device_group, all_of(eleven_point_vars)) %>%
+  # Clean labelled values before stacking all item responses into one long comparison file.
+  mutate(across(all_of(eleven_point_vars), ~ clean_vector(.x, as = "numeric"))) %>%
+  pivot_longer(all_of(eleven_point_vars), names_to = "variable", values_to = "score") %>%
+  filter(!is.na(score))
+
+device_comparison <- device_long %>%
+  group_by(variable, device_group) %>%
+  summarise(
+    mean_score = mean(score),
+    high_point_share = mean(score >= 9),
+    .groups = "drop"
+  ) %>%
+  pivot_wider(
+    names_from = device_group,
+    values_from = c(mean_score, high_point_share)
+  ) %>%
+  mutate(
+    mean_gap_mobile_minus_desktop = mean_score_Mobile - mean_score_Desktop,
+    high_gap_mobile_minus_desktop = high_point_share_Mobile - high_point_share_Desktop
+  )
+
+ggplot(
+  device_comparison %>% mutate(variable = fct_reorder(variable, high_gap_mobile_minus_desktop)),
+  aes(x = high_gap_mobile_minus_desktop, y = variable)
+) +
+  geom_col(fill = "#5C8F6F") +
+  geom_vline(xintercept = 0, linetype = 2, color = "grey40") +
+  scale_x_continuous(labels = percent_format(accuracy = 1)) +
+  labs(
+    title = "Mobile minus desktop gap in high-end responding",
+    subtitle = "Positive values mean mobile users choose 9-11 more often",
+    x = "Gap in share choosing 9-11",
+    y = NULL
+  ) +
+  theme_minimal(base_size = 11)
+```
+
+```{r device-comparison-table}
+device_comparison %>%
+  select(variable, mean_gap_mobile_minus_desktop, high_gap_mobile_minus_desktop) %>%
+  mutate(across(contains("gap"), ~ percent(.x, accuracy = 0.1))) %>%
+  gt()
+```
+
+## ESS Comparison
+
+The task brief asks for a comparison to ESS benchmarks. This section keeps the comparison deliberately simple and only uses items that are clearly comparable across the pretest and ESS. For the matched ESS items, the original ESS `0-10` scale is shifted to `1-11` so that it aligns with the pretest coding.
+
+```{r ess-comparison-overall-plot}
+# Define a small crosswalk between pretest items and clearly matching ESS variables.
+ess_crosswalk <- tribble(
+  ~country, ~country_code, ~pretest_var, ~ess_var, ~item_label,
+  "Croatia", "HR", "lifesat", "stflife", "Life satisfaction",
+  "France", "FR", "lifesat", "stflife", "Life satisfaction",
+  "Germany", "DE", "lifesat", "stflife", "Life satisfaction",
+  "Italy", "IT", "lifesat", "stflife", "Life satisfaction",
+  "Poland", "PL", "lifesat", "stflife", "Life satisfaction",
+  "Spain", "ES", "lifesat", "stflife", "Life satisfaction",
+  "Sweden", "SE", "lifesat", "stflife", "Life satisfaction",
+  "Croatia", "HR", "satdem", "stfdem", "Satisfaction with democracy",
+  "France", "FR", "satdem", "stfdem", "Satisfaction with democracy",
+  "Germany", "DE", "satdem", "stfdem", "Satisfaction with democracy",
+  "Italy", "IT", "satdem", "stfdem", "Satisfaction with democracy",
+  "Poland", "PL", "satdem", "stfdem", "Satisfaction with democracy",
+  "Spain", "ES", "satdem", "stfdem", "Satisfaction with democracy",
+  "Sweden", "SE", "satdem", "stfdem", "Satisfaction with democracy",
+  "Croatia", "HR", "trstparl", "trstprl", "Trust in parliament",
+  "France", "FR", "trstparl", "trstprl", "Trust in parliament",
+  "Germany", "DE", "trstparl", "trstprl", "Trust in parliament",
+  "Italy", "IT", "trstparl", "trstprl", "Trust in parliament",
+  "Poland", "PL", "trstparl", "trstprl", "Trust in parliament",
+  "Spain", "ES", "trstparl", "trstprl", "Trust in parliament",
+  "Sweden", "SE", "trstparl", "trstprl", "Trust in parliament",
+  "Croatia", "HR", "trstjudi", "trstlgl", "Trust in the legal system",
+  "France", "FR", "trstjudi", "trstlgl", "Trust in the legal system",
+  "Germany", "DE", "trstjudi", "trstlgl", "Trust in the legal system",
+  "Italy", "IT", "trstjudi", "trstlgl", "Trust in the legal system",
+  "Poland", "PL", "trstjudi", "trstlgl", "Trust in the legal system",
+  "Spain", "ES", "trstjudi", "trstlgl", "Trust in the legal system",
+  "Sweden", "SE", "trstjudi", "trstlgl", "Trust in the legal system",
+  "Croatia", "HR", "trstpltcns", "trstplt", "Trust in politicians",
+  "France", "FR", "trstpltcns", "trstplt", "Trust in politicians",
+  "Germany", "DE", "trstpltcns", "trstplt", "Trust in politicians",
+  "Italy", "IT", "trstpltcns", "trstplt", "Trust in politicians",
+  "Poland", "PL", "trstpltcns", "trstplt", "Trust in politicians",
+  "Spain", "ES", "trstpltcns", "trstplt", "Trust in politicians",
+  "Sweden", "SE", "trstpltcns", "trstplt", "Trust in politicians",
+  "Croatia", "HR", "trstparts", "trstprt", "Trust in political parties",
+  "France", "FR", "trstparts", "trstprt", "Trust in political parties",
+  "Germany", "DE", "trstparts", "trstprt", "Trust in political parties",
+  "Italy", "IT", "trstparts", "trstprt", "Trust in political parties",
+  "Poland", "PL", "trstparts", "trstprt", "Trust in political parties",
+  "Spain", "ES", "trstparts", "trstprt", "Trust in political parties",
+  "Sweden", "SE", "trstparts", "trstprt", "Trust in political parties",
+  "Croatia", "HR", "leftright", "lrscale", "Left-right placement",
+  "France", "FR", "leftright", "lrscale", "Left-right placement",
+  "Germany", "DE", "leftright", "lrscale", "Left-right placement",
+  "Italy", "IT", "leftright", "lrscale", "Left-right placement",
+  "Poland", "PL", "leftright", "lrscale", "Left-right placement",
+  "Spain", "ES", "leftright", "lrscale", "Left-right placement",
+  "Sweden", "SE", "leftright", "lrscale", "Left-right placement"
+)
+
+ess_items <- ess_crosswalk %>%
+  distinct(pretest_var, ess_var, item_label)
+
+# Clean ESS values using the variable labels, then shift the 0-10 ESS scale to 1-11.
+clean_ess_values <- function(x) {
+  clean_vector(x, as = "numeric") + 1
+}
+
+# Prepare pretest means in long format so they can be joined to the ESS benchmarks.
+pretest_benchmark <- analysis_data %>%
+  transmute(
+    country,
+    lifesat = clean_vector(lifesat, as = "numeric"),
+    satdem = clean_vector(satdem, as = "numeric"),
+    trstparl = clean_vector(trstparl, as = "numeric"),
+    trstjudi = clean_vector(trstjudi, as = "numeric"),
+    trstpltcns = clean_vector(trstpltcns, as = "numeric"),
+    trstparts = clean_vector(trstparts, as = "numeric"),
+    leftright = clean_vector(leftright, as = "numeric")
+  ) %>%
+  pivot_longer(-country, names_to = "pretest_var", values_to = "value") %>%
+  group_by(country, pretest_var) %>%
+  summarise(
+    pretest_mean = mean(value, na.rm = TRUE),
+    pretest_n = sum(!is.na(value)),
+    .groups = "drop"
+  )
+
+# Read ESS, keep the matched countries/items, and compute weighted country means.
+ess_benchmark <- read_dta(ess_file) %>%
+  filter(cntry %in% unique(ess_crosswalk$country_code)) %>%
+  transmute(
+    country_code = cntry,
+    anweight,
+    stflife = clean_ess_values(stflife),
+    stfdem = clean_ess_values(stfdem),
+    trstprl = clean_ess_values(trstprl),
+    trstlgl = clean_ess_values(trstlgl),
+    trstplt = clean_ess_values(trstplt),
+    trstprt = clean_ess_values(trstprt),
+    lrscale = clean_ess_values(lrscale)
+  ) %>%
+  pivot_longer(-c(country_code, anweight), names_to = "ess_var", values_to = "value") %>%
+  group_by(country_code, ess_var) %>%
+  summarise(
+    ess_mean = weighted.mean(value, w = anweight, na.rm = TRUE),
+    ess_n = sum(!is.na(value)),
+    .groups = "drop"
+  )
+
+ess_comparison <- ess_crosswalk %>%
+  left_join(pretest_benchmark, by = c("country", "pretest_var")) %>%
+  left_join(ess_benchmark, by = c("country_code", "ess_var")) %>%
+  mutate(mean_gap = pretest_mean - ess_mean)
+
+# Pool all seven countries together to get one simple overall benchmark comparison by item.
+pretest_benchmark_overall <- analysis_data %>%
+  transmute(
+    lifesat = clean_vector(lifesat, as = "numeric"),
+    satdem = clean_vector(satdem, as = "numeric"),
+    trstparl = clean_vector(trstparl, as = "numeric"),
+    trstjudi = clean_vector(trstjudi, as = "numeric"),
+    trstpltcns = clean_vector(trstpltcns, as = "numeric"),
+    trstparts = clean_vector(trstparts, as = "numeric"),
+    leftright = clean_vector(leftright, as = "numeric")
+  ) %>%
+  pivot_longer(everything(), names_to = "pretest_var", values_to = "value") %>%
+  group_by(pretest_var) %>%
+  summarise(
+    pretest_mean = mean(value, na.rm = TRUE),
+    pretest_n = sum(!is.na(value)),
+    .groups = "drop"
+  )
+
+ess_benchmark_overall <- read_dta(ess_file) %>%
+  filter(cntry %in% unique(ess_crosswalk$country_code)) %>%
+  transmute(
+    anweight,
+    stflife = clean_ess_values(stflife),
+    stfdem = clean_ess_values(stfdem),
+    trstprl = clean_ess_values(trstprl),
+    trstlgl = clean_ess_values(trstlgl),
+    trstplt = clean_ess_values(trstplt),
+    trstprt = clean_ess_values(trstprt),
+    lrscale = clean_ess_values(lrscale)
+  ) %>%
+  pivot_longer(-anweight, names_to = "ess_var", values_to = "value") %>%
+  group_by(ess_var) %>%
+  summarise(
+    ess_mean = weighted.mean(value, w = anweight, na.rm = TRUE),
+    ess_n = sum(!is.na(value)),
+    .groups = "drop"
+  )
+
+ess_comparison_overall <- ess_items %>%
+  left_join(pretest_benchmark_overall, by = "pretest_var") %>%
+  left_join(ess_benchmark_overall, by = "ess_var") %>%
+  mutate(mean_gap = pretest_mean - ess_mean)
+
+ggplot(
+  ess_comparison_overall %>% mutate(item_label = fct_reorder(item_label, mean_gap)),
+  aes(x = mean_gap, y = item_label)
+) +
+  geom_vline(xintercept = 0, linetype = 2, color = "grey45") +
+  geom_col(fill = "#7C5A8C") +
+  labs(
+    title = "Pretest minus ESS mean across all countries",
+    subtitle = "Positive values mean the pooled pretest average is higher than the pooled ESS benchmark",
+    x = "Difference in mean score",
+    y = NULL
+  ) +
+  theme_minimal(base_size = 11)
+```
+
+```{r ess-comparison-country-plot}
+# Show the same comparison country by country so each national pattern can be inspected separately.
+ggplot(
+  ess_comparison %>% mutate(item_label = fct_reorder(item_label, mean_gap)),
+  aes(x = mean_gap, y = item_label)
+) +
+  geom_vline(xintercept = 0, linetype = 2, color = "grey45") +
+  geom_point(size = 2.1, color = "#2E6F95") +
+  facet_wrap(~ country) +
+  labs(
+    title = "Pretest minus ESS mean by country",
+    subtitle = "Positive values mean the pretest average is higher than the ESS benchmark",
+    x = "Difference in mean score",
+    y = NULL
+  ) +
+  theme_minimal(base_size = 11)
+```
+
+```{r ess-comparison-overall-table}
+# Show the pooled benchmark means directly for a single all-country summary table.
+ess_comparison_overall %>%
+  select(item_label, pretest_mean, ess_mean, mean_gap, pretest_n, ess_n) %>%
+  arrange(item_label) %>%
+  mutate(across(c(pretest_mean, ess_mean, mean_gap), ~ round(.x, 2))) %>%
+  gt()
+```
+
+```{r ess-comparison-gap-table}
+# Pivot the country-level gaps so questions are rows and countries are columns.
+ess_comparison %>%
+  select(country, item_label, mean_gap) %>%
+  mutate(mean_gap = round(mean_gap, 2)) %>%
+  pivot_wider(names_from = country, values_from = mean_gap) %>%
+  arrange(item_label) %>%
+  gt()
+```

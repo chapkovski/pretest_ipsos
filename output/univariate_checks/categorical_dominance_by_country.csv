@@ -1,0 +1,907 @@
+group,variable,label,n,n_missing,missing_pct,n_non_missing,n_distinct,mean,sd,median,min,max,dominant_category,dominant_n,dominant_share
+Croatia,citiz,Citizenship,43,0,0,43,1,1,0,1,1,1,Yes,43,1
+Croatia,idminor2,Self-identification: minority group: Language,43,0,0,43,1,0,0,0,0,0,No,43,1
+Croatia,idminor6,Self-identification: minority group: Migrant status,43,0,0,43,1,0,0,0,0,0,No,43,1
+Croatia,idminor8,Self-identification: minority group: Other:,43,0,0,43,1,0,0,0,0,0,No,43,1
+Croatia,idminor88,Self-identification: minority group: Prefer not to say,43,0,0,43,1,0,0,0,0,0,No,43,1
+Croatia,idminor99,Self-identification: minority group: Do not know,43,0,0,43,1,0,0,0,0,0,No,43,1
+Croatia,ISCEDRecodeKP,Recode for International Standard Classification of Education (ISCED),43,0,0,43,2,2.9767441860465116,0.15249857033260472,3,2,3,High education,42,0.9767441860465116
+Croatia,idminor3,Self-identification: minority group: Disability,43,0,0,43,2,0.02325581395348836,0.15249857033260472,0,0,1,No,42,0.9767441860465116
+Croatia,idminor4,Self-identification: minority group: Sexual orientation or gender identity,43,0,0,43,2,0.023255813953488372,0.15249857033260472,0,0,1,No,42,0.9767441860465116
+Croatia,pubpaymininc,Receiving public payments: Social assistance or minimum income benefit,43,0,0,43,2,1.9767441860465116,0.15249857033260472,2,1,2,No,42,0.9767441860465116
+Croatia,idminor1,Self-identification: minority group: Ethnicity or skin colour,43,0,0,43,2,0.04651162790697676,0.21308263231644634,0,0,1,No,41,0.9534883720930233
+Croatia,pubpayrent,"Receiving public payments: Housing, rent or heating benefit",43,0,0,43,2,1.9534883720930232,0.2130826323164463,2,1,2,No,41,0.9534883720930233
+Croatia,pubpayunemp,Receiving public payments: Unemployment benefit,43,0,0,43,2,1.9534883720930232,0.21308263231644636,2,1,2,No,41,0.9534883720930233
+Croatia,votetrnt,Recalled turnout national parliamentary election,43,0,0,43,2,1.0465116279069768,0.21308263231644647,1,1,2,Yes,41,0.9534883720930233
+Croatia,idminor7,Self-identification: minority group: Political opinion,43,0,0,43,2,0.06976744186046512,0.25776963111323353,0,0,1,No,40,0.9302325581395349
+Croatia,idminor5,Self-identification: minority group: Religion or belief,43,0,0,43,2,0.0930232558139535,0.29390259873217894,0,0,1,No,39,0.9069767441860465
+Croatia,livtogr,Living Together,43,13,30.23255813953488,30,2,1.1,0.30512857662936466,1,1,2,Yes,27,0.9
+Croatia,econhour,Economic activity: hours of paid work,43,16,37.2093023255814,27,3,2.8518518518518516,0.4560451819471487,3,1,3,35 hours or more,24,0.8888888888888888
+Croatia,borncntry,Born in country,43,0,0,43,2,1.1162790697674418,0.3243530062242882,1,1,2,Yes,38,0.8837209302325582
+Croatia,pubpaychild,"Receiving public payments: Child, family or care allowance/benefit",43,0,0,43,2,1.8837209302325582,0.3243530062242882,2,1,2,No,38,0.8837209302325582
+Croatia,pubpaydisab,Receiving public payments: Disability benefit/pension,43,0,0,43,2,1.8604651162790697,0.35060460356342593,2,1,2,No,37,0.8604651162790697
+Croatia,bornfath,Father born in country,43,0,0,43,2,1.1627906976744187,0.37354368381881425,1,1,2,Yes,36,0.8372093023255814
+Croatia,bornmoth,Mother born in country,43,0,0,43,2,1.1627906976744187,0.37354368381881436,1,1,2,Yes,36,0.8372093023255814
+Croatia,idminor0,Self-identification: minority group: None,43,0,0,43,2,0.813953488372093,0.39374961547907866,1,0,1,Yes,35,0.813953488372093
+Croatia,psubnft,Public service: usage in last 12 months: social benefits and unemployment services,43,0,0,43,4,1.372093023255814,0.7874992309581577,1,1,4,"Neither I, nor someone from my family",34,0.7906976744186046
+Croatia,lnlyleft,Loneliness: feeling left out,43,0,0,43,2,2.7674418604651163,0.42746257437545865,3,2,3,Hardly ever or never,33,0.7674418604651163
+Croatia,Hhchldu18,Household number children aged <18,43,6,13.953488372093023,37,5,3,16.072751268321593,0,0,98,0,28,0.7567567567567568
+Croatia,psuschl,Public service: usage in last 12 months: school,43,0,0,43,3,1.372093023255814,0.7245115206272392,1,1,4,"Neither I, nor someone from my family",31,0.7209302325581395
+Croatia,hincome,hincome,43,6,13.953488372093023,37,5,9.27027027027027,1.5572170448993057,10,3,10,10,26,0.7027027027027027
+Croatia,partner,Partnership,43,0,0,43,2,1.302325581395349,0.4647008111181006,1,1,2,Yes,30,0.6976744186046512
+Croatia,psuhlth,Public service: usage in last 12 months: health care,43,0,0,43,4,3.3720930232558137,1.0240734677410204,4,1,4,I and someone from my family have used it,30,0.6976744186046512
+Croatia,plsolchld,Willingness to pay for public redistribution: children,43,0,0,43,3,4.232558139534884,0.5272213460490667,4,3,5,Agree,29,0.6744186046511628
+Croatia,plsolpoor,Willingness to pay for public redistribution: poor,43,0,0,43,4,3.953488372093023,0.688458885312939,4,2,5,Agree,29,0.6744186046511628
+Croatia,ecohhld,Current economic assessment: household,43,2,4.651162790697675,41,4,2.926829268292683,0.6476976108663296,3,1,4,Rather good,27,0.6585365853658537
+Croatia,plsolold,Willingness to pay for public redistribution: older people,43,0,0,43,3,4.116279069767442,0.5859181775145493,4,3,5,Agree,28,0.6511627906976745
+Croatia,EmploymentStatusKP,"What is your current working status? If more than one, please answer about your main activity (most hours per week).",43,1,2.3255813953488373,42,4,2.666666666666667,2.3234401183890743,1,1,6,"In paid work (or away temporarily) (employee, self-employed, working for your family business)",27,0.6428571428571429
+Croatia,fraudnorm,Subjective social norm: citizen welfare fraud,43,1,2.3255813953488373,42,4,1.5476190476190477,0.8890219606160511,1,1,5,1 Never justified,27,0.6428571428571429
+Croatia,prskcope,Personal risk assessment: not able to cope,43,1,2.3255813953488373,42,5,3.2142857142857135,11.681830198835499,1,1,77,Very unlikely,27,0.6428571428571429
+Croatia,dsrvneed,Deservingness: need,43,0,0,43,4,3.6744186046511627,0.8372554435420914,4,2,5,Agree,27,0.627906976744186
+Croatia,idworld,Identification: World,43,0,0,43,4,2.697674418604651,0.7082804032077311,3,1,4,Close,27,0.627906976744186
+Croatia,taxnorm,Subjective social norm: citizen tax morale,43,0,0,43,3,1.5116279069767442,0.7358860232418182,1,1,3,1 Never justified,27,0.627906976744186
+Croatia,econat,Current economic assessment: national economy,43,2,4.651162790697675,41,3,2.1951219512195124,0.6008124580566699,2,1,3,Rather bad,25,0.6097560975609756
+Croatia,EducationAchievedKP,"What is the highest level of school you have completed, or the highest degree you have received?",43,0,0,43,5,48.651162790697676,7.033537756892341,52,28,60,"Masters degree (magistar), Professional master degree, master of science or completed medical faculty, OR graduate degre",26,0.6046511627906976
+Croatia,ISCEDKP,International Standard Classification of Education (ISCED),43,0,0,43,5,7.558139534883721,0.958727469627749,8,4,9,8,26,0.6046511627906976
+Croatia,idmuni,Identification: Municipality,43,0,0,43,4,3,0.6900655593423543,3,1,4,Close,26,0.6046511627906976
+Croatia,plsolmuni,Willingness to pay for public redistribution: municipal,43,0,0,43,5,3.627906976744186,0.9517716766504324,4,1,5,Agree,26,0.6046511627906976
+Croatia,lnlyisol,Loneliness: feeling isolated,43,0,0,43,3,2.558139534883721,0.5478236413036653,3,1,3,Hardly ever or never,25,0.5813953488372093
+Croatia,txbrdmddl,Current Tax Assessment: Middle income,43,0,0,43,3,3.6744186046511627,0.5657245767937634,4,3,5,too high,25,0.5813953488372093
+Croatia,frndoldr,Friends networks: 10 years older,43,0,0,43,3,1.9767441860465116,0.6721809596566363,2,1,3,"Yes, one or two",24,0.5581395348837209
+Croatia,plsolcntry,Willingness to pay for public redistribution: country,43,0,0,43,4,3.6511627906976742,0.7832691239205493,4,2,5,Agree,24,0.5581395348837209
+Croatia,txbrdhigh,Current Tax Assessment: High income,43,0,0,43,4,2.441860465116279,0.8252654863276351,2,1,4,too low,24,0.5581395348837209
+Croatia,EMP01KP,Employment recode,43,19,44.18604651162791,24,4,4.541666666666666,2.8889469522221454,7,1,7,Retired,13,0.5416666666666666
+Croatia,prskunemp,Personal risk assessment: unemployment,43,2,4.651162790697675,41,4,19.804878048780484,32.89241516839037,1,1,77,Very unlikely,22,0.5365853658536586
+Croatia,frndincl,Friends networks: poor,43,0,0,43,3,2.13953488372093,0.6754679277161874,2,1,3,"Yes, one or two",23,0.5348837209302325
+Croatia,idcntry,Identification: Country,43,0,0,43,3,3,0.6900655593423543,3,2,4,Close,23,0.5348837209302325
+Croatia,ideurop,Identification: European Union,43,0,0,43,4,2.6279069767441863,0.7874992309581577,3,1,4,Close,23,0.5348837209302325
+Croatia,lnlycomp,Loneliness: lack of companionship,43,0,0,43,3,2.2325581395348837,0.6487060124485763,2,1,3,Some of the time,23,0.5348837209302325
+Croatia,polint,Political interest,43,0,0,43,4,2.8372093023255816,0.7214480332451612,3,1,4,Quite interested,23,0.5348837209302325
+Croatia,psutxath,Public service: usage in last 12 months: tax authority,43,0,0,43,4,1.8837209302325582,1.1382798702968104,1,1,4,"Neither I, nor someone from my family",23,0.5348837209302325
+Croatia,pubpaypens,Receiving public payments: Retirement pension,43,0,0,43,2,1.5348837209302326,0.5046845884077511,2,1,2,No,23,0.5348837209302325
+Croatia,Respondent_Gender,Gender,43,0,0,43,2,1.5116279069767442,0.505780538858873,2,1,2,Female,22,0.5116279069767442
+Croatia,crisoc,Crisis perception of country's society,43,0,0,43,5,2.9767441860465116,0.8860928708991229,3,1,5,is facing major problems.,22,0.5116279069767442
+Croatia,plsol_priority_mean,plsol_priority_mean,43,0,0,43,7,4.10077519379845,0.5170883262536284,4,3,5,4,22,0.5116279069767442
+Croatia,psefair,Public service: fair treatment,43,0,0,43,5,3.116279069767442,0.8785622000253595,3,1,5,3 Neither agree nor disagree,22,0.5116279069767442
+Croatia,MARITALSTATUSKP,What is your current legal marital status?,43,0,0,43,4,3.2325581395348837,2.2869943813028355,4,1,6,Legally married,21,0.4883720930232558
+Croatia,poleconred,Political orientation: Economic: Reduce Income Differences,43,1,2.3255813953488373,42,5,3.5952380952380953,1.0373400272677673,4,1,5,Agree,20,0.47619047619047616
+Croatia,dsrvatt,Deservingness: attitude,43,0,0,43,5,3.1627906976744184,0.8978872704229617,3,1,5,Neither agree nor disagree,20,0.46511627906976744
+Croatia,dsrvident,Deservingness: identity,43,0,0,43,4,2.488372093023256,0.8555725741740725,2,1,4,Disagree,20,0.46511627906976744
+Croatia,frndyngr,Friends networks: 10 years younger,43,0,0,43,3,1.9767441860465116,0.7396386535079218,2,1,3,"Yes, one or two",20,0.46511627906976744
+Croatia,immiecon,Immigration: economic migrants,43,0,0,43,3,3.2790697674418605,0.7661151658840617,3,2,4,Allow many to come and live here,20,0.46511627906976744
+Croatia,immiforc,Immigration: forced migrants,43,0,0,43,3,2.9767441860465116,0.7396386535079218,3,2,4,Allow some,20,0.46511627906976744
+Croatia,plsolfund,Preferred payment for public redistribution,43,4,9.30232558139535,39,4,2.1794871794871793,1.1669076288657094,3,1,4,An increase in taxes that I pay,18,0.46153846153846156
+Croatia,fresil,Financial resilience,43,5,11.627906976744185,38,5,3.8421052631578947,1.284550942452394,4,1,5,More than 12 months,17,0.4473684210526316
+Croatia,frndinch,Friends networks: rich,43,0,0,43,3,2.186046511627907,0.732114158203694,2,1,3,"Yes, one or two",19,0.4418604651162791
+Croatia,frndethn,Friends network: ethnicity,43,0,0,43,3,1.7906976744186047,0.7418811204628575,2,1,3,"Yes, one or two",18,0.4186046511627907
+Croatia,frndpol,Friends network: other politics,43,0,0,43,3,2.186046511627907,0.7944993617872822,2,1,3,"Yes, three or more",18,0.4186046511627907
+Croatia,pseeffi,Public service: efficiency,43,0,0,43,4,2.1627906976744184,0.9240241328053312,2,1,4,2 Disagree,18,0.4186046511627907
+Croatia,sochelp,Helping norm: descriptive,43,0,0,43,4,3.13953488372093,0.8885889120997031,3,1,4,4 Agree,18,0.4186046511627907
+Croatia,txbrdlow,Current Tax Assessment: Low income,43,2,4.651162790697675,41,4,3.975609756097561,0.82121266667194,4,2,5,too high,17,0.4146341463414634
+Croatia,polcultgend,Political orientation: Cultural: Gender roles,43,1,2.3255813953488373,42,5,2.2142857142857144,0.9508844223505762,2,1,5,Disagree,17,0.40476190476190477
+Croatia,dsrvcont,Deservingness: control,43,0,0,43,5,2.627906976744186,0.9517716766504323,3,1,5,Neither agree nor disagree,17,0.3953488372093023
+Croatia,dsrvreci,Deservingness: reciprocity,43,0,0,43,5,2.883720930232558,0.9052571938032015,3,1,5,Neither agree nor disagree,17,0.3953488372093023
+Croatia,polcultlgbt,Political orientation: Cultural: LGBT,43,0,0,43,4,3.86046511627907,1.1666271152922447,4,1,5,Agree,17,0.3953488372093023
+Croatia,pssatgen,Public service: overall satisfaction,43,0,0,43,5,2.7906976744186047,0.9400643223910575,3,1,5,2 Disagree,17,0.3953488372093023
+Croatia,rednrmdsc,Redistribution norm: descriptive,43,0,0,43,4,3.0697674418604652,0.8279449267746443,3,1,4,3 Neither agree nor disagree,17,0.3953488372093023
+Croatia,prskcare,Personal risk assessment: care for family,43,3,6.976744186046512,40,5,9.375,22.84472390414054,2,1,77,Very unlikely,15,0.375
+Croatia,prskunwork,Personal risk assessment: unable to work,43,3,6.976744186046512,40,5,13.075,27.20707628540781,2,1,77,Very unlikely,15,0.375
+Croatia,hhsize,Household size,43,0,0,43,7,4.790697674418604,14.749589404349496,2,1,99,2,16,0.37209302325581395
+Croatia,psutrnsp,Public service: usage in last 12 months: public transport,43,0,0,43,4,2.511627906976744,1.2978387349974576,2,1,4,I and someone from my family have used it,16,0.37209302325581395
+Croatia,plsoleu,Willingness to pay for public redistribution: EU,43,0,0,43,5,2.9302325581395348,1.0778141203205438,3,1,5,Neither agree nor disagree,15,0.3488372093023256
+Croatia,plsolimmeu,Willingness to pay for public redistribution: eu immigrants,43,0,0,43,5,3.255813953488372,1.0486504537196268,3,1,5,Neither agree nor disagree,15,0.3488372093023256
+Croatia,pseintgrt,Public service: integrity,43,0,0,43,5,2.488372093023256,1.0549676822686225,2,1,5,3 Neither agree nor disagree,15,0.3488372093023256
+Croatia,psehelp,Public service: prompt help,43,0,0,43,4,2.4651162790697674,0.9843740386976971,2,1,4,2 Disagree,14,0.32558139534883723
+Croatia,psqtxath,Quality public sector: Tax authority,43,3,6.976744186046512,40,9,4.675,1.9267017120404206,5,1,9,5,13,0.325
+Croatia,plsolimmnoneu,Willingness to pay for public redistribution: non-eu immigrants,43,0,0,43,5,3.0232558139534884,1.184992909221768,3,1,5,Agree,13,0.3023255813953488
+Croatia,poleconsmr,Political orientation: Economic: Less Government Intervention,43,0,0,43,5,3.13953488372093,1.1460365519982587,3,1,5,Agree,13,0.3023255813953488
+Croatia,hincshare,Share of household income,43,6,13.953488372093023,37,6,4.27027027027027,1.3467790515945124,4,2,7,"more than 50 %, up to three quarters (75 %)",11,0.2972972972972973
+Croatia,lifesat,Life satisfaction,43,0,0,43,9,7.953488372093023,1.9633970606371791,8,1,11,8,12,0.27906976744186046
+Croatia,scgvchld,Governmental Scope: Standard of Living: Children,43,0,0,43,7,9.279069767441861,1.5169766516605585,9,5,11,11 Entirely governments' responsibility,12,0.27906976744186046
+Croatia,scgvold,Governmental Scope: Standard of Living: older people,43,0,0,43,7,9.232558139534884,1.5249857033260463,9,5,11,11 Entirely governments' responsibility,12,0.27906976744186046
+Croatia,slfstatus,Self-placement: status ladder,43,0,0,43,7,6.488372093023256,1.6090827470399731,7,3,10,6,12,0.27906976744186046
+Croatia,trstgov,Political trust: national government,43,1,2.3255813953488373,42,11,3.9761904761904763,2.9507179385833915,3,1,11,1 No trust at all,11,0.2619047619047619
+Croatia,poldisfam,Political discussions: family and friends,43,0,0,43,6,4.604651162790698,1.761216231332916,5,2,7,Several times a week,11,0.2558139534883721
+Croatia,scgvpoor,Governmental Scope: Standard of Living: the poor,43,0,0,43,8,8.790697674418604,1.9341312745973098,9,4,11,11 Entirely governments' responsibility,11,0.2558139534883721
+Croatia,soligame,Solidarity game,43,0,0,43,15,54.25581395348837,21.82079940840174,60,0,100,50,11,0.2558139534883721
+Croatia,yrinccntry,Year first living in country,43,39,90.69767441860465,4,4,1966.5,19.122412679017955,1958,1955,1995,1955,1,0.25
+Croatia,satdem,Satisfaction with democracy in country of interview,43,1,2.3255813953488373,42,10,4.666666666666667,2.4857316405070535,4,1,10,3,10,0.23809523809523808
+Croatia,trstmil,Political trust: armed forces,43,1,2.3255813953488373,42,10,6.166666666666667,2.978923251753458,7,1,11,8,10,0.23809523809523808
+Croatia,perchelp,Perceived helpfulness,43,0,0,43,8,3.9767441860465116,1.908481970834702,4,1,8,3,10,0.23255813953488372
+Croatia,psqhlth,Quality public sector: Public health care,43,0,0,43,11,4.906976744186046,2.486285750427658,4,1,11,3,10,0.23255813953488372
+Croatia,taxwelf,Trade-off: Tax and welfare state,43,0,0,43,10,5.302325581395349,2.15511444531961,5,1,11,5,10,0.23255813953488372
+Croatia,psqtrnsp,Quality public sector: Public transport,43,1,2.3255813953488373,42,9,5.261904761904762,2.15338104893862,5,1,10,5,9,0.21428571428571427
+Croatia,trstjudi,Political trust: legal system,43,1,2.3255813953488373,42,10,4.309523809523809,2.5613267830683344,3.5,1,11,3,9,0.21428571428571427
+Croatia,trstparl,Political trust: national parliament,43,1,2.3255813953488373,42,10,3.9523809523809526,2.6591065889384087,3,1,10,1 No trust at all,9,0.21428571428571427
+Croatia,eduyrs,Education years,43,0,0,43,12,17.46511627906977,3.3119468969266426,17,12,28,17,9,0.20930232558139536
+Croatia,leftright,Left-right self-placement,43,0,0,43,11,4.906976744186046,2.4183224556386786,5,1,11,4,9,0.20930232558139536
+Croatia,percfair,Perceived fairness,43,0,0,43,11,5.627906976744186,2.3301671288307846,6,1,11,6,9,0.20930232558139536
+Croatia,poldiscol,Political discussions: work colleagues,43,0,0,43,8,17.441860465116278,33.282558227554304,5,1,99,Less than once a month,9,0.20930232558139536
+Croatia,psqloc,"Quality public sector: Public administration in my village, town or city",43,0,0,43,11,4.651162790697674,2.590125212364329,5,1,11,5,9,0.20930232558139536
+Croatia,trstpltcns,Political trust: politicians,43,0,0,43,8,3.441860465116279,2.1745533266725463,3,1,8,1 No trust at all,9,0.20930232558139536
+Croatia,psqschl,Quality public sector: Schools,43,2,4.651162790697675,41,8,5.951219512195122,2.0242433093898957,6,3,11,4,8,0.1951219512195122
+Croatia,trsteucom,Political trust: european commission,43,2,4.651162790697675,41,11,4.682926829268292,2.715133738789343,5,1,11,6,8,0.1951219512195122
+Croatia,immicullife,Cultural Life enriched by immigration,43,1,2.3255813953488373,42,11,6.976190476190476,2.7892484802873216,7,1,11,6,8,0.19047619047619047
+Croatia,scgveuimm,Governmental Scope: Standard of Living immigrants from EU countries,43,0,0,43,11,6.72093023255814,2.8976639309832626,7,1,11,5,8,0.18604651162790697
+Croatia,soctrst,Social trust and helping norm: injuctive,43,0,0,43,10,6.186046511627907,2.509560898353946,6,2,11,4,8,0.18604651162790697
+Croatia,trstmuni,Political trust: local authorities,43,0,0,43,10,4.5813953488372094,2.855508945875998,4,1,11,2,8,0.18604651162790697
+Croatia,trstparts,Political trust: political parties,43,0,0,43,9,3.8372093023255816,2.224647993109189,4,1,9,1 No trust at all,8,0.18604651162790697
+Croatia,psqbnft,Quality public sector: Benefits and employment services,43,5,11.627906976744185,38,10,4.157894736842105,2.388331044434458,4,1,10,2,7,0.18421052631578946
+Croatia,euintgr,European integration attitude,43,1,2.3255813953488373,42,11,6.285714285714286,3.3443488139766524,6.5,1,11,11 Unification should go further,7,0.16666666666666666
+Croatia,scgvnoneuimm,Governmental Scope: Standard of Living immigrants from non-EU countries,43,0,0,43,11,6.348837209302325,3.1538617366366273,6,1,11,5,7,0.16279069767441862
+France,idminor3,Self-identification: minority group: Disability,53,0,0,53,1,0,0,0,0,0,No,53,1
+France,idminor4,Self-identification: minority group: Sexual orientation or gender identity,53,0,0,53,1,0,0,0,0,0,No,53,1
+France,idminor6,Self-identification: minority group: Migrant status,53,0,0,53,1,0,0,0,0,0,No,53,1
+France,idminor88,Self-identification: minority group: Prefer not to say,53,0,0,53,1,0,0,0,0,0,No,53,1
+France,idminor99,Self-identification: minority group: Do not know,53,0,0,53,1,0,0,0,0,0,No,53,1
+France,pubpaymininc,Receiving public payments: Social assistance or minimum income benefit,53,0,0,53,2,1.9811320754716981,0.1373605639486889,2,1,2,No,52,0.9811320754716981
+France,ISCEDRecodeKP,Recode for International Standard Classification of Education (ISCED),53,0,0,53,2,2.9622641509433962,0.19238024756109737,3,2,3,High education,51,0.9622641509433962
+France,citiz,Citizenship,53,0,0,53,2,1.0377358490566038,0.19238024756109728,1,1,2,Yes,51,0.9622641509433962
+France,idminor2,Self-identification: minority group: Language,53,0,0,53,2,0.03773584905660378,0.1923802475610972,0,0,1,No,51,0.9622641509433962
+France,idminor8,Self-identification: minority group: Other:,53,0,0,53,2,0.03773584905660378,0.19238024756109726,0,0,1,No,51,0.9622641509433962
+France,pubpaydisab,Receiving public payments: Disability benefit/pension,53,0,0,53,2,1.9622641509433962,0.19238024756109734,2,1,2,No,51,0.9622641509433962
+France,livtogr,Living Together,53,14,26.41509433962264,39,2,1.0512820512820513,0.22345586503095896,1,1,2,Yes,37,0.9487179487179487
+France,idminor1,Self-identification: minority group: Ethnicity or skin colour,53,0,0,53,2,0.05660377358490567,0.23329531793437605,0,0,1,No,50,0.9433962264150944
+France,pubpayrent,"Receiving public payments: Housing, rent or heating benefit",53,0,0,53,2,1.9433962264150944,0.23329531793437602,2,1,2,No,50,0.9433962264150944
+France,pubpayunemp,Receiving public payments: Unemployment benefit,53,0,0,53,2,1.9433962264150944,0.23329531793437608,2,1,2,No,50,0.9433962264150944
+France,idminor5,Self-identification: minority group: Religion or belief,53,0,0,53,2,0.07547169811320756,0.2666787612158106,0,0,1,No,49,0.9245283018867925
+France,idminor7,Self-identification: minority group: Political opinion,53,0,0,53,2,0.07547169811320756,0.2666787612158106,0,0,1,No,49,0.9245283018867925
+France,bornfath,Father born in country,53,0,0,53,2,1.1132075471698113,0.31987842392976573,1,1,2,Yes,47,0.8867924528301887
+France,borncntry,Born in country,53,0,0,53,2,1.1320754716981132,0.34181280577895956,1,1,2,Yes,46,0.8679245283018868
+France,bornmoth,Mother born in country,53,0,0,53,2,1.169811320754717,0.3790600245041253,1,1,2,Yes,44,0.8301886792452831
+France,pubpaychild,"Receiving public payments: Child, family or care allowance/benefit",53,0,0,53,2,1.830188679245283,0.37906002450412524,2,1,2,No,44,0.8301886792452831
+France,votetrnt,Recalled turnout national parliamentary election,53,0,0,53,3,1.2264150943396226,0.5421293286648015,1,1,3,Yes,44,0.8301886792452831
+France,frndpol,Friends network: other politics,53,0,0,53,3,1.9622641509433962,0.43687104904974317,2,1,3,"Yes, one or two",43,0.8113207547169812
+France,frndyngr,Friends networks: 10 years younger,53,0,0,53,3,2.0377358490566038,0.43687104904974317,2,1,3,"Yes, one or two",43,0.8113207547169812
+France,idminor0,Self-identification: minority group: None,53,0,0,53,2,0.8113207547169812,0.3949977494378391,1,0,1,Yes,43,0.8113207547169812
+France,frndinch,Friends networks: rich,53,0,0,53,3,1.8867924528301887,0.46659063586875205,2,1,3,"Yes, one or two",41,0.7735849056603774
+France,frndincl,Friends networks: poor,53,0,0,53,3,1.9622641509433962,0.47887143573130514,2,1,3,"Yes, one or two",41,0.7735849056603774
+France,ecohhld,Current economic assessment: household,53,1,1.8867924528301887,52,3,2.923076923076923,0.4788120039674112,3,2,4,Rather good,40,0.7692307692307693
+France,taxnorm,Subjective social norm: citizen tax morale,53,2,3.7735849056603774,51,5,1.4509803921568627,0.9861789997803858,1,1,5,1 Never justified,39,0.7647058823529411
+France,partner,Partnership,53,1,1.8867924528301887,52,2,1.25,0.4372373160976031,1,1,2,Yes,39,0.75
+France,econhour,Economic activity: hours of paid work,53,22,41.509433962264154,31,3,2.6129032258064515,0.7154215239907498,3,1,3,35 hours or more,23,0.7419354838709677
+France,fraudnorm,Subjective social norm: citizen welfare fraud,53,2,3.7735849056603774,51,4,1.5098039215686274,1.0463756308249508,1,1,5,1 Never justified,37,0.7254901960784313
+France,lnlyleft,Loneliness: feeling left out,53,0,0,53,3,2.660377358490566,0.5864953349678427,3,1,3,Hardly ever or never,38,0.71698113207547165
+France,Hhchldu18,Household number children aged <18,53,15,28.30188679245283,38,4,0.47368421052631576,0.8297457150451858,0,0,3,0,27,0.7105263157894737
+France,psuhlth,Public service: usage in last 12 months: health care,53,0,0,53,4,3.3962264150943398,1.044023700024047,4,1,4,I and someone from my family have used it,37,0.6981132075471698
+France,frndoldr,Friends networks: 10 years older,53,0,0,53,3,1.849056603773585,0.56827087308425,2,1,3,"Yes, one or two",35,0.660377358490566
+France,EMP01KP,Employment recode,53,25,47.16981132075472,28,6,5.7142857142857135,2.4321480044076087,7,1,9,Retired,18,0.6428571428571429
+France,lnlyisol,Loneliness: feeling isolated,53,0,0,53,3,2.6037735849056602,0.5663521139548542,3,1,3,Hardly ever or never,34,0.6415094339622641
+France,psutrnsp,Public service: usage in last 12 months: public transport,53,0,0,53,4,3.188679245283019,1.1776215235932932,4,1,4,I and someone from my family have used it,34,0.6415094339622641
+France,pubpaypens,Receiving public payments: Retirement pension,53,0,0,53,2,1.641509433962264,0.48414633923422795,2,1,2,No,34,0.6415094339622641
+France,immiforc,Immigration: forced migrants,53,1,1.8867924528301887,52,4,2.923076923076923,0.6521804708175775,3,1,4,Allow some,33,0.6346153846153846
+France,immiecon,Immigration: economic migrants,53,2,3.7735849056603774,51,4,3.0588235294117645,0.7046066904559548,3,1,4,Allow some,32,0.6274509803921569
+France,polcultlgbt,Political orientation: Cultural: LGBT,53,2,3.7735849056603774,51,4,4.411764705882353,0.8758189444910475,5,2,5,Agree strongly,32,0.6274509803921569
+France,lnlycomp,Loneliness: lack of companionship,53,0,0,53,3,2.5283018867924527,0.6680561234169128,3,1,3,Hardly ever or never,33,0.6226415094339622
+France,psubnft,Public service: usage in last 12 months: social benefits and unemployment services,53,0,0,53,4,1.641509433962264,0.9626553745248594,1,1,4,"Neither I, nor someone from my family",33,0.6226415094339622
+France,econat,Current economic assessment: national economy,53,1,1.8867924528301887,52,3,1.8461538461538463,0.6066499260117115,2,1,3,Rather bad,32,0.6153846153846154
+France,MARITALSTATUSKP,What is your current legal marital status?,53,1,1.8867924528301887,52,6,2.4423076923076925,1.9645232075190264,1,1,6,Legally married,31,0.5961538461538461
+France,EmploymentStatusKP,"What is your current working status? If more than one, please answer about your main activity (most hours per week).",53,0,0,53,5,3.1132075471698117,2.5694984347330876,1,1,8,"In paid work (or away temporarily) (employee, self-employed, working for your family business)",31,0.5849056603773585
+France,frndethn,Friends network: ethnicity,53,0,0,53,3,1.6226415094339623,0.5271992432562717,2,1,3,"Yes, one or two",31,0.5849056603773585
+France,idcntry,Identification: Country,53,0,0,53,4,3.4339622641509435,0.7723449299738517,4,1,4,Very Close,31,0.5849056603773585
+France,prskunemp,Personal risk assessment: unemployment,53,0,0,53,4,14.169811320754715,28.691821301184433,1,1,77,Very unlikely,31,0.5849056603773585
+France,prskcope,Personal risk assessment: not able to cope,53,0,0,53,4,7.188679245283015,20.146632285640955,1,1,77,Very unlikely,29,0.5471698113207547
+France,prskunwork,Personal risk assessment: unable to work,53,2,3.7735849056603774,51,5,8.901960784313722,22.684139747374847,1,1,77,Very unlikely,27,0.5294117647058824
+France,Respondent_Gender,Gender,53,0,0,53,2,1.528301886792453,0.5039754872284372,2,1,2,Female,28,0.5283018867924528
+France,plsolmuni,Willingness to pay for public redistribution: municipal,53,0,0,53,5,3.7358490566037736,0.9835364643865215,4,1,5,Agree,28,0.5283018867924528
+France,plsolold,Willingness to pay for public redistribution: older people,53,0,0,53,5,3.8867924528301887,0.9539468086786065,4,1,5,Agree,28,0.5283018867924528
+France,polcultgend,Political orientation: Cultural: Gender roles,53,0,0,53,4,1.8113207547169812,1.092924864994157,1,1,5,Disagree strongly,28,0.5283018867924528
+France,psutxath,Public service: usage in last 12 months: tax authority,53,0,0,53,4,1.8867924528301885,1.0859306069076735,1,1,4,"Neither I, nor someone from my family",28,0.5283018867924528
+France,plsolchld,Willingness to pay for public redistribution: children,53,0,0,53,5,3.9622641509433962,0.9397680595793384,4,1,5,Agree,27,0.5094339622641509
+France,crisoc,Crisis perception of country's society,53,1,1.8867924528301887,52,4,3.5,0.851757122704842,3,2,5,is facing major problems.,26,0.5
+France,idworld,Identification: World,53,0,0,53,4,2.584905660377358,0.7950317425726552,3,1,4,Close,26,0.49056603773584906
+France,polint,Political interest,53,0,0,53,4,2.9622641509433962,0.8311776666259885,3,1,4,Quite interested,26,0.49056603773584906
+France,pseeffi,Public service: efficiency,53,0,0,53,5,2.150943396226415,0.94860680058653,2,1,5,2 Disagree,25,0.4716981132075472
+France,psuschl,Public service: usage in last 12 months: school,53,0,0,53,4,1.8679245283018866,1.0568046149570338,2,1,4,"Neither I, nor someone from my family",25,0.4716981132075472
+France,plsolfund,Preferred payment for public redistribution,53,12,22.641509433962266,41,4,2.317073170731707,1.0592219878345595,3,1,4,"A decrease in spending for general public services that I benefit from, resulting in for example longer waiting times fo",19,0.4634146341463415
+France,dsrvatt,Deservingness: attitude,53,0,0,53,5,3.4150943396226414,0.9288943440819009,4,1,5,Agree,24,0.4528301886792453
+France,dsrvident,Deservingness: identity,53,0,0,53,5,2.2264150943396226,0.9930820214394385,2,1,5,Neither agree nor disagree,24,0.4528301886792453
+France,plsolcntry,Willingness to pay for public redistribution: country,53,0,0,53,5,3.6037735849056602,1.1658543028366244,4,1,5,Agree,24,0.4528301886792453
+France,prskcare,Personal risk assessment: care for family,53,0,0,53,5,7.452830188679247,20.079233472321448,2,1,77,Very unlikely,24,0.4528301886792453
+France,txbrdmddl,Current Tax Assessment: Middle income,53,0,0,53,4,3.6037735849056602,0.8398631445637537,4,1,5,too high,24,0.4528301886792453
+France,hincome,hincome,53,3,5.660377358490567,50,8,8.12,2.56856983950372,9,2,10,10,22,0.44
+France,dsrvcont,Deservingness: control,53,0,0,53,5,2.490566037735849,0.9119430125041545,3,1,5,Neither agree nor disagree,23,0.4339622641509434
+France,idmuni,Identification: Municipality,53,0,0,53,4,3.0377358490566038,0.8311776666259885,3,1,4,Close,23,0.4339622641509434
+France,psefair,Public service: fair treatment,53,0,0,53,5,3.358490566037736,0.9218363700671176,3,1,5,4 Agree,23,0.4339622641509434
+France,ideurop,Identification: European Union,53,0,0,53,4,2.509433962264151,0.9327923651685253,3,1,4,Close,22,0.41509433962264153
+France,fresil,Financial resilience,53,6,11.320754716981133,47,5,3.7872340425531914,1.3011060547751025,4,1,5,More than 12 months,19,0.40425531914893614
+France,hhsize,Household size,53,1,1.8867924528301887,52,5,2.3076923076923075,1.129609711160236,2,1,5,2,19,0.36538461538461536
+France,txbrdlow,Current Tax Assessment: Low income,53,1,1.8867924528301887,52,5,3.0384615384615383,1.0839567761720719,3,1,5,about right,19,0.36538461538461536
+France,dsrvneed,Deservingness: need,53,0,0,53,5,3.188679245283019,1.2256333335116196,3,1,5,Agree,19,0.3584905660377358
+France,plsolpoor,Willingness to pay for public redistribution: poor,53,0,0,53,5,3.641509433962264,1.0578341374758564,4,1,5,Agree,19,0.3584905660377358
+France,pseintgrt,Public service: integrity,53,0,0,53,5,2.9056603773584904,1.0788910072455142,3,1,5,3 Neither agree nor disagree,19,0.3584905660377358
+France,rednrmdsc,Redistribution norm: descriptive,53,0,0,53,4,2.7735849056603774,0.8910130240341883,3,1,4,2 Disagree,19,0.3584905660377358
+France,txbrdhigh,Current Tax Assessment: High income,53,1,1.8867924528301887,52,5,2.596153846153846,1.2087850874460586,2,1,5,too low,18,0.34615384615384615
+France,hincshare,Share of household income,53,15,28.30188679245283,38,7,4.578947368421052,1.4819924307237935,5,1,7,"more than 50 %, up to three quarters (75 %)",13,0.34210526315789475
+France,poleconred,Political orientation: Economic: Reduce Income Differences,53,3,5.660377358490567,50,5,3.18,1.320018552745315,3.5,1,5,Agree,17,0.34
+France,ISCEDKP,International Standard Classification of Education (ISCED),53,0,0,53,5,7.056603773584905,1.1505031397614138,7,4,9,8,18,0.33962264150943394
+France,plsoleu,Willingness to pay for public redistribution: EU,53,0,0,53,5,2.2452830188679247,1.1077638664194445,2,1,5,Disagree strongly,18,0.33962264150943394
+France,plsolimmnoneu,Willingness to pay for public redistribution: non-eu immigrants,53,0,0,53,5,2.4716981132075473,1.3097823304906822,2,1,5,Disagree strongly,18,0.33962264150943394
+France,pssatgen,Public service: overall satisfaction,53,1,1.8867924528301887,52,5,2.826923076923077,1.1668821175764748,3,1,5,4 Agree,17,0.3269230769230769
+France,psehelp,Public service: prompt help,53,0,0,53,4,2.509433962264151,1.0852621361721781,2,1,4,2 Disagree,17,0.32075471698113206
+France,sochelp,Helping norm: descriptive,53,0,0,53,4,2.8867924528301887,0.9539468086786067,3,1,4,3 Neither agree nor disagree,17,0.32075471698113206
+France,soligame,Solidarity game,53,0,0,53,10,32.905660377358494,29.347561916126867,30,0,100,0,17,0.32075471698113206
+France,plsolimmeu,Willingness to pay for public redistribution: eu immigrants,53,0,0,53,5,2.7735849056603774,1.324931194642578,3,1,5,Agree,16,0.3018867924528302
+France,scgvchld,Governmental Scope: Standard of Living: Children,53,0,0,53,10,7.452830188679245,2.5386704404520417,8,1,11,8,16,0.3018867924528302
+France,taxwelf,Trade-off: Tax and welfare state,53,4,7.547169811320755,49,9,4.3061224489795915,2.829929928701512,4,1,11,1 Reduce taxes and spend less on social benefits,14,0.2857142857142857
+France,dsrvreci,Deservingness: reciprocity,53,0,0,53,5,3.207547169811321,1.1986930473522743,3,1,5,Neither agree nor disagree,15,0.2830188679245283
+France,scgvnoneuimm,Governmental Scope: Standard of Living immigrants from non-EU countries,53,0,0,53,11,4.339622641509434,3.0251725712149624,4,1,11,1 Not governments' responsibility at all,15,0.2830188679245283
+France,psqbnft,Quality public sector: Benefits and employment services,53,7,13.20754716981132,46,9,4.760869565217392,2.0131212096719158,5,1,9,5,13,0.2826086956521739
+France,psqloc,"Quality public sector: Public administration in my village, town or city",53,4,7.547169811320755,49,9,6.6938775510204085,1.8051325162880825,7,2,10,7,13,0.2653061224489796
+France,EducationAchievedKP,"What is the highest level of school you have completed, or the highest degree you have received?",53,0,0,53,6,81.20754716981132,11.33469569773411,81,43,95,"Secondary education (2nd cycle), general",14,0.2641509433962264
+France,plsol_priority_mean,plsol_priority_mean,53,0,0,53,11,3.830188679245283,0.8954362960572495,4,1,5,4,14,0.2641509433962264
+France,psqtxath,Quality public sector: Tax authority,53,0,0,53,11,6.188679245283019,2.1577820144910276,6,1,11,6,14,0.2641509433962264
+France,slfstatus,Self-placement: status ladder,53,0,0,53,7,5.69811320754717,1.6002993188821,6,1,8,5,14,0.2641509433962264
+France,poleconsmr,Political orientation: Economic: Less Government Intervention,53,3,5.660377358490567,50,5,3.3,1.233048321545148,3,1,5,Agree,13,0.26
+France,trsteucom,Political trust: european commission,53,2,3.7735849056603774,51,9,3.7058823529411766,2.2476131130339927,3,1,9,1 No trust at all,13,0.2549019607843137
+France,lifesat,Life satisfaction,53,0,0,53,10,7.226415094339623,2.154079398525596,7,1,11,7,13,0.24528301886792453
+France,poldisfam,Political discussions: family and friends,53,0,0,53,7,4.018867924528302,1.7263853527143824,4,1,7,Several times a month,13,0.24528301886792453
+France,psqhlth,Quality public sector: Public health care,53,0,0,53,9,5.660377358490566,2.4014690714260643,5,1,11,5,13,0.24528301886792453
+France,scgvpoor,Governmental Scope: Standard of Living: the poor,53,0,0,53,11,6.452830188679245,2.430305755818273,6,1,11,5,13,0.24528301886792453
+France,trstmuni,Political trust: local authorities,53,0,0,53,10,6.6415094339622645,2.1221754043963177,7,1,11,7,13,0.24528301886792453
+France,trstparl,Political trust: national parliament,53,0,0,53,10,4.056603773584905,2.169855492703663,4,1,11,4,13,0.24528301886792453
+France,trstparts,Political trust: political parties,53,0,0,53,9,3.509433962264151,2.1449640620033525,3,1,10,1 No trust at all,13,0.24528301886792453
+France,percfair,Perceived fairness,53,0,0,53,10,6.811320754716981,2.2622028387391393,7,1,11,7,12,0.22641509433962265
+France,perchelp,Perceived helpfulness,53,0,0,53,10,4.754716981132075,2.3113903606118056,4,1,11,4,12,0.22641509433962265
+France,poldiscol,Political discussions: work colleagues,53,0,0,53,7,24.773584905660375,40.5688595568998,4,1,99,I do not have work colleagues,12,0.22641509433962265
+France,psqtrnsp,Quality public sector: Public transport,53,0,0,53,11,6.188679245283019,2.0667384540491747,6,1,11,6,12,0.22641509433962265
+France,trstgov,Political trust: national government,53,0,0,53,9,4.037735849056604,2.3448984244930804,4,1,9,1 No trust at all,12,0.22641509433962265
+France,euintgr,European integration attitude,53,4,7.547169811320755,49,11,5.428571428571429,3.3416562759605704,5,1,11,1 Unification has already gone too far,11,0.22448979591836735
+France,satdem,Satisfaction with democracy in country of interview,53,1,1.8867924528301887,52,8,4.5,2.2966300973211964,5,1,9,5,11,0.21153846153846154
+France,scgveuimm,Governmental Scope: Standard of Living immigrants from EU countries,53,0,0,53,11,4.962264150943397,3.044302775747002,5,1,11,1 Not governments' responsibility at all,11,0.20754716981132076
+France,trstjudi,Political trust: legal system,53,0,0,53,10,5.773584905660377,2.53924208433239,6,1,10,6,11,0.20754716981132076
+France,trstmil,Political trust: armed forces,53,0,0,53,11,7.433962264150943,2.3656958153694045,8,1,11,7,11,0.20754716981132076
+France,soctrst,Social trust and helping norm: injuctive,53,0,0,53,9,6.245283018867925,2.888343019644511,6,1,11,4,10,0.18867924528301888
+France,trstpltcns,Political trust: politicians,53,0,0,53,9,3.8867924528301887,2.1272985519603758,4,1,9,1 No trust at all,10,0.18867924528301888
+France,psqschl,Quality public sector: Schools,53,4,7.547169811320755,49,9,5.4897959183673475,2.171044765579388,5,1,9,5,9,0.1836734693877551
+France,eduyrs,Education years,53,3,5.660377358490567,50,15,15.66,3.347920463298289,16,8,25,17,9,0.18
+France,immicullife,Cultural Life enriched by immigration,53,1,1.8867924528301887,52,11,6.153846153846154,3.298155250181326,6,1,11,1 Cultural life undermined,9,0.17307692307692307
+France,scgvold,Governmental Scope: Standard of Living: older people,53,0,0,53,10,7.377358490566038,2.355243047186586,8,1,11,6,9,0.16981132075471697
+France,leftright,Left-right self-placement,53,3,5.660377358490567,50,11,5.98,2.9519277685980745,6,1,11,7,8,0.16
+France,yrinccntry,Year first living in country,53,46,86.79245283018868,7,7,1982.142857142857,25.458649947372646,1974,1946,2018,1946,1,0.14285714285714285
+Germany,idminor1,Self-identification: minority group: Ethnicity or skin colour,50,0,0,50,1,0,0,0,0,0,No,50,1
+Germany,idminor2,Self-identification: minority group: Language,50,0,0,50,1,0,0,0,0,0,No,50,1
+Germany,idminor3,Self-identification: minority group: Disability,50,0,0,50,1,0,0,0,0,0,No,50,1
+Germany,idminor4,Self-identification: minority group: Sexual orientation or gender identity,50,0,0,50,1,0,0,0,0,0,No,50,1
+Germany,idminor5,Self-identification: minority group: Religion or belief,50,0,0,50,1,0,0,0,0,0,No,50,1
+Germany,idminor88,Self-identification: minority group: Prefer not to say,50,0,0,50,1,0,0,0,0,0,No,50,1
+Germany,idminor99,Self-identification: minority group: Do not know,50,0,0,50,1,0,0,0,0,0,No,50,1
+Germany,idminor8,Self-identification: minority group: Other:,50,0,0,50,2,0.01999999999999999,0.14142135623730948,0,0,1,No,49,0.98
+Germany,pubpaydisab,Receiving public payments: Disability benefit/pension,50,0,0,50,2,1.98,0.14142135623730942,2,1,2,No,49,0.98
+Germany,pubpayrent,"Receiving public payments: Housing, rent or heating benefit",50,0,0,50,2,1.98,0.14142135623730942,2,1,2,No,49,0.98
+Germany,votetrnt,Recalled turnout national parliamentary election,50,0,0,50,2,1.04,0.28284271247461873,1,1,3,Yes,49,0.98
+Germany,Hhchldu18,Household number children aged <18,50,11,22,39,2,0.051282051282051266,0.3202563076101744,0,0,2,0,38,0.9743589743589743
+Germany,livtogr,Living Together,50,12,24,38,2,1.0263157894736843,0.16222142113076257,1,1,2,Yes,37,0.9736842105263158
+Germany,citiz,Citizenship,50,0,0,50,2,1.04,0.1979486637221575,1,1,2,Yes,48,0.96
+Germany,idminor6,Self-identification: minority group: Migrant status,50,0,0,50,2,0.039999999999999994,0.19794866372215747,0,0,1,No,48,0.96
+Germany,pubpaymininc,Receiving public payments: Social assistance or minimum income benefit,50,0,0,50,2,1.96,0.19794866372215747,2,1,2,No,48,0.96
+Germany,pubpayunemp,Receiving public payments: Unemployment benefit,50,0,0,50,2,1.96,0.19794866372215747,2,1,2,No,48,0.96
+Germany,idminor7,Self-identification: minority group: Political opinion,50,0,0,50,2,0.059999999999999984,0.23989793748209529,0,0,1,No,47,0.94
+Germany,borncntry,Born in country,50,0,0,50,2,1.08,0.2740475156178697,1,1,2,Yes,46,0.92
+Germany,idminor0,Self-identification: minority group: None,50,0,0,50,2,0.9,0.303045763365663,1,0,1,Yes,45,0.9
+Germany,bornfath,Father born in country,50,0,0,50,2,1.12,0.32826072265931605,1,1,2,Yes,44,0.88
+Germany,bornmoth,Mother born in country,50,0,0,50,2,1.12,0.328260722659316,1,1,2,Yes,44,0.88
+Germany,lnlyisol,Loneliness: feeling isolated,50,0,0,50,3,2.86,0.4045657788144654,3,1,3,Hardly ever or never,44,0.88
+Germany,econhour,Economic activity: hours of paid work,50,28,56.00000000000001,22,3,2.8181818181818183,0.5010810823432182,3,1,3,35 hours or more,19,0.8636363636363636
+Germany,psuhlth,Public service: usage in last 12 months: health care,50,0,0,50,4,3.72,0.7295511619887828,4,1,4,I and someone from my family have used it,43,0.86
+Germany,psubnft,Public service: usage in last 12 months: social benefits and unemployment services,50,0,0,50,4,1.3,0.7889543583705185,1,1,4,"Neither I, nor someone from my family",42,0.84
+Germany,pubpaychild,"Receiving public payments: Child, family or care allowance/benefit",50,0,0,50,2,1.84,0.37032803990902047,2,1,2,No,42,0.84
+Germany,lnlyleft,Loneliness: feeling left out,50,0,0,50,3,2.74,0.486973158544552,3,1,3,Hardly ever or never,38,0.76
+Germany,partner,Partnership,50,0,0,50,2,1.24,0.4314191105869002,1,1,2,Yes,38,0.76
+Germany,taxnorm,Subjective social norm: citizen tax morale,50,3,6,47,5,1.4680851063829787,0.9053239590667611,1,1,5,1 Never justified,34,0.723404255319149
+Germany,fraudnorm,Subjective social norm: citizen welfare fraud,50,2,4,48,4,1.4583333333333333,0.849488790787588,1,1,5,1 Never justified,34,0.7083333333333334
+Germany,MARITALSTATUSKP,What is your current legal marital status?,50,0,0,50,5,2.1199999999999997,1.8029454359181147,1,1,6,Legally married,35,0.7
+Germany,polcultlgbt,Political orientation: Cultural: LGBT,50,3,6,47,4,4.574468085106383,0.7730425729618463,5,1,5,Agree strongly,32,0.6808510638297872
+Germany,Respondent_Gender,Gender,50,0,0,50,3,1.34,0.5194188275056527,1,1,3,Male,34,0.68
+Germany,psuschl,Public service: usage in last 12 months: school,50,0,0,50,4,1.38,0.6353530273696312,1,1,4,"Neither I, nor someone from my family",34,0.68
+Germany,ecohhld,Current economic assessment: household,50,2,4,48,4,3.1041666666666665,0.627035691859122,3,1,4,Rather good,32,0.6666666666666666
+Germany,crisoc,Crisis perception of country's society,50,0,0,50,5,3,0.8081220356417685,3,1,5,is facing major problems.,33,0.66
+Germany,lnlycomp,Loneliness: lack of companionship,50,0,0,50,3,2.62,0.5674864018868914,3,1,3,Hardly ever or never,33,0.66
+Germany,pseintgrt,Public service: integrity,50,0,0,50,5,3.64,0.8980704940286691,4,1,5,4 Agree,32,0.64
+Germany,psutxath,Public service: usage in last 12 months: tax authority,50,0,0,50,4,1.66,0.9816687167205418,1,1,4,"Neither I, nor someone from my family",32,0.64
+Germany,hhsize,Household size,50,0,0,50,4,2.04,0.8320125587749165,2,1,4,2,31,0.62
+Germany,psutrnsp,Public service: usage in last 12 months: public transport,50,0,0,50,4,3.2,1.1065666703449761,4,1,4,I and someone from my family have used it,31,0.62
+Germany,immiecon,Immigration: economic migrants,50,1,2,49,3,3.5510204081632653,0.6144518047887589,4,2,4,Allow many to come and live here,30,0.6122448979591837
+Germany,frndinch,Friends networks: rich,50,0,0,50,3,1.96,0.6375975315548971,2,1,3,"Yes, one or two",30,0.6
+Germany,prskcope,Personal risk assessment: not able to cope,50,0,0,50,4,8.98,22.91376023622629,1,1,77,Very unlikely,30,0.6
+Germany,econat,Current economic assessment: national economy,50,3,6,47,4,2.297872340425532,0.6225785655684533,2,1,4,Rather bad,28,0.5957446808510638
+Germany,plsolfund,Preferred payment for public redistribution,50,3,6,47,4,1.9574468085106382,1.2328377799509453,1,1,4,An increase in taxes that I pay,28,0.5957446808510638
+Germany,hincome,hincome,50,6,12,44,5,9.113636363636363,1.4819206439367811,10,4,10,10,26,0.5909090909090909
+Germany,pubpaypens,Receiving public payments: Retirement pension,50,0,0,50,2,1.42,0.49856938190328975,1,1,2,Yes,29,0.58
+Germany,EMP01KP,Employment recode,50,0,0,50,6,4.52,2.8730983062803506,7,1,8,Retired,26,0.52
+Germany,EmploymentStatusKP,"What is your current working status? If more than one, please answer about your main activity (most hours per week).",50,0,0,50,4,3.7399999999999998,2.52182311765411,6,1,7,Retired,26,0.52
+Germany,plsolchld,Willingness to pay for public redistribution: children,50,0,0,50,3,4.38,0.7253429871306344,5,3,5,Agree strongly,26,0.52
+Germany,frndoldr,Friends networks: 10 years older,50,0,0,50,3,1.94,0.711709640404637,2,1,3,"Yes, one or two",25,0.5
+Germany,polint,Political interest,50,0,0,50,3,3.42,0.6091144458665096,3,2,4,Very interested,24,0.48
+Germany,frndpol,Friends network: other politics,50,0,0,50,3,1.8199999999999998,0.7196938124462856,2,1,3,"Yes, one or two",23,0.46
+Germany,idcntry,Identification: Country,50,0,0,50,4,3.2800000000000002,0.729551161988783,3,1,4,Close,23,0.46
+Germany,psefair,Public service: fair treatment,50,0,0,50,5,3.6,0.9897433186107868,4,1,5,4 Agree,23,0.46
+Germany,txbrdmddl,Current Tax Assessment: Middle income,50,0,0,50,3,3.76,0.7969328960560775,4,3,5,about right,23,0.46
+Germany,fresil,Financial resilience,50,4,8,46,5,3.6956521739130435,1.4586076346584982,4,1,5,More than 12 months,21,0.45652173913043476
+Germany,dsrvcont,Deservingness: control,50,0,0,50,5,2.46,1.073046397612224,2,1,5,Disagree,22,0.44
+Germany,frndincl,Friends networks: poor,50,0,0,50,3,1.82,0.8253632471802451,2,1,3,"No, none at all",22,0.44
+Germany,idmuni,Identification: Municipality,50,0,0,50,4,3.04,0.8320125587749165,3,1,4,Close,22,0.44
+Germany,plsolold,Willingness to pay for public redistribution: older people,50,0,0,50,4,4.12,0.8241260058203402,4,2,5,Agree,22,0.44
+Germany,txbrdhigh,Current Tax Assessment: High income,50,0,0,50,5,2.26,1.0654116766848047,2,1,5,too low,22,0.44
+Germany,immiforc,Immigration: forced migrants,50,2,4,48,4,3.166666666666667,0.883256386318056,3,1,4,Allow many to come and live here,21,0.4375
+Germany,polcultgend,Political orientation: Cultural: Gender roles,50,2,4,48,4,2.0625,1.1186285295995462,2,1,4,Disagree strongly,21,0.4375
+Germany,prskunwork,Personal risk assessment: unable to work,50,2,4,48,4,12.541666666666666,26.922235003592334,2,1,77,Very unlikely,21,0.4375
+Germany,prskunemp,Personal risk assessment: unemployment,50,1,2,49,4,32.224489795918366,37.57285439988693,2,1,77,Very unlikely,21,0.42857142857142855
+Germany,dsrvident,Deservingness: identity,50,0,0,50,5,1.88,0.9398219544799159,2,1,5,Disagree strongly,21,0.42
+Germany,sochelp,Helping norm: descriptive,50,0,0,50,4,3.22,0.8154127538760192,3,2,5,3 Neither agree nor disagree,21,0.42
+Germany,prskcare,Personal risk assessment: care for family,50,2,4,48,4,15.75,29.739650443652465,2,1,77,Rather unlikely,20,0.4166666666666667
+Germany,frndethn,Friends network: ethnicity,50,0,0,50,3,1.8599999999999999,0.8083745343311491,2,1,3,"No, none at all",20,0.4
+Germany,frndyngr,Friends networks: 10 years younger,50,0,0,50,3,2.12,0.8241260058203405,2,1,3,"Yes, three or more",20,0.4
+Germany,ideurop,Identification: European Union,50,0,0,50,4,3.04,0.8561899465012405,3,1,4,Close,20,0.4
+Germany,idworld,Identification: World,50,0,0,50,4,2.66,0.8233827686279752,3,1,4,Close,20,0.4
+Germany,psehelp,Public service: prompt help,50,0,0,50,5,2.96,0.9249379460707803,3,1,5,3 Neither agree nor disagree,20,0.4
+Germany,poleconsmr,Political orientation: Economic: Less Government Intervention,50,1,2,49,5,3.2448979591836737,1.1642345884188239,4,1,5,Agree,19,0.3877551020408163
+Germany,txbrdlow,Current Tax Assessment: Low income,50,1,2,49,4,3.9591836734693877,0.8888003073776235,4,1,5,too high,19,0.3877551020408163
+Germany,plsolpoor,Willingness to pay for public redistribution: poor,50,0,0,50,4,3.98,0.979170827896788,4,2,5,Agree strongly,19,0.38
+Germany,poldisfam,Political discussions: family and friends,50,0,0,50,7,4.86,1.4287142785721423,5,1,7,Several times a week,19,0.38
+Germany,poldiscol,Political discussions: work colleagues,50,1,2,49,8,38.81632653061225,46.359857576979486,6,1,99,I do not have work colleagues,18,0.3673469387755102
+Germany,plsolcntry,Willingness to pay for public redistribution: country,50,0,0,50,4,3.92,0.8769148144698746,4,2,5,Agree,18,0.36
+Germany,plsolimmeu,Willingness to pay for public redistribution: eu immigrants,50,0,0,50,5,3.12,1.1717769516805643,3,1,5,Neither agree nor disagree,18,0.36
+Germany,dsrvneed,Deservingness: need,50,0,0,50,5,3.5,1.2494896917525644,4,1,5,Agree,17,0.34
+Germany,plsolmuni,Willingness to pay for public redistribution: municipal,50,0,0,50,5,3.86,0.9691148917798074,4,1,5,Agree,17,0.34
+Germany,pseeffi,Public service: efficiency,50,0,0,50,5,2.48,1.0924602453888665,3,1,5,3 Neither agree nor disagree,17,0.34
+Germany,pssatgen,Public service: overall satisfaction,50,0,0,50,5,2.98,1.0200040015927907,3,1,5,2 Disagree,17,0.34
+Germany,rednrmdsc,Redistribution norm: descriptive,50,0,0,50,4,2.88,0.9178501945262291,3,1,4,3 Neither agree nor disagree,17,0.34
+Germany,hincshare,Share of household income,50,11,22,39,7,4.666666666666667,1.4926721593968975,5,1,7,around half (50 %),13,0.3333333333333333
+Germany,dsrvatt,Deservingness: attitude,50,0,0,50,4,3.6,1.0690449676496974,4,2,5,Agree,16,0.32
+Germany,plsolimmnoneu,Willingness to pay for public redistribution: non-eu immigrants,50,0,0,50,5,2.84,1.2348675877128175,3,1,5,Neither agree nor disagree,16,0.32
+Germany,slfstatus,Self-placement: status ladder,50,0,0,50,7,7.2,1.1952286093343936,7,4,10,7,16,0.32
+Germany,scgvchld,Governmental Scope: Standard of Living: Children,50,0,0,50,9,8.4,2.6649654437396615,9,1,11,11 Entirely governments' responsibility,15,0.3
+Germany,trstmil,Political trust: armed forces,50,1,2,49,10,7.653061224489796,2.479507851101398,8,1,11,8,14,0.2857142857142857
+Germany,plsol_priority_mean,plsol_priority_mean,50,0,0,50,8,4.16,0.6875636437249544,4,2.3333333333333335,5,5,14,0.28
+Germany,plsoleu,Willingness to pay for public redistribution: EU,50,0,0,50,5,2.88,1.3498299212591673,3,1,5,Neither agree nor disagree,14,0.28
+Germany,psqtxath,Quality public sector: Tax authority,50,7,14.000000000000002,43,10,6.837209302325581,2.057856403872492,7,1,11,7,12,0.27906976744186046
+Germany,dsrvreci,Deservingness: reciprocity,50,0,0,50,5,3.2,1.2616801237611215,3,1,5,Disagree,13,0.26
+Germany,lifesat,Life satisfaction,50,0,0,50,11,7.64,2.283570423164353,8,1,11,8,13,0.26
+Germany,percfair,Perceived fairness,50,0,0,50,10,6.7,2.3754698783308417,7,1,11,8,13,0.26
+Germany,euintgr,European integration attitude,50,3,6,47,11,7.191489361702128,3.4492488021013226,8,1,11,11 Unification should go further,12,0.2553191489361702
+Germany,yrinccntry,Year first living in country,50,46,92,4,4,1976,20.016659728003237,1966.5,1965,2006,1965,1,0.25
+Germany,leftright,Left-right self-placement,50,1,2,49,11,5.244897959183674,2.3321182453306437,5,1,11,6,12,0.24489795918367346
+Germany,poleconred,Political orientation: Economic: Reduce Income Differences,50,1,2,49,5,3.2857142857142856,1.274754878398196,3,1,5,Neither agree nor disagree,12,0.24489795918367346
+Germany,trstparl,Political trust: national parliament,50,1,2,49,11,6.285714285714286,2.7838821814150103,7,1,11,7,12,0.24489795918367346
+Germany,scgvnoneuimm,Governmental Scope: Standard of Living immigrants from non-EU countries,50,0,0,50,11,4.96,3.1877315842243092,5,1,11,1 Not governments' responsibility at all,12,0.24
+Germany,scgvpoor,Governmental Scope: Standard of Living: the poor,50,0,0,50,10,7.46,2.4925194204307592,8,1,11,8,12,0.24
+Germany,soctrst,Social trust and helping norm: injuctive,50,0,0,50,10,5.1,2.9084675816431904,5,1,11,3,12,0.24
+Germany,soligame,Solidarity game,50,0,0,50,10,40.5,24.291805958690965,50,0,100,50,12,0.24
+Germany,trstgov,Political trust: national government,50,1,2,49,10,5.775510204081632,2.9102212553519093,7,1,11,7,11,0.22448979591836735
+Germany,immicullife,Cultural Life enriched by immigration,50,2,4,48,11,6.833333333333334,3.1712359717707037,8,1,11,9,10,0.20833333333333334
+Germany,psqhlth,Quality public sector: Public health care,50,1,2,49,9,6.469387755102041,2.1223222424222645,7,2,11,7,10,0.20408163265306123
+Germany,psqloc,"Quality public sector: Public administration in my village, town or city",50,1,2,49,10,6.591836734693878,2.149790371049183,7,2,11,8,10,0.20408163265306123
+Germany,trstjudi,Political trust: legal system,50,1,2,49,10,7.387755102040816,2.9355317982906453,8,1,11,8,10,0.20408163265306123
+Germany,trstmuni,Political trust: local authorities,50,1,2,49,11,6.795918367346939,2.645590607003273,7,1,11,8,10,0.20408163265306123
+Germany,eduyrs,Education years,50,0,0,50,15,16.98,3.40162026219319,16.5,5,25,15,10,0.2
+Germany,satdem,Satisfaction with democracy in country of interview,50,0,0,50,10,7.08,2.694211482086008,8,1,11,8,10,0.2
+Germany,scgvold,Governmental Scope: Standard of Living: older people,50,0,0,50,10,7.86,2.5475878947806008,8,1,11,9,10,0.2
+Germany,psqtrnsp,Quality public sector: Public transport,50,4,8,46,9,5.913043478260869,2.2786554218224757,6,2,11,7,9,0.1956521739130435
+Germany,trstparts,Political trust: political parties,50,2,4,48,9,5.145833333333333,2.5846484870129705,5.5,1,9,7,9,0.1875
+Germany,trsteucom,Political trust: european commission,50,1,2,49,10,5.040816326530612,2.886456764453822,5,1,10,1 No trust at all,9,0.1836734693877551
+Germany,trstpltcns,Political trust: politicians,50,1,2,49,9,4.857142857142857,2.614064523559687,5,1,9,1 No trust at all,9,0.1836734693877551
+Germany,psqbnft,Quality public sector: Benefits and employment services,50,17,34,33,10,5.909090909090909,2.402650052073184,6,1,10,4,6,0.18181818181818182
+Germany,perchelp,Perceived helpfulness,50,0,0,50,10,5.88,2.335528607735521,6,1,11,7,9,0.18
+Germany,scgveuimm,Governmental Scope: Standard of Living immigrants from EU countries,50,0,0,50,11,5.64,2.8266949042358025,6,1,11,7,9,0.18
+Germany,taxwelf,Trade-off: Tax and welfare state,50,2,4,48,10,5.6875,3.0398505702356,6,1,11,6,8,0.16666666666666666
+Germany,psqschl,Quality public sector: Schools,50,5,10,45,11,6.044444444444444,2.2858811266670296,6,1,11,5,7,0.15555555555555556
+Italy,ISCEDRecodeKP,Recode for International Standard Classification of Education (ISCED),50,0,0,50,1,3,0,3,3,3,High education,50,1
+Italy,citiz,Citizenship,50,1,2,49,1,1,0,1,1,1,Yes,49,1
+Italy,idminor1,Self-identification: minority group: Ethnicity or skin colour,50,0,0,50,1,0,0,0,0,0,No,50,1
+Italy,idminor2,Self-identification: minority group: Language,50,0,0,50,1,0,0,0,0,0,No,50,1
+Italy,idminor4,Self-identification: minority group: Sexual orientation or gender identity,50,0,0,50,1,0,0,0,0,0,No,50,1
+Italy,idminor5,Self-identification: minority group: Religion or belief,50,0,0,50,1,0,0,0,0,0,No,50,1
+Italy,idminor6,Self-identification: minority group: Migrant status,50,0,0,50,1,0,0,0,0,0,No,50,1
+Italy,idminor88,Self-identification: minority group: Prefer not to say,50,0,0,50,1,0,0,0,0,0,No,50,1
+Italy,idminor99,Self-identification: minority group: Do not know,50,0,0,50,1,0,0,0,0,0,No,50,1
+Italy,pubpayrent,"Receiving public payments: Housing, rent or heating benefit",50,0,0,50,1,2,0,2,2,2,No,50,1
+Italy,bornfath,Father born in country,50,0,0,50,2,1.02,0.14142135623730945,1,1,2,Yes,49,0.98
+Italy,idminor3,Self-identification: minority group: Disability,50,0,0,50,2,0.01999999999999999,0.14142135623730936,0,0,1,No,49,0.98
+Italy,borncntry,Born in country,50,0,0,50,2,1.04,0.19794866372215747,1,1,2,Yes,48,0.96
+Italy,idminor7,Self-identification: minority group: Political opinion,50,0,0,50,2,0.03999999999999999,0.1979486637221575,0,0,1,No,48,0.96
+Italy,idminor8,Self-identification: minority group: Other:,50,0,0,50,2,0.039999999999999994,0.19794866372215753,0,0,1,No,48,0.96
+Italy,pubpaymininc,Receiving public payments: Social assistance or minimum income benefit,50,0,0,50,2,1.96,0.19794866372215741,2,1,2,No,48,0.96
+Italy,bornmoth,Mother born in country,50,0,0,50,2,1.06,0.23989793748209526,1,1,2,Yes,47,0.94
+Italy,pubpaydisab,Receiving public payments: Disability benefit/pension,50,0,0,50,2,1.94,0.2398979374820953,2,1,2,No,47,0.94
+Italy,fraudnorm,Subjective social norm: citizen welfare fraud,50,1,2,49,4,1.1428571428571428,0.6454972243679025,1,1,5,1 Never justified,46,0.9387755102040817
+Italy,pubpayunemp,Receiving public payments: Unemployment benefit,50,0,0,50,2,1.92,0.2740475156178697,2,1,2,No,46,0.92
+Italy,idminor0,Self-identification: minority group: None,50,0,0,50,2,0.9,0.30304576336566297,1,0,1,Yes,45,0.9
+Italy,votetrnt,Recalled turnout national parliamentary election,50,0,0,50,2,1.1,0.3030457633656633,1,1,2,Yes,45,0.9
+Italy,psutxath,Public service: usage in last 12 months: tax authority,50,0,0,50,4,1.22,0.6480740698407861,1,1,4,"Neither I, nor someone from my family",44,0.88
+Italy,livtogr,Living Together,50,9,18,41,2,1.1219512195121952,0.3312945782245395,1,1,2,Yes,36,0.8780487804878049
+Italy,psubnft,Public service: usage in last 12 months: social benefits and unemployment services,50,0,0,50,4,1.24,0.6565214453186321,1,1,4,"Neither I, nor someone from my family",43,0.86
+Italy,partner,Partnership,50,0,0,50,2,1.18,0.3880879344916036,1,1,2,Yes,41,0.82
+Italy,taxnorm,Subjective social norm: citizen tax morale,50,0,0,50,3,1.22,0.5066899385990912,1,1,3,1 Never justified,41,0.82
+Italy,econat,Current economic assessment: national economy,50,2,4,48,3,2.0833333333333335,0.4535126887588134,2,1,3,Rather bad,38,0.7916666666666666
+Italy,ecohhld,Current economic assessment: household,50,1,2,49,3,3.020408163265306,0.47826927206192066,3,2,4,Rather good,38,0.7755102040816326
+Italy,pubpaychild,"Receiving public payments: Child, family or care allowance/benefit",50,0,0,50,2,1.76,0.4314191105869001,2,1,2,No,38,0.76
+Italy,EmploymentStatusKP,"What is your current working status? If more than one, please answer about your main activity (most hours per week).",50,0,0,50,4,2.42,2.374094886606735,1,1,8,"In paid work (or away temporarily) (employee, self-employed, working for your family business)",36,0.72
+Italy,plsolold,Willingness to pay for public redistribution: older people,50,0,0,50,3,4.12,0.5205962045225315,4,3,5,Agree,36,0.72
+Italy,pubpaypens,Receiving public payments: Retirement pension,50,0,0,50,2,1.7,0.46291004988627565,2,1,2,No,35,0.7
+Italy,plsolchld,Willingness to pay for public redistribution: children,50,0,0,50,4,4.08,0.633744943223395,4,2,5,Agree,33,0.66
+Italy,plsolcntry,Willingness to pay for public redistribution: country,50,0,0,50,4,3.92,0.633744943223395,4,2,5,Agree,33,0.66
+Italy,plsolpoor,Willingness to pay for public redistribution: poor,50,0,0,50,5,4.04,0.7548482750641663,4,1,5,Agree,33,0.66
+Italy,lnlyisol,Loneliness: feeling isolated,50,0,0,50,3,2.56,0.6439672954048369,3,1,3,Hardly ever or never,32,0.64
+Italy,ISCEDKP,International Standard Classification of Education (ISCED),50,0,0,50,4,7.08,0.6651683843898748,7,6,9,7,31,0.62
+Italy,MARITALSTATUSKP,What is your current legal marital status?,50,0,0,50,5,2.7600000000000002,2.326072278519728,1,1,6,Legally married,31,0.62
+Italy,frndethn,Friends network: ethnicity,50,0,0,50,3,1.5,0.7071067811865476,1,1,3,"No, none at all",31,0.62
+Italy,lnlyleft,Loneliness: feeling left out,50,0,0,50,2,2.62,0.49031435147801455,3,2,3,Hardly ever or never,31,0.62
+Italy,plsolmuni,Willingness to pay for public redistribution: municipal,50,0,0,50,5,3.86,0.8083745343311491,4,1,5,Agree,31,0.62
+Italy,frndoldr,Friends networks: 10 years older,50,0,0,50,3,1.5,0.6776309271789385,1,1,3,"No, none at all",30,0.6
+Italy,lnlycomp,Loneliness: lack of companionship,50,0,0,50,3,2.58,0.5379477252503635,3,1,3,Hardly ever or never,30,0.6
+Italy,dsrvident,Deservingness: identity,50,0,0,50,4,3.38,0.8545197959278957,4,1,4,Agree,29,0.58
+Italy,immiecon,Immigration: economic migrants,50,1,2,49,3,3.4693877551020407,0.6801360408136045,4,2,4,Allow many to come and live here,28,0.5714285714285714
+Italy,polcultlgbt,Political orientation: Cultural: LGBT,50,4,8,46,3,4.391304347826087,0.7739727491489097,5,3,5,Agree strongly,26,0.5652173913043478
+Italy,psuhlth,Public service: usage in last 12 months: health care,50,0,0,50,4,2.82,0.84972984902646,3,1,4,"I have used it myself, but no one else from my family",28,0.56
+Italy,psuschl,Public service: usage in last 12 months: school,50,0,0,50,4,1.9400000000000002,1.2190662200961817,1,1,4,"Neither I, nor someone from my family",28,0.56
+Italy,frndincl,Friends networks: poor,50,0,0,50,3,2.1,0.6776309271789386,2,1,3,"Yes, one or two",27,0.54
+Italy,plsol_priority_mean,plsol_priority_mean,50,0,0,50,8,4.08,0.4835619914204229,4,2.6666666666666665,5,4,27,0.54
+Italy,Hhchldu18,Household number children aged <18,50,11,22,39,4,0.7948717948717949,0.9781692669011082,0,0,3,0,21,0.5384615384615384
+Italy,econhour,Economic activity: hours of paid work,50,14,28.000000000000004,36,3,2.388888888888889,0.72811999708752,3,1,3,35 hours or more,19,0.5277777777777778
+Italy,Respondent_Gender,Gender,50,0,0,50,2,1.52,0.50467204950444855,2,1,2,Female,26,0.52
+Italy,crisoc,Crisis perception of country's society,50,1,2,49,4,3.306122448979592,0.7693092581620721,3,2,5,is facing major problems.,25,0.5102040816326531
+Italy,dsrvatt,Deservingness: attitude,50,0,0,50,5,3.48,0.8388524717658968,4,1,5,Agree,25,0.5
+Italy,ideurop,Identification: European Union,50,0,0,50,4,2.82,0.7743331561638657,3,1,4,Close,25,0.5
+Italy,immiforc,Immigration: forced migrants,50,0,0,50,4,3.36,0.7761758689832075,3.5,1,4,Allow many to come and live here,25,0.5
+Italy,plsolimmeu,Willingness to pay for public redistribution: eu immigrants,50,0,0,50,5,3.48,0.9310954706743042,4,1,5,Agree,25,0.5
+Italy,plsolimmnoneu,Willingness to pay for public redistribution: non-eu immigrants,50,0,0,50,5,3.3,1.0926470386270257,4,1,5,Agree,25,0.5
+Italy,prskunemp,Personal risk assessment: unemployment,50,0,0,50,5,13.600000000000001,27.95915388051444,1.5,1,77,Very unlikely,25,0.5
+Italy,pseeffi,Public service: efficiency,50,0,0,50,5,2.12,0.8485281374238569,2,1,5,2 Disagree,25,0.5
+Italy,psehelp,Public service: prompt help,50,0,0,50,4,2.32,0.76771593385968,2,1,4,2 Disagree,25,0.5
+Italy,yrinccntry,Year first living in country,50,48,96,2,2,1984,22.627416997969522,1984,1968,2000,1968,1,0.5
+Italy,txbrdmddl,Current Tax Assessment: Middle income,50,1,2,49,3,4.1020408163265305,0.714285714285714,4,3,5,too high,24,0.4897959183673469
+Italy,plsolfund,Preferred payment for public redistribution,50,7,14.000000000000002,43,4,2.2093023255813953,1.282819430838698,2,1,4,An increase in taxes that I pay,21,0.4883720930232558
+Italy,dsrvcont,Deservingness: control,50,0,0,50,5,2.56,0.9293403409880338,2,1,5,Disagree,24,0.48
+Italy,frndyngr,Friends networks: 10 years younger,50,0,0,50,3,1.64,0.6311634866964149,2,1,3,"Yes, one or two",24,0.48
+Italy,prskcope,Personal risk assessment: not able to cope,50,1,2,49,4,1.7346938775510203,0.7295977831449794,2,1,4,Rather unlikely,23,0.46938775510204084
+Italy,idmuni,Identification: Municipality,50,0,0,50,4,2.96,0.7814168189244198,3,1,4,Close,23,0.46
+Italy,rednrmdsc,Redistribution norm: descriptive,50,0,0,50,4,2.5,0.8144110179279557,2,1,4,2 Disagree,23,0.46
+Italy,hincome,hincome,50,6,12,44,7,8.659090909090908,1.8036549690440506,9,3,10,10,20,0.45454545454545453
+Italy,dsrvneed,Deservingness: need,50,0,0,50,5,3.1,1.164964745021435,3.5,1,5,Agree,22,0.44
+Italy,frndinch,Friends networks: rich,50,0,0,50,3,2.16,0.7384484561897194,2,1,3,"Yes, one or two",22,0.44
+Italy,idcntry,Identification: Country,50,0,0,50,4,2.98,0.7951382885757567,3,1,4,Close,22,0.44
+Italy,idworld,Identification: World,50,0,0,50,4,2.54,0.7342912729083656,3,1,4,Close,22,0.44
+Italy,psefair,Public service: fair treatment,50,0,0,50,4,3.08,0.8290638930598231,3,1,4,3 Neither agree nor disagree,22,0.44
+Italy,euintgr,European integration attitude,50,2,4,48,10,8.354166666666666,2.8694249059315244,8.5,1,11,11 Unification should go further,21,0.4375
+Italy,poleconsmr,Political orientation: Economic: Less Government Intervention,50,4,8,46,4,2.5217391304347827,0.781426912336446,3,1,4,Neither agree nor disagree,20,0.43478260869565216
+Italy,prskcare,Personal risk assessment: care for family,50,4,8,46,5,8.586956521739133,21.362039110905247,2,1,77,Rather unlikely,20,0.43478260869565216
+Italy,EMP01KP,Employment recode,50,20,40,30,6,3.9666666666666663,3.0792221737643906,2.5,1,9,Employed full-time,13,0.43333333333333335
+Italy,frndpol,Friends network: other politics,50,0,0,50,3,2.1,0.7626484465736654,2,1,3,"Yes, one or two",21,0.42
+Italy,lifesat,Life satisfaction,50,0,0,50,8,7.74,1.258603048086672,8,4,11,8,21,0.42
+Italy,prskunwork,Personal risk assessment: unable to work,50,2,4,48,5,12.64583333333333,26.881528565432884,2,1,77,Very unlikely,20,0.4166666666666667
+Italy,plsoleu,Willingness to pay for public redistribution: EU,50,0,0,50,5,3.26,0.8992059989632122,3,1,5,Agree,20,0.4
+Italy,polint,Political interest,50,0,0,50,3,3.08,0.7782764841072132,3,2,4,Quite interested,20,0.4
+Italy,pseintgrt,Public service: integrity,50,0,0,50,4,2.64,0.8514093957572193,3,1,4,3 Neither agree nor disagree,20,0.4
+Italy,psutrnsp,Public service: usage in last 12 months: public transport,50,0,0,50,4,2.34,1.0421719862765417,3,1,4,"I have used it myself, but no one else from my family",20,0.4
+Italy,pssatgen,Public service: overall satisfaction,50,1,2,49,5,2.836734693877551,0.9431096343018266,3,1,5,2 Disagree,19,0.3877551020408163
+Italy,psqtrnsp,Quality public sector: Public transport,50,0,0,50,8,5.56,1.5928411274018688,5.5,1,8,5,19,0.38
+Italy,fresil,Financial resilience,50,4,8,46,5,3.8260869565217392,1.216631923268075,4,1,5,6 to 12 months,17,0.3695652173913043
+Italy,hincshare,Share of household income,50,11,22,39,7,4.358974358974359,1.7242417019355663,4,1,7,around half (50 %),14,0.358974358974359
+Italy,hhsize,Household size,50,2,4,48,5,2.7708333333333335,1.2418171882680695,3,1,5,4,17,0.3541666666666667
+Italy,polcultgend,Political orientation: Cultural: Gender roles,50,0,0,50,5,2.16,1.1492677349210718,2,1,5,Disagree,17,0.34
+Italy,poleconred,Political orientation: Economic: Reduce Income Differences,50,0,0,50,5,3.82,1.082136963680322,4,1,5,Agree,17,0.34
+Italy,slfstatus,Self-placement: status ladder,50,0,0,50,6,6.08,1.4262838827827071,6,2,8,7,17,0.34
+Italy,sochelp,Helping norm: descriptive,50,0,0,50,4,2.92,0.9655282999266172,3,1,4,4 Agree,17,0.34
+Italy,txbrdlow,Current Tax Assessment: Low income,50,1,2,49,4,3.673469387755102,0.9871624972203752,4,2,5,about right,16,0.32653061224489793
+Italy,EducationAchievedKP,"What is the highest level of school you have completed, or the highest degree you have received?",50,0,0,50,6,72.68,8.52712359091235,76,54,89,Long cycle degree courses,16,0.32
+Italy,dsrvreci,Deservingness: reciprocity,50,0,0,50,5,3.32,1.0774118648551319,3,1,5,Agree,16,0.32
+Italy,psqloc,"Quality public sector: Public administration in my village, town or city",50,2,4,48,9,5.708333333333334,1.821366488800325,6,1,10,6,15,0.3125
+Italy,poldisfam,Political discussions: family and friends,50,0,0,50,6,4.44,1.592841127401869,4,2,7,Several times a month,15,0.3
+Italy,soligame,Solidarity game,50,0,0,50,11,26.94,22.75460034223176,30,0,70,0,15,0.3
+Italy,txbrdhigh,Current Tax Assessment: High income,50,2,4,48,5,2.8541666666666665,1.2714472125040808,3,1,5,too low,14,0.2916666666666667
+Italy,psqtxath,Quality public sector: Tax authority,50,5,10,45,10,5.822222222222222,1.9222251415870872,6,2,11,6,13,0.28888888888888886
+Italy,psqhlth,Quality public sector: Public health care,50,0,0,50,10,5.92,2.107711787600913,6,2,11,5,14,0.28
+Italy,trsteucom,Political trust: european commission,50,0,0,50,9,5.96,2.0400080031855814,6,2,10,6,14,0.28
+Italy,trstjudi,Political trust: legal system,50,0,0,50,9,6.84,2.376414723648949,7,2,11,8,14,0.28
+Italy,psqbnft,Quality public sector: Benefits and employment services,50,9,18,41,7,4.829268292682927,1.5953438347953433,5,2,8,4,11,0.2682926829268293
+Italy,eduyrs,Education years,50,1,2,49,13,16.6734693877551,3.567140282623935,17,0,23,18,13,0.2653061224489796
+Italy,psqschl,Quality public sector: Schools,50,0,0,50,8,6,1.6781914463529615,6,2,9,7,13,0.26
+Italy,scgvchld,Governmental Scope: Standard of Living: Children,50,0,0,50,7,8.8,1.4982983545287882,9,5,11,10,13,0.26
+Italy,scgvold,Governmental Scope: Standard of Living: older people,50,0,0,50,8,8.46,1.875839947917754,8.5,1,11,8,13,0.26
+Italy,satdem,Satisfaction with democracy in country of interview,50,1,2,49,8,6.1020408163265305,1.8285342258120263,6,1,9,7,12,0.24489795918367346
+Italy,trstpltcns,Political trust: politicians,50,1,2,49,7,3.9183673469387754,1.777600614755247,4,1,7,6,12,0.24489795918367346
+Italy,scgvpoor,Governmental Scope: Standard of Living: the poor,50,0,0,50,7,8.14,1.795800088869491,8,3,11,8,12,0.24
+Italy,soctrst,Social trust and helping norm: injuctive,50,0,0,50,8,5.58,2.0312859102006278,6,1,9,6,12,0.24
+Italy,trstgov,Political trust: national government,50,0,0,50,9,4.58,2.321944997502863,5,1,10,6,12,0.24
+Italy,trstmil,Political trust: armed forces,50,0,0,50,10,7.06,2.1703944906163857,7,2,11,6,12,0.24
+Italy,trstparl,Political trust: national parliament,50,0,0,50,11,5.26,2.2479923015337713,5.5,1,11,6,12,0.24
+Italy,poldiscol,Political discussions: work colleagues,50,0,0,50,8,11.320000000000004,26.17557671430623,4,1,99,Less than once a month,11,0.22
+Italy,trstmuni,Political trust: local authorities,50,0,0,50,9,6.14,1.937913879428503,6,2,10,6,11,0.22
+Italy,taxwelf,Trade-off: Tax and welfare state,50,4,8,46,10,6.804347826086956,2.4001811525835692,6.5,1,11,8,10,0.21739130434782608
+Italy,percfair,Perceived fairness,50,0,0,50,10,5.78,2.1408562086516802,6,2,11,5,10,0.2
+Italy,perchelp,Perceived helpfulness,50,0,0,50,10,4.66,2.3089002594662387,5,1,11,4,10,0.2
+Italy,scgveuimm,Governmental Scope: Standard of Living immigrants from EU countries,50,0,0,50,9,7.26,1.9463204426060277,7,3,11,6,10,0.2
+Italy,trstparts,Political trust: political parties,50,0,0,50,8,3.98,1.984532022150002,4,1,8,4,10,0.2
+Italy,leftright,Left-right self-placement,50,2,4,48,11,5.125,2.6787183343706777,5,1,11,3,9,0.1875
+Italy,scgvnoneuimm,Governmental Scope: Standard of Living immigrants from non-EU countries,50,0,0,50,11,6.74,2.5379567549105166,7,1,11,8,9,0.18
+Italy,immicullife,Cultural Life enriched by immigration,50,3,6,47,11,6.574468085106383,2.6844534772995017,6,1,11,6,7,0.14893617021276595
+Poland,ISCEDRecodeKP,Recode for International Standard Classification of Education (ISCED),40,0,0,40,1,3,0,3,3,3,High education,40,1
+Poland,borncntry,Born in country,40,0,0,40,1,1,0,1,1,1,Yes,40,1
+Poland,citiz,Citizenship,40,0,0,40,1,1,0,1,1,1,Yes,40,1
+Poland,idminor1,Self-identification: minority group: Ethnicity or skin colour,40,0,0,40,1,0,0,0,0,0,No,40,1
+Poland,idminor2,Self-identification: minority group: Language,40,0,0,40,1,0,0,0,0,0,No,40,1
+Poland,idminor3,Self-identification: minority group: Disability,40,0,0,40,1,0,0,0,0,0,No,40,1
+Poland,idminor6,Self-identification: minority group: Migrant status,40,0,0,40,1,0,0,0,0,0,No,40,1
+Poland,idminor88,Self-identification: minority group: Prefer not to say,40,0,0,40,1,0,0,0,0,0,No,40,1
+Poland,idminor99,Self-identification: minority group: Do not know,40,0,0,40,1,0,0,0,0,0,No,40,1
+Poland,pubpaymininc,Receiving public payments: Social assistance or minimum income benefit,40,0,0,40,1,2,0,2,2,2,No,40,1
+Poland,pubpayrent,"Receiving public payments: Housing, rent or heating benefit",40,0,0,40,1,2,0,2,2,2,No,40,1
+Poland,votetrnt,Recalled turnout national parliamentary election,40,1,2.5,39,1,1,0,1,1,1,Yes,39,1
+Poland,pubpayunemp,Receiving public payments: Unemployment benefit,40,0,0,40,2,1.975,0.15811388300841897,2,1,2,No,39,0.975
+Poland,bornfath,Father born in country,40,1,2.5,39,2,1.0256410256410255,0.16012815380508716,1,1,2,Yes,38,0.9743589743589743
+Poland,bornmoth,Mother born in country,40,1,2.5,39,2,1.0256410256410255,0.1601281538050872,1,1,2,Yes,38,0.9743589743589743
+Poland,pubpaydisab,Receiving public payments: Disability benefit/pension,40,1,2.5,39,2,1.9743589743589745,0.16012815380508721,2,1,2,No,38,0.9743589743589743
+Poland,idminor8,Self-identification: minority group: Other:,40,0,0,40,2,0.049999999999999996,0.2207214278631521,0,0,1,No,38,0.95
+Poland,livtogr,Living Together,40,8,20,32,2,1.0625,0.24593468841898236,1,1,2,Yes,30,0.9375
+Poland,idminor4,Self-identification: minority group: Sexual orientation or gender identity,40,0,0,40,2,0.07500000000000001,0.26674678283691866,0,0,1,No,37,0.925
+Poland,idminor5,Self-identification: minority group: Religion or belief,40,0,0,40,2,0.075,0.26674678283691855,0,0,1,No,37,0.925
+Poland,pubpaychild,"Receiving public payments: Child, family or care allowance/benefit",40,0,0,40,2,1.925,0.2667467828369186,2,1,2,No,37,0.925
+Poland,idminor7,Self-identification: minority group: Political opinion,40,0,0,40,2,0.1,0.3038218101250999,0,0,1,No,36,0.9
+Poland,econhour,Economic activity: hours of paid work,40,10,25,30,3,2.8333333333333335,0.461133037377414,3,1,3,35 hours or more,26,0.8666666666666667
+Poland,partner,Partnership,40,3,7.5,37,2,1.135135135135135,0.34658349660669086,1,1,2,Yes,32,0.8648648648648649
+Poland,EducationAchievedKP,"What is the highest level of school you have completed, or the highest degree you have received?",40,0,0,40,3,76.3,2.652526613607758,77,70,84,University education (eq. master degree),34,0.85
+Poland,ISCEDKP,International Standard Classification of Education (ISCED),40,0,0,40,3,7.9,0.3789323733725366,8,7,9,8,34,0.85
+Poland,idminor0,Self-identification: minority group: None,40,0,0,40,2,0.8,0.4050957468334668,1,0,1,Yes,32,0.8
+Poland,taxnorm,Subjective social norm: citizen tax morale,40,1,2.5,39,4,1.2820512820512822,0.6468025790365346,1,1,4,1 Never justified,31,0.7948717948717948
+Poland,EmploymentStatusKP,"What is your current working status? If more than one, please answer about your main activity (most hours per week).",40,1,2.5,39,5,2.2564102564102564,2.3920696689153247,1,1,8,"In paid work (or away temporarily) (employee, self-employed, working for your family business)",30,0.7692307692307693
+Poland,pubpaypens,Receiving public payments: Retirement pension,40,1,2.5,39,2,1.7692307692307692,0.426832794918354,2,1,2,No,30,0.7692307692307693
+Poland,fraudnorm,Subjective social norm: citizen welfare fraud,40,2,5,38,4,1.4210526315789473,0.9762470596521013,1,1,5,1 Never justified,29,0.7631578947368421
+Poland,frndethn,Friends network: ethnicity,40,0,0,40,2,1.25,0.4385290096535146,1,1,2,"No, none at all",30,0.75
+Poland,psubnft,Public service: usage in last 12 months: social benefits and unemployment services,40,0,0,40,4,1.425,0.8737628616859029,1,1,4,"Neither I, nor someone from my family",30,0.75
+Poland,ecohhld,Current economic assessment: household,40,1,2.5,39,3,3,0.512989176042577,3,2,4,Rather good,29,0.7435897435897436
+Poland,econat,Current economic assessment: national economy,40,1,2.5,39,3,2.717948717948718,0.5103516820842346,3,1,3,Rather good,29,0.7435897435897436
+Poland,psutrnsp,Public service: usage in last 12 months: public transport,40,0,0,40,4,3.525,0.8469401940560459,4,1,4,I and someone from my family have used it,29,0.725
+Poland,hincome,hincome,40,8,20,32,7,9.03125,2.221368003382513,10,1,10,10,23,0.71875
+Poland,immiecon,Immigration: economic migrants,40,1,2.5,39,4,3,0.6069769786668839,3,1,4,Allow some,28,0.717948717948718
+Poland,plsolold,Willingness to pay for public redistribution: older people,40,0,0,40,4,3.75,0.8086075400626399,4,1,5,Agree,28,0.7
+Poland,plsolmuni,Willingness to pay for public redistribution: municipal,40,0,0,40,4,3.575,0.8737628616859029,4,1,5,Agree,27,0.675
+Poland,Hhchldu18,Household number children aged <18,40,8,20,32,3,0.53125,0.802591568487018,0,0,2,0,21,0.65625
+Poland,MARITALSTATUSKP,What is your current legal marital status?,40,0,0,40,4,2.55,2.194982623609745,1,1,6,Legally married,26,0.65
+Poland,ideurop,Identification: European Union,40,0,0,40,4,2.875,0.6479751498875516,3,1,4,Close,26,0.65
+Poland,plsolchld,Willingness to pay for public redistribution: children,40,0,0,40,5,3.825,0.9026314805852885,4,1,5,Agree,26,0.65
+Poland,plsolcntry,Willingness to pay for public redistribution: country,40,0,0,40,5,3.525,0.8469401940560459,4,1,5,Agree,25,0.625
+Poland,psuhlth,Public service: usage in last 12 months: health care,40,0,0,40,4,3.2,1.1140133037920334,4,1,4,I and someone from my family have used it,25,0.625
+Poland,immiforc,Immigration: forced migrants,40,1,2.5,39,4,2.9743589743589745,0.7429379618209788,3,1,4,Allow some,24,0.6153846153846154
+Poland,psuschl,Public service: usage in last 12 months: school,40,0,0,40,3,1.675,0.6155047959570694,2,1,4,"Not I, but someone from my family",24,0.6
+Poland,frndinch,Friends networks: rich,40,0,0,40,3,2.225,0.6196566460342041,2,1,3,"Yes, one or two",23,0.575
+Poland,lnlyisol,Loneliness: feeling isolated,40,0,0,40,3,2.55,0.5523841101337053,3,1,3,Hardly ever or never,23,0.575
+Poland,lnlyleft,Loneliness: feeling left out,40,0,0,40,3,2.45,0.7143223433831608,3,1,3,Hardly ever or never,23,0.575
+Poland,polint,Political interest,40,0,0,40,3,3.075,0.6558416006386032,3,2,4,Quite interested,23,0.575
+Poland,crisoc,Crisis perception of country's society,40,0,0,40,4,2.225,0.8002403485107555,2,1,4,is facing minor problems.,22,0.55
+Poland,idworld,Identification: World,40,0,0,40,3,2.7,0.6076436202501999,3,2,4,Close,22,0.55
+Poland,hhsize,Household size,40,3,7.5,37,6,2.4864864864864864,1.145562007187875,2,1,6,2,19,0.5135135135135135
+Poland,prskcope,Personal risk assessment: not able to cope,40,1,2.5,39,4,7.333333333333334,20.38360194053484,1,1,77,Very unlikely,20,0.5128205128205128
+Poland,Respondent_Gender,Gender,40,0,0,40,2,1.5,0.5063696835418333,1.5,1,2,Female,20,0.5
+Poland,frndincl,Friends networks: poor,40,0,0,40,3,1.85,0.6998168258505864,2,1,3,"Yes, one or two",20,0.5
+Poland,prskunemp,Personal risk assessment: unemployment,40,2,5,38,5,15.526315789473685,29.61622714634779,1.5,1,77,Very unlikely,19,0.5
+Poland,sochelp,Helping norm: descriptive,40,0,0,40,5,3.15,1.098950548337962,4,1,5,4 Agree,20,0.5
+Poland,dsrvatt,Deservingness: attitude,40,0,0,40,5,3.65,0.9486832980505135,4,1,5,Agree,19,0.475
+Poland,dsrvident,Deservingness: identity,40,0,0,40,5,2.1,0.9818872461248105,2,1,5,Disagree,19,0.475
+Poland,frndyngr,Friends networks: 10 years younger,40,0,0,40,3,1.725,0.7840558588159326,2,1,3,"No, none at all",19,0.475
+Poland,lnlycomp,Loneliness: lack of companionship,40,0,0,40,3,2.375,0.6674674677561601,2,1,3,Hardly ever or never,19,0.475
+Poland,txbrdlow,Current Tax Assessment: Low income,40,2,5,38,4,3.736842105263158,0.8280295897022489,4,1,5,too high,18,0.47368421052631576
+Poland,pssatgen,Public service: overall satisfaction,40,1,2.5,39,5,3.282051282051282,0.7930194777165229,3,1,5,3 Neither agree nor disagree,18,0.46153846153846156
+Poland,idcntry,Identification: Country,40,0,0,40,3,3.25,0.7071067811865476,3,2,4,Close,18,0.45
+Poland,plsolpoor,Willingness to pay for public redistribution: poor,40,0,0,40,5,3.275,0.905467721606792,3,1,5,Agree,18,0.45
+Poland,fresil,Financial resilience,40,6,15,34,5,3.088235294117647,1.2399327219975338,3,1,5,1 to 3 months,15,0.4411764705882353
+Poland,polcultlgbt,Political orientation: Cultural: LGBT,40,1,2.5,39,5,4.128205128205129,1.0557982058859339,4,1,5,Agree strongly,17,0.4358974358974359
+Poland,txbrdmddl,Current Tax Assessment: Middle income,40,1,2.5,39,5,3.769230769230769,0.9020893426852101,4,1,5,too high,17,0.4358974358974359
+Poland,prskunwork,Personal risk assessment: unable to work,40,3,7.5,37,5,7.810810810810813,20.851109533278297,2,1,77,Very unlikely,16,0.43243243243243246
+Poland,dsrvcont,Deservingness: control,40,0,0,40,4,2.625,0.8066232240898012,3,1,4,Disagree,17,0.425
+Poland,dsrvreci,Deservingness: reciprocity,40,0,0,40,4,3.35,0.9212588934267872,3.5,2,5,Agree,17,0.425
+Poland,frndoldr,Friends networks: 10 years older,40,0,0,40,3,1.775,0.7333624702836333,2,1,3,"Yes, one or two",17,0.425
+Poland,psefair,Public service: fair treatment,40,0,0,40,5,3.225,0.83166499665831,3,1,5,3 Neither agree nor disagree,17,0.425
+Poland,pseintgrt,Public service: integrity,40,0,0,40,4,2.575,0.9306049865682221,3,1,4,3 Neither agree nor disagree,17,0.425
+Poland,slfstatus,Self-placement: status ladder,40,0,0,40,6,5,1.4675987714106855,5,3,8,5,17,0.425
+Poland,polcultgend,Political orientation: Cultural: Gender roles,40,1,2.5,39,4,2.282051282051282,0.793019477716523,2,1,4,Neither agree nor disagree,16,0.41025641025641024
+Poland,dsrvneed,Deservingness: need,40,0,0,40,5,3.825,1.1067971810589328,4,1,5,Agree,16,0.4
+Poland,idmuni,Identification: Municipality,40,0,0,40,4,2.875,0.8223636976922384,3,1,4,Close,16,0.4
+Poland,plsoleu,Willingness to pay for public redistribution: EU,40,0,0,40,4,2.925,0.9971112120675252,3,1,4,Neither agree nor disagree,16,0.4
+Poland,plsolimmeu,Willingness to pay for public redistribution: eu immigrants,40,0,0,40,4,2.925,1.071483515074741,3,1,4,Agree,16,0.4
+Poland,pseeffi,Public service: efficiency,40,0,0,40,5,2.675,0.9442810316143531,3,1,5,3 Neither agree nor disagree,16,0.4
+Poland,psehelp,Public service: prompt help,40,0,0,40,4,2.5,0.9058216273156766,3,1,4,3 Neither agree nor disagree,16,0.4
+Poland,plsolfund,Preferred payment for public redistribution,40,4,10,36,4,2.3333333333333335,1.1710800875382399,3,1,4,"A decrease in spending for general public services that I benefit from, resulting in for example longer waiting times fo",14,0.3888888888888889
+Poland,frndpol,Friends network: other politics,40,0,0,40,3,2.05,0.8458041235325205,2,1,3,"Yes, three or more",15,0.375
+Poland,poldisfam,Political discussions: family and friends,40,0,0,40,7,4.175,1.7080127904403095,4,1,7,Several times a month,15,0.375
+Poland,poleconred,Political orientation: Economic: Reduce Income Differences,40,0,0,40,5,2.975,0.8911962574151492,3,1,5,Neither agree nor disagree,15,0.375
+Poland,psutxath,Public service: usage in last 12 months: tax authority,40,0,0,40,4,2.175,1.1067971810589328,2,1,4,"Neither I, nor someone from my family",15,0.375
+Poland,rednrmdsc,Redistribution norm: descriptive,40,0,0,40,4,2.85,0.833589704154145,3,1,4,3 Neither agree nor disagree,15,0.375
+Poland,poleconsmr,Political orientation: Economic: Less Government Intervention,40,1,2.5,39,5,3.3333333333333335,1.0087337902782492,3,1,5,Neither agree nor disagree,14,0.358974358974359
+Poland,EMP01KP,Employment recode,40,28,70,12,5,5.5,2.9387690682262932,6.5,1,9,Retired,4,0.3333333333333333
+Poland,prskcare,Personal risk assessment: care for family,40,4,10,36,5,10.388888888888891,23.90609937446063,2,1,77,Very unlikely,12,0.3333333333333333
+Poland,psqloc,"Quality public sector: Public administration in my village, town or city",40,2,5,38,9,6.552631578947368,1.8844652036693816,6,1,11,6,12,0.3157894736842105
+Poland,psqhlth,Quality public sector: Public health care,40,1,2.5,39,8,4.948717948717949,1.9594402792193646,5,1,8,5,12,0.3076923076923077
+Poland,satdem,Satisfaction with democracy in country of interview,40,1,2.5,39,9,5.897435897435898,2.325995788959305,6,1,11,6,12,0.3076923076923077
+Poland,plsolimmnoneu,Willingness to pay for public redistribution: non-eu immigrants,40,0,0,40,4,2.65,1.1220402662000855,3,1,4,Agree,12,0.3
+Poland,plsol_priority_mean,plsol_priority_mean,40,0,0,40,9,3.6166666666666667,0.7828285334736547,3.6666666666666665,1,5,3.66666666666667,11,0.275
+Poland,poldiscol,Political discussions: work colleagues,40,0,0,40,8,13.300000000000002,28.987353564385053,4,1,99,Several times a month,11,0.275
+Poland,scgvnoneuimm,Governmental Scope: Standard of Living immigrants from non-EU countries,40,0,0,40,9,3.4,2.193229675673847,3,1,9,3,11,0.275
+Poland,trstparts,Political trust: political parties,40,0,0,40,7,3.325,2.0049617938683504,3.5,1,9,4,11,0.275
+Poland,trstpltcns,Political trust: politicians,40,0,0,40,8,3.1,1.9188671871839598,3,1,9,1 No trust at all,11,0.275
+Poland,psqtrnsp,Quality public sector: Public transport,40,1,2.5,39,9,7.230769230769231,2.157746612868186,8,1,11,9,10,0.2564102564102564
+Poland,eduyrs,Education years,40,0,0,40,10,16.6,3.6147844564602565,17,5,23,17,10,0.25
+Poland,hincshare,Share of household income,40,8,20,32,7,4.21875,1.4752665150143482,4,1,7,around half (50 %),8,0.25
+Poland,leftright,Left-right self-placement,40,0,0,40,10,5.7,2.20953644053482,5.5,1,11,5,10,0.25
+Poland,taxwelf,Trade-off: Tax and welfare state,40,0,0,40,9,4.725,2.3423361119912878,4.5,1,11,6,10,0.25
+Poland,trstmil,Political trust: armed forces,40,0,0,40,10,5.975,2.6261749507210808,6,1,11,8,10,0.25
+Poland,psqbnft,Quality public sector: Benefits and employment services,40,7,17.5,33,8,4.666666666666666,2.217355782608345,5,1,9,3,8,0.24242424242424243
+Poland,txbrdhigh,Current Tax Assessment: High income,40,2,5,38,5,2.6578947368421053,1.279280114064868,3,1,5,about right,9,0.23684210526315788
+Poland,immicullife,Cultural Life enriched by immigration,40,1,2.5,39,11,7,2.585384019118976,7,1,11,6,9,0.23076923076923078
+Poland,psqschl,Quality public sector: Schools,40,1,2.5,39,10,6.102564102564102,2.1000610491736698,7,1,10,8,9,0.23076923076923078
+Poland,lifesat,Life satisfaction,40,0,0,40,8,7.6,1.9715931342900057,8,3,11,8,9,0.225
+Poland,perchelp,Perceived helpfulness,40,0,0,40,7,3.75,2.2043081361221617,3.5,1,7,1 People mostly look out for themselves,9,0.225
+Poland,scgvold,Governmental Scope: Standard of Living: older people,40,0,0,40,11,6.925,2.654338490191637,7.5,1,11,8,9,0.225
+Poland,trstmuni,Political trust: local authorities,40,0,0,40,9,5.35,2.166765283751748,5,1,9,5,9,0.225
+Poland,trstparl,Political trust: national parliament,40,0,0,40,9,4.25,2.1691307487397355,4.5,1,9,6,9,0.225
+Poland,psqtxath,Quality public sector: Tax authority,40,2,5,38,10,6.078947368421053,2.0451865565784217,6,1,10,7,8,0.21052631578947367
+Poland,scgveuimm,Governmental Scope: Standard of Living immigrants from EU countries,40,0,0,40,9,3.875,2.2553355540891165,3.5,1,9,1 Not governments' responsibility at all,8,0.2
+Poland,trsteucom,Political trust: european commission,40,0,0,40,10,5.15,2.7507574714370344,6,1,10,6,8,0.2
+Poland,trstjudi,Political trust: legal system,40,0,0,40,9,5.1,2.1339742626953484,5,1,9,7,8,0.2
+Poland,euintgr,European integration attitude,40,0,0,40,11,5.875,3.1799653279838584,6,1,11,1 Unification has already gone too far,7,0.175
+Poland,percfair,Perceived fairness,40,0,0,40,10,5.7,2.7004273166126307,6,1,11,4,7,0.175
+Poland,scgvchld,Governmental Scope: Standard of Living: Children,40,0,0,40,10,7.1,3.111599473269541,8,1,11,8,7,0.175
+Poland,scgvpoor,Governmental Scope: Standard of Living: the poor,40,0,0,40,9,5.375,2.3059288133651683,5.5,1,9,5,7,0.175
+Poland,soctrst,Social trust and helping norm: injuctive,40,0,0,40,10,6.425,2.9078805392878895,6.5,1,11,3,7,0.175
+Poland,soligame,Solidarity game,40,0,0,40,15,44.7,32.32225556993516,50,0,100,0,7,0.175
+Poland,trstgov,Political trust: national government,40,0,0,40,10,5.1,2.6583202716502514,5.5,1,11,6,7,0.175
+Spain,ISCEDRecodeKP,Recode for International Standard Classification of Education (ISCED),39,0,0,39,1,3,0,3,3,3,High education,39,1
+Spain,idminor1,Self-identification: minority group: Ethnicity or skin colour,39,0,0,39,1,0,0,0,0,0,No,39,1
+Spain,idminor3,Self-identification: minority group: Disability,39,0,0,39,1,0,0,0,0,0,No,39,1
+Spain,idminor88,Self-identification: minority group: Prefer not to say,39,0,0,39,1,0,0,0,0,0,No,39,1
+Spain,citiz,Citizenship,39,0,0,39,2,1.0256410256410255,0.1601281538050872,1,1,2,Yes,38,0.9743589743589743
+Spain,idminor2,Self-identification: minority group: Language,39,0,0,39,2,0.025641025641025633,0.1601281538050872,0,0,1,No,38,0.9743589743589743
+Spain,idminor5,Self-identification: minority group: Religion or belief,39,0,0,39,2,0.025641025641025633,0.16012815380508721,0,0,1,No,38,0.9743589743589743
+Spain,idminor99,Self-identification: minority group: Do not know,39,0,0,39,2,0.025641025641025633,0.16012815380508721,0,0,1,No,38,0.9743589743589743
+Spain,idminor6,Self-identification: minority group: Migrant status,39,0,0,39,2,0.05128205128205127,0.2234558650309589,0,0,1,No,37,0.9487179487179487
+Spain,idminor7,Self-identification: minority group: Political opinion,39,0,0,39,2,0.05128205128205128,0.2234558650309589,0,0,1,No,37,0.9487179487179487
+Spain,idminor8,Self-identification: minority group: Other:,39,0,0,39,2,0.05128205128205127,0.22345586503095904,0,0,1,No,37,0.9487179487179487
+Spain,idminor4,Self-identification: minority group: Sexual orientation or gender identity,39,0,0,39,2,0.07692307692307694,0.26995276239950844,0,0,1,No,36,0.9230769230769231
+Spain,pubpaymininc,Receiving public payments: Social assistance or minimum income benefit,39,0,0,39,2,1.9230769230769231,0.2699527623995085,2,1,2,No,36,0.9230769230769231
+Spain,pubpayrent,"Receiving public payments: Housing, rent or heating benefit",39,0,0,39,2,1.9230769230769231,0.26995276239950844,2,1,2,No,36,0.9230769230769231
+Spain,livtogr,Living Together,39,7,17.94871794871795,32,2,1.125,0.3360107525161235,1,1,2,Yes,28,0.875
+Spain,borncntry,Born in country,39,0,0,39,2,1.1282051282051282,0.3386884284293705,1,1,2,Yes,34,0.8717948717948718
+Spain,bornfath,Father born in country,39,0,0,39,2,1.1282051282051282,0.3386884284293705,1,1,2,Yes,34,0.8717948717948718
+Spain,pubpaychild,"Receiving public payments: Child, family or care allowance/benefit",39,0,0,39,2,1.8717948717948718,0.3386884284293705,2,1,2,No,34,0.8717948717948718
+Spain,pubpaydisab,Receiving public payments: Disability benefit/pension,39,0,0,39,2,1.8717948717948718,0.3386884284293705,2,1,2,No,34,0.8717948717948718
+Spain,bornmoth,Mother born in country,39,0,0,39,2,1.1538461538461537,0.36551776819519577,1,1,2,Yes,33,0.8461538461538461
+Spain,partner,Partnership,39,0,0,39,2,1.1794871794871795,0.3887764119844716,1,1,2,Yes,32,0.8205128205128205
+Spain,pubpayunemp,Receiving public payments: Unemployment benefit,39,0,0,39,2,1.8205128205128205,0.3887764119844716,2,1,2,No,32,0.8205128205128205
+Spain,votetrnt,Recalled turnout national parliamentary election,39,0,0,39,3,1.2564102564102564,0.5946227781653596,1,1,3,Yes,32,0.8205128205128205
+Spain,econhour,Economic activity: hours of paid work,39,15,38.46153846153847,24,2,2.7916666666666665,0.4148511169990534,3,2,3,35 hours or more,19,0.7916666666666666
+Spain,pubpaypens,Receiving public payments: Retirement pension,39,0,0,39,2,1.7435897435897436,0.44235903005475674,2,1,2,No,29,0.7435897435897436
+Spain,frndpol,Friends network: other politics,39,0,0,39,3,2.6666666666666665,0.5773502691896258,3,1,3,"Yes, three or more",28,0.717948717948718
+Spain,idminor0,Self-identification: minority group: None,39,0,0,39,2,0.717948717948718,0.45588075245489307,1,0,1,Yes,28,0.717948717948718
+Spain,polcultlgbt,Political orientation: Cultural: LGBT,39,1,2.564102564102564,38,3,4.605263157894737,0.679406485190926,5,3,5,Agree strongly,27,0.7105263157894737
+Spain,Hhchldu18,Household number children aged <18,39,5,12.82051282051282,34,4,0.4411764705882353,0.7859052479933755,0,0,3,0,24,0.7058823529411765
+Spain,lnlyisol,Loneliness: feeling isolated,39,0,0,39,3,2.6153846153846154,0.633095345583262,3,1,3,Hardly ever or never,27,0.6923076923076923
+Spain,lnlyleft,Loneliness: feeling left out,39,0,0,39,3,2.6153846153846154,0.6330953455832622,3,1,3,Hardly ever or never,27,0.6923076923076923
+Spain,crisoc,Crisis perception of country's society,39,0,0,39,5,3.0256410256410255,0.7775528239689434,3,1,5,is facing major problems.,25,0.6410256410256411
+Spain,psuhlth,Public service: usage in last 12 months: health care,39,0,0,39,4,3.3333333333333335,0.9551338658818385,4,1,4,I and someone from my family have used it,25,0.6410256410256411
+Spain,EmploymentStatusKP,"What is your current working status? If more than one, please answer about your main activity (most hours per week).",39,0,0,39,6,2.5384615384615383,2.210574512680665,1,1,7,"In paid work (or away temporarily) (employee, self-employed, working for your family business)",24,0.6153846153846154
+Spain,MARITALSTATUSKP,What is your current legal marital status?,39,0,0,39,6,2.4871794871794872,2.0631069425529676,1,1,6,Legally married,24,0.6153846153846154
+Spain,lnlycomp,Loneliness: lack of companionship,39,0,0,39,3,2.5384615384615383,0.6426161105878412,3,1,3,Hardly ever or never,24,0.6153846153846154
+Spain,psutrnsp,Public service: usage in last 12 months: public transport,39,0,0,39,4,3.2051282051282053,1.1280977743059604,4,1,4,I and someone from my family have used it,24,0.6153846153846154
+Spain,psutxath,Public service: usage in last 12 months: tax authority,39,0,0,39,4,1.6153846153846154,0.9065662403697465,1,1,4,"Neither I, nor someone from my family",24,0.6153846153846154
+Spain,taxnorm,Subjective social norm: citizen tax morale,39,0,0,39,5,1.794871794871795,1.151189023289151,1,1,5,1 Never justified,24,0.6153846153846154
+Spain,plsolcntry,Willingness to pay for public redistribution: country,39,0,0,39,5,3.8205128205128207,0.9139790067782242,4,1,5,Agree,23,0.5897435897435898
+Spain,plsolmuni,Willingness to pay for public redistribution: municipal,39,0,0,39,5,3.871794871794872,0.9227957286502328,4,1,5,Agree,23,0.5897435897435898
+Spain,prskcope,Personal risk assessment: not able to cope,39,1,2.564102564102564,38,5,7.526315789473684,20.630254406345905,1,1,77,Very unlikely,22,0.5789473684210527
+Spain,fresil,Financial resilience,39,2,5.128205128205128,37,5,3.945945945945946,1.4897044066589915,5,1,5,More than 12 months,21,0.5675675675675675
+Spain,Respondent_Gender,Gender,39,0,0,39,2,1.435897435897436,0.5023561221029409,1,1,2,Male,22,0.5641025641025641
+Spain,plsolold,Willingness to pay for public redistribution: older people,39,0,0,39,3,4.230769230769231,0.6266678151997976,4,3,5,Agree,22,0.5641025641025641
+Spain,plsolpoor,Willingness to pay for public redistribution: poor,39,0,0,39,5,3.8974358974358974,0.9401811638097871,4,1,5,Agree,22,0.5641025641025641
+Spain,psehelp,Public service: prompt help,39,0,0,39,5,2,0.8583950752789521,2,1,5,2 Disagree,22,0.5641025641025641
+Spain,psuschl,Public service: usage in last 12 months: school,39,0,0,39,4,1.6153846153846154,0.8770580193070289,1,1,4,"Neither I, nor someone from my family",22,0.5641025641025641
+Spain,ecohhld,Current economic assessment: household,39,1,2.564102564102564,38,4,3,0.7352146220938077,3,1,4,Rather good,21,0.5526315789473685
+Spain,fraudnorm,Subjective social norm: citizen welfare fraud,39,1,2.564102564102564,38,5,1.9210526315789473,1.2386038117818208,1,1,5,1 Never justified,21,0.5526315789473685
+Spain,immiforc,Immigration: forced migrants,39,2,5.128205128205128,37,4,2.945945945945946,0.7433387871977036,3,1,4,Allow some,20,0.5405405405405406
+Spain,ISCEDKP,International Standard Classification of Education (ISCED),39,0,0,39,5,6.923076923076923,1.0854204953942332,7,2,9,7,21,0.5384615384615384
+Spain,psubnft,Public service: usage in last 12 months: social benefits and unemployment services,39,0,0,39,4,1.6153846153846154,0.8148420775438832,1,1,4,"Neither I, nor someone from my family",21,0.5384615384615384
+Spain,econat,Current economic assessment: national economy,39,0,0,39,4,2.358974358974359,0.7775528239689432,2,1,4,Rather bad,20,0.5128205128205128
+Spain,idmuni,Identification: Municipality,39,0,0,39,4,2.9743589743589745,0.8106910465827578,3,1,4,Close,20,0.5128205128205128
+Spain,prskunwork,Personal risk assessment: unable to work,39,0,0,39,5,13.102564102564102,27.60987130090182,1,1,77,Very unlikely,20,0.5128205128205128
+Spain,hhsize,Household size,39,1,2.564102564102564,38,5,2.5,0.9795200148335201,2,1,5,2,19,0.5
+Spain,hincome,hincome,39,1,2.564102564102564,38,8,8.289473684210526,2.492235453030635,9.5,2,10,10,19,0.5
+Spain,prskunemp,Personal risk assessment: unemployment,39,1,2.564102564102564,38,5,13.657894736842103,27.81529456368017,1.5,1,77,Very unlikely,19,0.5
+Spain,dsrvcont,Deservingness: control,39,0,0,39,4,2.41025641025641,0.9095385966738334,2,1,4,Disagree,19,0.48717948717948717
+Spain,idcntry,Identification: Country,39,0,0,39,4,3.3076923076923075,0.7661883152417267,3,1,4,Close,19,0.48717948717948717
+Spain,idworld,Identification: World,39,0,0,39,4,2.717948717948718,0.9161911415350296,3,1,4,Close,19,0.48717948717948717
+Spain,plsolchld,Willingness to pay for public redistribution: children,39,0,0,39,5,4,0.9459053029269173,4,1,5,Agree,19,0.48717948717948717
+Spain,frndinch,Friends networks: rich,39,0,0,39,3,2.358974358974359,0.6683514473837645,2,1,3,"Yes, three or more",18,0.46153846153846156
+Spain,frndoldr,Friends networks: 10 years older,39,0,0,39,3,2.076923076923077,0.7392960871352162,2,1,3,"Yes, one or two",18,0.46153846153846156
+Spain,pseeffi,Public service: efficiency,39,0,0,39,4,1.8717948717948718,0.8328608647145147,2,1,4,2 Disagree,18,0.46153846153846156
+Spain,txbrdmddl,Current Tax Assessment: Middle income,39,0,0,39,4,3.8974358974358974,0.787897662165515,4,2,5,too high,18,0.46153846153846156
+Spain,immiecon,Immigration: economic migrants,39,2,5.128205128205128,37,3,3.27027027027027,0.6931669932133817,3,2,4,Allow some,17,0.4594594594594595
+Spain,plsolfund,Preferred payment for public redistribution,39,6,15.384615384615385,33,4,2.242424242424242,1.2255178250004934,3,1,4,An increase in taxes that I pay,15,0.45454545454545453
+Spain,frndincl,Friends networks: poor,39,0,0,39,3,2.128205128205128,0.8638800836460911,2,1,3,"Yes, three or more",17,0.4358974358974359
+Spain,plsoleu,Willingness to pay for public redistribution: EU,39,0,0,39,5,3.41025641025641,1.2078242447507948,4,1,5,Agree,17,0.4358974358974359
+Spain,polcultgend,Political orientation: Cultural: Gender roles,39,2,5.128205128205128,37,5,1.945945945945946,1.0526671402243484,2,1,5,Disagree strongly,16,0.43243243243243246
+Spain,ideurop,Identification: European Union,39,0,0,39,4,2.8974358974358974,0.8206182455888074,3,1,4,Close,16,0.41025641025641024
+Spain,polint,Political interest,39,0,0,39,4,2.8461538461538463,0.8123540043232882,3,1,4,Quite interested,16,0.41025641025641024
+Spain,EMP01KP,Employment recode,39,21,53.84615384615385,18,7,5.333333333333333,2.1143765594836976,6,1,8,Retired,7,0.3888888888888889
+Spain,EducationAchievedKP,"What is the highest level of school you have completed, or the highest degree you have received?",39,0,0,39,9,90.61538461538461,14.189720861865176,94,18,100,"Third degree studies, second cycle: University faculties, Higher degree",15,0.38461538461538464
+Spain,dsrvatt,Deservingness: attitude,39,0,0,39,5,3.641025641025641,1.111830626233375,4,1,5,Agree,15,0.38461538461538464
+Spain,dsrvident,Deservingness: identity,39,0,0,39,4,2.2564102564102564,0.849704243219174,2,1,4,Disagree,15,0.38461538461538464
+Spain,dsrvreci,Deservingness: reciprocity,39,0,0,39,5,2.8974358974358974,1.1875421719907087,3,1,5,Disagree,15,0.38461538461538464
+Spain,frndyngr,Friends networks: 10 years younger,39,0,0,39,3,2,0.7947194142390263,2,1,3,"Yes, one or two",15,0.38461538461538464
+Spain,plsol_priority_mean,plsol_priority_mean,39,0,0,39,8,4.042735042735043,0.7221616639547478,4,2.3333333333333335,5,4,15,0.38461538461538464
+Spain,psefair,Public service: fair treatment,39,0,0,39,4,3.4358974358974357,0.967766603954742,4,2,5,4 Agree,15,0.38461538461538464
+Spain,sochelp,Helping norm: descriptive,39,0,0,39,4,3.2564102564102564,0.8801300357856434,3,2,5,4 Agree,15,0.38461538461538464
+Spain,trstgov,Political trust: national government,39,0,0,39,10,3.769230769230769,3.0561546053267525,3,1,11,1 No trust at all,15,0.38461538461538464
+Spain,trstpltcns,Political trust: politicians,39,0,0,39,8,2.923076923076923,2.263958054574884,2,1,11,1 No trust at all,15,0.38461538461538464
+Spain,txbrdlow,Current Tax Assessment: Low income,39,0,0,39,5,4,1.025978352085154,4,1,5,much too high,15,0.38461538461538464
+Spain,prskcare,Personal risk assessment: care for family,39,2,5.128205128205128,37,5,10.054054054054056,23.64194242107533,2,1,77,Rather unlikely,14,0.3783783783783784
+Spain,frndethn,Friends network: ethnicity,39,0,0,39,3,1.9743589743589745,0.8106910465827578,2,1,3,"Yes, one or two",14,0.358974358974359
+Spain,pssatgen,Public service: overall satisfaction,39,0,0,39,4,2.6923076923076925,0.977479200312996,3,1,4,2 Disagree,14,0.358974358974359
+Spain,plsolimmeu,Willingness to pay for public redistribution: eu immigrants,39,0,0,39,5,3.2564102564102564,1.1634329582374268,3,1,5,Agree,13,0.3333333333333333
+Spain,hincshare,Share of household income,39,5,12.82051282051282,34,7,4.088235294117647,1.6581780263896355,4,1,7,around half (50 %),11,0.3235294117647059
+Spain,plsolimmnoneu,Willingness to pay for public redistribution: non-eu immigrants,39,0,0,39,5,3.2051282051282053,1.2603150646081607,3,1,5,Agree,12,0.3076923076923077
+Spain,pseintgrt,Public service: integrity,39,0,0,39,4,2.6153846153846154,1.091001100278875,3,1,4,2 Disagree,12,0.3076923076923077
+Spain,psqloc,"Quality public sector: Public administration in my village, town or city",39,0,0,39,8,5.3076923076923075,2.117021817676478,5,1,8,7,12,0.3076923076923077
+Spain,poleconred,Political orientation: Economic: Reduce Income Differences,39,2,5.128205128205128,37,5,3.108108108108108,1.5235883044055312,4,1,5,Agree,11,0.2972972972972973
+Spain,poleconsmr,Political orientation: Economic: Less Government Intervention,39,2,5.128205128205128,37,5,3.027027027027027,1.3434302381608079,3,1,5,Disagree,11,0.2972972972972973
+Spain,rednrmdsc,Redistribution norm: descriptive,39,0,0,39,5,3,1.1002392084403616,3,1,5,2 Disagree,11,0.28205128205128205
+Spain,scgvold,Governmental Scope: Standard of Living: older people,39,0,0,39,9,8.58974358974359,2.2794037622744656,9,2,11,11 Entirely governments' responsibility,11,0.28205128205128205
+Spain,soctrst,Social trust and helping norm: injuctive,39,0,0,39,8,5.17948717948718,2.1135128512028807,5,2,11,4,11,0.28205128205128205
+Spain,soligame,Solidarity game,39,0,0,39,11,36.35897435897436,28.569847170424808,40,0,100,0,11,0.28205128205128205
+Spain,dsrvneed,Deservingness: need,39,0,0,39,5,3.3846153846153846,1.1835580748738903,3,1,5,Disagree,10,0.2564102564102564
+Spain,poldisfam,Political discussions: family and friends,39,0,0,39,7,4.230769230769231,1.925747134047328,4,1,7,Several times a month,10,0.2564102564102564
+Spain,slfstatus,Self-placement: status ladder,39,0,0,39,7,5.9743589743589745,1.4046385466352749,6,3,9,5,10,0.2564102564102564
+Spain,trstparts,Political trust: political parties,39,0,0,39,7,2.948717948717949,1.7464056011181184,3,1,7,1 No trust at all,10,0.2564102564102564
+Spain,psqschl,Quality public sector: Schools,39,3,7.6923076923076925,36,10,6.138888888888889,2.140130540448112,6,1,11,5,9,0.25
+Spain,psqtxath,Quality public sector: Tax authority,39,3,7.6923076923076925,36,9,4.694444444444445,2.2144905179224077,5,1,9,5,9,0.25
+Spain,leftright,Left-right self-placement,39,1,2.564102564102564,38,11,5.473684210526316,2.5757375443903032,5,1,11,3,9,0.23684210526315788
+Spain,psqbnft,Quality public sector: Benefits and employment services,39,5,12.82051282051282,34,10,5.911764705882353,2.416705082981893,7,1,11,7,8,0.23529411764705882
+Spain,lifesat,Life satisfaction,39,0,0,39,10,7.666666666666667,2.156182461439093,8,2,11,9,9,0.23076923076923078
+Spain,perchelp,Perceived helpfulness,39,0,0,39,10,4.717948717948718,2.3835921360386205,5,1,10,4,9,0.23076923076923078
+Spain,satdem,Satisfaction with democracy in country of interview,39,0,0,39,9,4.769230769230769,2.4757937425945733,4,1,9,3,9,0.23076923076923078
+Spain,scgvchld,Governmental Scope: Standard of Living: Children,39,0,0,39,8,8.538461538461538,2.0881388571260473,9,2,11,11 Entirely governments' responsibility,9,0.23076923076923078
+Spain,trstparl,Political trust: national parliament,39,0,0,39,11,4.205128205128205,2.6870007460822727,4,1,11,1 No trust at all,9,0.23076923076923078
+Spain,txbrdhigh,Current Tax Assessment: High income,39,0,0,39,5,2.871794871794872,1.3799215686996427,3,1,5,too low,9,0.23076923076923078
+Spain,euintgr,European integration attitude,39,4,10.256410256410255,35,9,6.914285714285715,3.0522068059937584,7,1,11,11 Unification should go further,8,0.22857142857142856
+Spain,psqhlth,Quality public sector: Public health care,39,1,2.564102564102564,38,9,5.973684210526316,2.0065681621798164,6,2,11,4,8,0.21052631578947367
+Spain,trsteucom,Political trust: european commission,39,1,2.564102564102564,38,8,4.421052631578947,2.225546746639884,5,1,8,5,8,0.21052631578947367
+Spain,percfair,Perceived fairness,39,0,0,39,10,6.153846153846154,2.1708409907884665,6,1,11,6,8,0.20512820512820512
+Spain,poldiscol,Political discussions: work colleagues,39,0,0,39,8,15.743589743589745,32.38966530166027,4,1,99,Less than once a month,8,0.20512820512820512
+Spain,scgvpoor,Governmental Scope: Standard of Living: the poor,39,0,0,39,10,7.743589743589744,2.6429444178191703,8,1,11,9,8,0.20512820512820512
+Spain,trstmuni,Political trust: local authorities,39,0,0,39,9,4.615384615384615,2.219712933258009,5,1,9,5,8,0.20512820512820512
+Spain,yrinccntry,Year first living in country,39,34,87.17948717948718,5,5,2016.2,7.395944834840239,2018,2005,2023,2005,1,0.2
+Spain,taxwelf,Trade-off: Tax and welfare state,39,2,5.128205128205128,37,8,5.783783783783784,3.128144064023472,6,1,11,6,7,0.1891891891891892
+Spain,eduyrs,Education years,39,0,0,39,15,19.28205128205128,4.7403570704321085,20,9,30,20,7,0.1794871794871795
+Spain,immicullife,Cultural Life enriched by immigration,39,0,0,39,11,6.615384615384616,3.091715454798727,7,1,11,11 Cultural life enriched,7,0.1794871794871795
+Spain,psqtrnsp,Quality public sector: Public transport,39,0,0,39,10,5.564102564102564,2.4038879888397444,5,1,11,7,7,0.1794871794871795
+Spain,scgveuimm,Governmental Scope: Standard of Living immigrants from EU countries,39,0,0,39,10,6.564102564102564,2.7700928332807284,7,1,11,6,7,0.1794871794871795
+Spain,scgvnoneuimm,Governmental Scope: Standard of Living immigrants from non-EU countries,39,0,0,39,11,5.948717948717949,2.6749197523498656,6,1,11,5,7,0.1794871794871795
+Spain,trstjudi,Political trust: legal system,39,0,0,39,11,5.615384615384615,2.720442926546924,5,1,11,3,7,0.1794871794871795
+Spain,trstmil,Political trust: armed forces,39,0,0,39,10,6.6923076923076925,2.535576817525127,7,1,11,5,7,0.1794871794871795
+Sweden,ISCEDRecodeKP,Recode for International Standard Classification of Education (ISCED),39,0,0,39,1,3,0,3,3,3,High education,39,1
+Sweden,citiz,Citizenship,39,0,0,39,1,1,0,1,1,1,Yes,39,1
+Sweden,idminor7,Self-identification: minority group: Political opinion,39,0,0,39,1,0,0,0,0,0,No,39,1
+Sweden,idminor88,Self-identification: minority group: Prefer not to say,39,0,0,39,1,0,0,0,0,0,No,39,1
+Sweden,idminor99,Self-identification: minority group: Do not know,39,0,0,39,1,0,0,0,0,0,No,39,1
+Sweden,pubpaymininc,Receiving public payments: Social assistance or minimum income benefit,39,0,0,39,1,2,0,2,2,2,No,39,1
+Sweden,pubpayrent,"Receiving public payments: Housing, rent or heating benefit",39,1,2.564102564102564,38,1,2,0,2,2,2,No,38,1
+Sweden,pubpayunemp,Receiving public payments: Unemployment benefit,39,1,2.564102564102564,38,1,2,0,2,2,2,No,38,1
+Sweden,idminor2,Self-identification: minority group: Language,39,0,0,39,2,0.025641025641025633,0.16012815380508721,0,0,1,No,38,0.9743589743589743
+Sweden,idminor5,Self-identification: minority group: Religion or belief,39,0,0,39,2,0.025641025641025633,0.16012815380508716,0,0,1,No,38,0.9743589743589743
+Sweden,idminor6,Self-identification: minority group: Migrant status,39,0,0,39,2,0.025641025641025633,0.1601281538050872,0,0,1,No,38,0.9743589743589743
+Sweden,votetrnt,Recalled turnout national parliamentary election,39,0,0,39,2,1.0256410256410255,0.1601281538050872,1,1,2,Yes,38,0.9743589743589743
+Sweden,econhour,Economic activity: hours of paid work,39,15,38.46153846153847,24,2,2.9583333333333335,0.20412414523193148,3,2,3,35 hours or more,23,0.9583333333333334
+Sweden,idminor1,Self-identification: minority group: Ethnicity or skin colour,39,0,0,39,2,0.051282051282051266,0.22345586503095885,0,0,1,No,37,0.9487179487179487
+Sweden,idminor3,Self-identification: minority group: Disability,39,0,0,39,2,0.05128205128205127,0.2234558650309589,0,0,1,No,37,0.9487179487179487
+Sweden,idminor8,Self-identification: minority group: Other:,39,0,0,39,2,0.05128205128205128,0.223455865030959,0,0,1,No,37,0.9487179487179487
+Sweden,pubpaydisab,Receiving public payments: Disability benefit/pension,39,1,2.564102564102564,38,2,1.9473684210526316,0.22629428592141423,2,1,2,No,36,0.9473684210526315
+Sweden,idminor4,Self-identification: minority group: Sexual orientation or gender identity,39,0,0,39,2,0.07692307692307696,0.2699527623995084,0,0,1,No,36,0.9230769230769231
+Sweden,livtogr,Living Together,39,11,28.205128205128204,28,2,1.1071428571428572,0.31497039417435607,1,1,2,Yes,25,0.8928571428571429
+Sweden,EMP01KP,Employment recode,39,25,64.1025641025641,14,3,6.928571428571429,0.9972489631508747,7,4,9,Retired,12,0.8571428571428571
+Sweden,polcultlgbt,Political orientation: Cultural: LGBT,39,2,5.128205128205128,37,3,4.8108108108108105,0.46175016319781975,5,3,5,Agree strongly,31,0.8378378378378378
+Sweden,prskcope,Personal risk assessment: not able to cope,39,0,0,39,4,3.1538461538461537,12.149373952981806,1,1,77,Very unlikely,32,0.8205128205128205
+Sweden,psubnft,Public service: usage in last 12 months: social benefits and unemployment services,39,0,0,39,4,1.2564102564102564,0.6373443553217201,1,1,4,"Neither I, nor someone from my family",32,0.8205128205128205
+Sweden,borncntry,Born in country,39,1,2.564102564102564,38,2,1.1842105263157894,0.39285945206319156,1,1,2,Yes,31,0.8157894736842105
+Sweden,taxnorm,Subjective social norm: citizen tax morale,39,2,5.128205128205128,37,4,1.2972972972972974,0.701778093482899,1,1,4,1 Never justified,30,0.8108108108108109
+Sweden,txbrdmddl,Current Tax Assessment: Middle income,39,3,7.6923076923076925,36,4,3.2222222222222223,0.6374552583116767,3,2,5,about right,29,0.8055555555555556
+Sweden,bornmoth,Mother born in country,39,0,0,39,2,1.2307692307692308,0.426832794918354,1,1,2,Yes,30,0.7692307692307693
+Sweden,pubpaychild,"Receiving public payments: Child, family or care allowance/benefit",39,0,0,39,2,1.7692307692307692,0.426832794918354,2,1,2,No,30,0.7692307692307693
+Sweden,polcultgend,Political orientation: Cultural: Gender roles,39,1,2.564102564102564,38,4,1.4473684210526314,0.860463998683194,1,1,4,Disagree strongly,28,0.7368421052631579
+Sweden,fraudnorm,Subjective social norm: citizen welfare fraud,39,3,7.6923076923076925,36,3,1.3333333333333333,0.5855400437691198,1,1,3,1 Never justified,26,0.7222222222222222
+Sweden,bornfath,Father born in country,39,0,0,39,2,1.2820512820512822,0.45588075245489307,1,1,2,Yes,28,0.717948717948718
+Sweden,idminor0,Self-identification: minority group: None,39,0,0,39,2,0.717948717948718,0.45588075245489307,1,0,1,Yes,28,0.717948717948718
+Sweden,partner,Partnership,39,0,0,39,2,1.2820512820512822,0.455880752454893,1,1,2,Yes,28,0.717948717948718
+Sweden,hincome,hincome,39,2,5.128205128205128,37,6,9.243243243243244,1.422154183807973,10,5,10,10,26,0.7027027027027027
+Sweden,psutxath,Public service: usage in last 12 months: tax authority,39,0,0,39,4,1.4871794871794872,0.8230813374079161,1,1,4,"Neither I, nor someone from my family",27,0.6923076923076923
+Sweden,prskunwork,Personal risk assessment: unable to work,39,2,5.128205128205128,37,4,7.513513513513512,20.938563069690886,1,1,77,Very unlikely,25,0.6756756756756757
+Sweden,idcntry,Identification: Country,39,0,0,39,4,3.051282051282051,0.6468025790365348,3,1,4,Close,26,0.6666666666666666
+Sweden,lnlyisol,Loneliness: feeling isolated,39,0,0,39,3,2.58974358974359,0.63734435532172,3,1,3,Hardly ever or never,26,0.6666666666666666
+Sweden,psutrnsp,Public service: usage in last 12 months: public transport,39,0,0,39,4,3.3333333333333335,1.0596258856520346,4,1,4,I and someone from my family have used it,26,0.6666666666666666
+Sweden,pubpaypens,Receiving public payments: Retirement pension,39,1,2.564102564102564,38,2,1.6578947368421053,0.4807829082199319,2,1,2,No,25,0.6578947368421053
+Sweden,EmploymentStatusKP,"What is your current working status? If more than one, please answer about your main activity (most hours per week).",39,0,0,39,4,2.769230769230769,2.465141593686472,1,1,8,"In paid work (or away temporarily) (employee, self-employed, working for your family business)",25,0.6410256410256411
+Sweden,plsolcntry,Willingness to pay for public redistribution: country,39,0,0,39,4,4.051282051282051,0.7591102114254676,4,1,5,Agree,25,0.6410256410256411
+Sweden,Hhchldu18,Household number children aged <18,39,9,23.076923076923077,30,4,0.7666666666666667,1.1043279539543756,0,0,3,0,19,0.6333333333333333
+Sweden,fresil,Financial resilience,39,0,0,39,5,4.17948717948718,1.12089707663561,5,1,5,More than 12 months,23,0.5897435897435898
+Sweden,plsolmuni,Willingness to pay for public redistribution: municipal,39,0,0,39,4,4.102564102564102,0.753758016274796,4,2,5,Agree,23,0.5897435897435898
+Sweden,sochelp,Helping norm: descriptive,39,0,0,39,5,3.4615384615384617,0.8839550430981336,4,1,5,4 Agree,23,0.5897435897435898
+Sweden,plsolfund,Preferred payment for public redistribution,39,4,10.256410256410255,35,4,1.8857142857142857,1.131667914587828,1,1,4,An increase in taxes that I pay,20,0.5714285714285714
+Sweden,econat,Current economic assessment: national economy,39,0,0,39,4,2.7948717948717947,0.6950761858843502,3,1,4,Rather good,22,0.5641025641025641
+Sweden,frndethn,Friends network: ethnicity,39,0,0,39,3,2.0256410256410255,0.6683514473837648,2,1,3,"Yes, one or two",22,0.5641025641025641
+Sweden,Respondent_Gender,Gender,39,0,0,39,2,1.4615384615384615,0.5050353737560759,1,1,2,Male,21,0.5384615384615384
+Sweden,ecohhld,Current economic assessment: household,39,0,0,39,3,3.3076923076923075,0.6136108038679583,3,2,4,Rather good,21,0.5384615384615384
+Sweden,idmuni,Identification: Municipality,39,0,0,39,4,2.7435897435897436,0.7510676161988108,3,1,4,Close,21,0.5384615384615384
+Sweden,psehelp,Public service: prompt help,39,0,0,39,4,2.8461538461538463,0.874746926965061,3,1,4,3 Neither agree nor disagree,21,0.5384615384615384
+Sweden,MARITALSTATUSKP,What is your current legal marital status?,39,0,0,39,5,2.41025641025641,1.8023077124670897,1,1,6,Legally married,20,0.5128205128205128
+Sweden,lnlycomp,Loneliness: lack of companionship,39,0,0,39,3,2.3333333333333335,0.6212607441973955,2,1,3,Some of the time,20,0.5128205128205128
+Sweden,pseeffi,Public service: efficiency,39,0,0,39,5,2.58974358974359,1.0187182017755843,3,1,5,3 Neither agree nor disagree,20,0.5128205128205128
+Sweden,psuhlth,Public service: usage in last 12 months: health care,39,0,0,39,3,3.3076923076923075,0.7997975452327444,4,2,4,I and someone from my family have used it,20,0.5128205128205128
+Sweden,rednrmdsc,Redistribution norm: descriptive,39,0,0,39,3,3.358974358974359,0.7429379618209786,4,2,4,4 Agree,20,0.5128205128205128
+Sweden,hincshare,Share of household income,39,9,23.076923076923077,30,6,4.5,1.45625878715715,4,1,7,around half (50 %),15,0.5
+Sweden,frndoldr,Friends networks: 10 years older,39,0,0,39,3,1.6923076923076923,0.6550952583944186,2,1,3,"Yes, one or two",19,0.48717948717948717
+Sweden,ideurop,Identification: European Union,39,0,0,39,4,2.8205128205128207,0.854455655336526,3,1,4,Close,19,0.48717948717948717
+Sweden,lnlyleft,Loneliness: feeling left out,39,0,0,39,3,2.4615384615384617,0.5547001962252291,2,1,3,Hardly ever or never,19,0.48717948717948717
+Sweden,plsolold,Willingness to pay for public redistribution: older people,39,0,0,39,4,4.17948717948718,0.7564388475577302,4,2,5,Agree,19,0.48717948717948717
+Sweden,plsolpoor,Willingness to pay for public redistribution: poor,39,0,0,39,4,4.102564102564102,0.8206182455888075,4,2,5,Agree,19,0.48717948717948717
+Sweden,psefair,Public service: fair treatment,39,0,0,39,5,3.5128205128205128,0.9698560628908012,4,1,5,4 Agree,19,0.48717948717948717
+Sweden,psuschl,Public service: usage in last 12 months: school,39,0,0,39,4,1.9487179487179487,1.16864109002762,2,1,4,"Neither I, nor someone from my family",19,0.48717948717948717
+Sweden,prskunemp,Personal risk assessment: unemployment,39,1,2.564102564102564,38,5,25.342105263157897,35.57350693209877,2,1,77,Very unlikely,18,0.47368421052631576
+Sweden,EducationAchievedKP,"What is the highest level of school you have completed, or the highest degree you have received?",39,0,0,39,4,74.76923076923077,5.975659128856958,78,64,85,"University, college of higher learning (Master's degree)",18,0.46153846153846156
+Sweden,ISCEDKP,International Standard Classification of Education (ISCED),39,0,0,39,4,7.538461538461538,0.8536655898367077,8,6,9,8,18,0.46153846153846156
+Sweden,dsrvreci,Deservingness: reciprocity,39,0,0,39,5,2.5128205128205128,1.232707650315799,2,1,5,Disagree,18,0.46153846153846156
+Sweden,frndinch,Friends networks: rich,39,0,0,39,3,2.128205128205128,0.7319579790745531,2,1,3,"Yes, one or two",18,0.46153846153846156
+Sweden,frndpol,Friends network: other politics,39,0,0,39,3,2.076923076923077,0.7392960871352164,2,1,3,"Yes, one or two",18,0.46153846153846156
+Sweden,frndyngr,Friends networks: 10 years younger,39,0,0,39,3,1.9743589743589745,0.7429379618209789,2,1,3,"Yes, one or two",18,0.46153846153846156
+Sweden,plsolchld,Willingness to pay for public redistribution: children,39,0,0,39,4,4.282051282051282,0.7930194777165229,4,2,5,Agree strongly,18,0.46153846153846156
+Sweden,polint,Political interest,39,0,0,39,3,3.128205128205128,0.7319579790745531,3,2,4,Quite interested,18,0.46153846153846156
+Sweden,pssatgen,Public service: overall satisfaction,39,2,5.128205128205128,37,5,3.3513513513513513,0.8568746899250987,3,1,5,4 Agree,17,0.4594594594594595
+Sweden,txbrdlow,Current Tax Assessment: Low income,39,2,5.128205128205128,37,4,3.7027027027027026,0.8454080167083318,4,2,5,about right,17,0.4594594594594595
+Sweden,psqtrnsp,Quality public sector: Public transport,39,1,2.564102564102564,38,11,7.052631578947368,2.2049988468594472,8,1,11,8,17,0.4473684210526316
+Sweden,dsrvneed,Deservingness: need,39,0,0,39,4,3.6923076923076925,0.9774792003129962,4,2,5,Agree,17,0.4358974358974359
+Sweden,immiforc,Immigration: forced migrants,39,1,2.564102564102564,38,4,3.1315789473684212,0.9055699304881248,3,1,4,Allow many to come and live here,16,0.42105263157894735
+Sweden,dsrvatt,Deservingness: attitude,39,0,0,39,5,3.076923076923077,1.109400392450458,3,1,5,Neither agree nor disagree,16,0.41025641025641024
+Sweden,idworld,Identification: World,39,0,0,39,4,2.3333333333333335,0.805681579172283,2,1,4,Not very close,16,0.41025641025641024
+Sweden,immiecon,Immigration: economic migrants,39,0,0,39,4,3.1794871794871793,0.8544556553365259,3,1,4,Allow many to come and live here,16,0.41025641025641024
+Sweden,prskcare,Personal risk assessment: care for family,39,0,0,39,5,21.051282051282055,33.295288680428804,2,1,77,Very unlikely,16,0.41025641025641024
+Sweden,crisoc,Crisis perception of country's society,39,0,0,39,5,2.5641025641025643,1.0207033641684695,2,1,5,is facing minor problems.,15,0.38461538461538464
+Sweden,frndincl,Friends networks: poor,39,0,0,39,3,1.8974358974358974,0.8206182455888074,2,1,3,"No, none at all",15,0.38461538461538464
+Sweden,plsolimmeu,Willingness to pay for public redistribution: eu immigrants,39,0,0,39,5,3.4871794871794872,1.1441336614913593,4,1,5,Agree,15,0.38461538461538464
+Sweden,poleconsmr,Political orientation: Economic: Less Government Intervention,39,1,2.564102564102564,38,5,2.6052631578947367,0.945529272181417,3,1,5,Disagree,14,0.3684210526315789
+Sweden,dsrvcont,Deservingness: control,39,0,0,39,4,2.1794871794871793,0.969856062890801,2,1,4,Disagree,14,0.358974358974359
+Sweden,dsrvident,Deservingness: identity,39,0,0,39,4,2.1538461538461537,0.9329766042777035,2,1,5,Neither agree nor disagree,14,0.358974358974359
+Sweden,hhsize,Household size,39,0,0,39,6,2.4615384615384617,1.2533356303995948,2,1,6,2,14,0.358974358974359
+Sweden,plsol_priority_mean,plsol_priority_mean,39,0,0,39,9,4.188034188034188,0.7326746315790414,4,2.3333333333333335,5,4,14,0.358974358974359
+Sweden,plsoleu,Willingness to pay for public redistribution: EU,39,0,0,39,5,3.3333333333333335,1.0087337902782494,3,1,5,Agree,14,0.358974358974359
+Sweden,scgvpoor,Governmental Scope: Standard of Living: the poor,39,0,0,39,10,7.384615384615385,2.2078256106689014,8,1,11,8,14,0.358974358974359
+Sweden,trstmil,Political trust: armed forces,39,0,0,39,9,7.923076923076923,2.144572284489569,9,2,10,9,14,0.358974358974359
+Sweden,trstparts,Political trust: political parties,39,0,0,39,9,5.923076923076923,2.2755521641618897,7,1,9,7,14,0.358974358974359
+Sweden,poleconred,Political orientation: Economic: Reduce Income Differences,39,2,5.128205128205128,37,5,3.3783783783783785,1.1867638385156534,4,1,5,Agree,13,0.35135135135135137
+Sweden,euintgr,European integration attitude,39,1,2.564102564102564,38,9,6.315789473684211,2.219145966209898,6,1,11,6,13,0.34210526315789475
+Sweden,plsolimmnoneu,Willingness to pay for public redistribution: non-eu immigrants,39,0,0,39,5,3.2564102564102564,1.1858363408415422,3,1,5,Agree,13,0.3333333333333333
+Sweden,slfstatus,Self-placement: status ladder,39,0,0,39,6,6.6923076923076925,1.340735190185754,7,4,9,6,13,0.3333333333333333
+Sweden,trsteucom,Political trust: european commission,39,1,2.564102564102564,38,9,6.5,1.9966187634314385,7,1,10,7,12,0.3157894736842105
+Sweden,trstpltcns,Political trust: politicians,39,1,2.564102564102564,38,9,5.7105263157894735,2.2288997981290173,6.5,1,9,7,12,0.3157894736842105
+Sweden,psqloc,"Quality public sector: Public administration in my village, town or city",39,4,10.256410256410255,35,7,6.228571428571429,2.0159031589385656,7,2,9,8,11,0.3142857142857143
+Sweden,lifesat,Life satisfaction,39,0,0,39,10,7.615384615384615,2.1227512512053615,8,2,11,8,12,0.3076923076923077
+Sweden,pseintgrt,Public service: integrity,39,0,0,39,5,3.051282051282051,1.212841768408263,3,1,5,4 Agree,12,0.3076923076923077
+Sweden,txbrdhigh,Current Tax Assessment: High income,39,2,5.128205128205128,37,5,2.3783783783783785,1.23268792462631,2,1,5,much too low,11,0.2972972972972973
+Sweden,leftright,Left-right self-placement,39,0,0,39,10,5.615384615384615,2.7397213132897167,5,1,11,4,11,0.28205128205128205
+Sweden,psqhlth,Quality public sector: Public health care,39,0,0,39,9,6.589743589743589,2.2090477672035016,7,2,10,8,11,0.28205128205128205
+Sweden,soctrst,Social trust and helping norm: injuctive,39,0,0,39,10,4.307692307692308,2.352533305920574,4,1,10,3,11,0.28205128205128205
+Sweden,soligame,Solidarity game,39,0,0,39,11,38.38461538461539,30.02070810257075,50,0,100,0,11,0.28205128205128205
+Sweden,trstmuni,Political trust: local authorities,39,0,0,39,8,6.871794871794871,2.2145391249112043,7,1,10,8,11,0.28205128205128205
+Sweden,psqschl,Quality public sector: Schools,39,5,12.82051282051282,34,9,6.205882352941177,2.026781472496456,7,1,9,8,9,0.2647058823529412
+Sweden,percfair,Perceived fairness,39,0,0,39,9,7.461538461538462,2.2693165426731907,8,3,11,8,10,0.2564102564102564
+Sweden,perchelp,Perceived helpfulness,39,0,0,39,9,6.871794871794871,2.418998130800252,7,1,10,8,10,0.2564102564102564
+Sweden,poldisfam,Political discussions: family and friends,39,0,0,39,7,4.153846153846154,1.678634494219092,4,1,7,Several times a month,10,0.2564102564102564
+Sweden,satdem,Satisfaction with democracy in country of interview,39,0,0,39,10,6.9743589743589745,2.4005172631964515,8,1,11,8,10,0.2564102564102564
+Sweden,trstgov,Political trust: national government,39,0,0,39,10,6.0256410256410255,2.6406456495890653,7,1,10,7,10,0.2564102564102564
+Sweden,eduyrs,Education years,39,3,7.6923076923076925,36,13,15.61111111111111,4.357442092248798,17,2,21,17,9,0.25
+Sweden,poldiscol,Political discussions: work colleagues,39,0,0,39,7,25.25641025641026,40.947153328674716,4,1,99,I do not have work colleagues,9,0.23076923076923078
+Sweden,scgvchld,Governmental Scope: Standard of Living: Children,39,0,0,39,10,7.897435897435898,2.6734057895350594,8,1,11,8,9,0.23076923076923078
+Sweden,scgvold,Governmental Scope: Standard of Living: older people,39,0,0,39,8,8.461538461538462,1.7598766979259752,9,4,11,8,9,0.23076923076923078
+Sweden,taxwelf,Trade-off: Tax and welfare state,39,0,0,39,11,6.564102564102564,2.807835575809724,7,1,11,7,9,0.23076923076923078
+Sweden,trstparl,Political trust: national parliament,39,0,0,39,10,6.871794871794871,2.515002220146422,7,1,10,7,9,0.23076923076923078
+Sweden,psqtxath,Quality public sector: Tax authority,39,4,10.256410256410255,35,9,7.742857142857143,2.2008401757037235,8,2,11,9,8,0.22857142857142856
+Sweden,immicullife,Cultural Life enriched by immigration,39,2,5.128205128205128,37,10,7.297297297297297,3.089991593523848,8,1,11,11 Cultural life enriched,8,0.21621621621621623
+Sweden,scgveuimm,Governmental Scope: Standard of Living immigrants from EU countries,39,0,0,39,11,6.538461538461538,2.798929812833111,7,1,11,8,8,0.20512820512820512
+Sweden,trstjudi,Political trust: legal system,39,0,0,39,10,7.82051282051282,2.4265179174649996,8,1,11,10,8,0.20512820512820512
+Sweden,psqbnft,Quality public sector: Benefits and employment services,39,14,35.8974358974359,25,10,5.6,2.70801280154532,6,1,10,8,5,0.2
+Sweden,scgvnoneuimm,Governmental Scope: Standard of Living immigrants from non-EU countries,39,0,0,39,11,5.846153846153846,3.0047196343372304,6,1,11,8,7,0.1794871794871795
+Sweden,yrinccntry,Year first living in country,39,33,84.61538461538461,6,6,1983.1666666666667,21.876166635557215,1983,1951,2012,1951,1,0.16666666666666666

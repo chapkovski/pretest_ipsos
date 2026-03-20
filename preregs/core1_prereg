@@ -1,0 +1,68 @@
+reregistration Template from AsPredicted.org
+Data collection
+No, no data have been collected for this study yet.
+
+Hypothesis
+Main question: What drives political solidarity in Europe, understood as individuals’ willingness to financially support public redistribution for others across territorial and social boundaries?
+We test a multi-level framework in which political solidarity is shaped by (A) individual foundations (ideology, resources, perceived capacity, need and risk), (B) social norms and legitimacy (norm perceptions, trust, and public-service evaluations), and (C) objective context at the regional and country level (governance/service quality, economic conditions, welfare institutions, and governance quality).
+Hypotheses
+Bucket A: Individual foundations
+H1 Ideology: Individuals who are more economically left-leaning and egalitarian show higher political solidarity than individuals who are more economically right-leaning.
+H2 Resources and capacity
+H2a Individuals with higher objective socioeconomic resources (income and wealth) show higher political solidarity.
+H2b Net of objective resources, individuals who perceive higher personal capacity to contribute (financial security) show higher political solidarity.
+H3 Insurance against future needs
+H3a Individuals with higher exposure to social risks show higher political solidarity.
+H3b Net of objective indicators, individuals who perceive higher personal risk of deterioration and higher future need show higher political solidarity.
+Bucket B: Social norms and legitimacy
+H4 Perceived willingness of others to contribute: Individuals who believe that most others contribute fairly (pay taxes, do not abuse benefits, endorse solidarity norms) show higher political solidarity.
+H5 Trust and public-service evaluations
+H5a Individuals with higher generalized social trust show higher political solidarity.
+H5b Individuals with higher institutional trust show higher political solidarity.
+H5c Individuals who are more satisfied with the quality and fairness of public services show higher political solidarity.
+Bucket C: Objective context
+H6 Regional context
+H6a Residents of regions with higher public service quality show higher political solidarity.
+H6b Holding absolute conditions constant, residents of relatively better-off regions within a country show lower political solidarity on average, consistent with a net-contributor logic in territorial redistribution.
+
+Dependent variable
+Primary dependent variables are survey-based measures of political solidarity (support for redistribution that favours other people), constructed from willingness-to-pay/support statements and related items.  We will conduct the main test of our hypotheses with and additive index of general political solidarity that is the sum of three indicators of territorial solidarity (support for redistribution at the local, national and supranational levels).
+Main outcome variable: General political solidarity index 
+•	Average of respondents’ willingness to pay for public redistribution benefiting (i) their local area (village, town, or city), (ii) their country, and (iii) other EU countries (excluding their own country).
+
+Robustness
+In addition to the index above, we will also analyze the underlying items separately (each territorial target) in order to verify that results are not driven by any single item.  
+
+Conditions
+Not applicable. This is an observational cross-national survey. Participants are not assigned to experimental conditions.
+
+Analyses
+We will estimate statistical associations between our measures of political solidarity and the explanatory factors described in the hypotheses using linear regression models. Because respondents are clustered within regions and countries, our primary approach will use random effects and/or fixed effects models that account for this nesting.  Analyses will apply design and post-stratification weights to reflect the sampling design and population parameters.
+Core specification strategy:
+Building blocs of predictors from the micro to the macro level
+1. Individual foundations. We estimate a model that relates political solidarity to individuals’ economic ideology, objective socioeconomic resources, perceived financial security, indicators of objective need (for example receiving public benefits), perceived personal risk of deterioration, and the interaction between perceived risk and acute economic strain. We include standard socio-demographic controls (age, gender, education, household income per squared(household member), migration status).
+2. Social norms and legitimacy. We estimate a model with perceptions of whether others contribute fairly and comply with rules, generalized social trust, trust in political and administrative institutions, satisfaction with democracy, and evaluations of public services (overall satisfaction, perceived local performance, perceived quality across domains, and perceived fairness, efficiency, and integrity in service delivery) as predictors of political solidarity.
+3. Objective context. We estimate a model with contextual indicators at the regional and country level, including regional governance and public service quality (based on the European Quality of Government Index) , regional economic conditions and fiscal capacity, regions’ relative economic position within each country, and country-level features such as welfare state universalism, economic conditions, and overall governance quality as predictors of political solidarity.
+We run separate regressions for each block and then run combinations of the models, including a full model with all three blocks. We will report estimated associations with uncertainty intervals and assess the relative contribution of these blocks of predictors by comparing model fit and explained variance. All interpretations will be presented as associations rather than causal effects.
+
+Secondary analyses include: (i) repeating models for solidarity sub-dimensions (territorial vs group; deserving vs migrant-targeted; welfare chauvinism), (ii) alternative index constructions and item-level specifications, and (iii) heterogeneity analyses by key demographics (e.g., education, labour-market status) and country subgroups (e.g., East vs West Germany), where sample size permits.
+
+Outliers and Exclusions
+Exclusions: We will exclude respondents failing standard survey quality checks implemented by the fieldwork provider (where available). For the primary and secondary outcomes, we calculate indices by averaging non-missing responses, ensuring respondents with missing data on individual items remain included. 
+Missing data: The primary approach is listwise deletion when missingness is limited; if missingness is substantial for key covariates, we will use multiple imputation as a robustness check and compare results across approaches.
+
+Sample Size
+We recruit samples from existing probability-based respondent pools in seven countries (Germany, France, Italy, Poland, Sweden, Spain, Croatia). Target sample size is at least 1,000 completed interviews per country. Germany includes an East–West oversample (1,100 in West Germany, 500 in East Germany). In each country, the study population comprises non-institutionalised residents aged 18 and over who can read and write the dominant national language.
+
+Other
+Interpretation: All results are interpreted as associations, not as causal effects.
+Once the second wave is collected, we will also test whether changes in the main independent variables are associated with congruent changes in the dependent variables in line with the patterns that we have seen cross-sectionally.
+
+Name
+POLITSOLID: Political solidarity in Europe: institutions, perceptions, and individual motives (PEPS-Y Core 1)
+
+Type of Project
+Survey
+
+Other
+No data

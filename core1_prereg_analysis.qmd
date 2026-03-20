@@ -1,0 +1,266 @@
+---
+title: "PEPS-Y Core 1: Pilot Hypothesis Checks"
+format:
+  html:
+    toc: true
+    number-sections: true
+    theme: cosmo
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+## Setup
+
+This report tests the hypotheses in `preregs/core1_prereg` against the pilot file `POLITSOLID_Pretest_interim_11032026.sav`. The pilot contains the individual-level survey items needed for most micro-level hypotheses, but it does not include design weights or the external regional indicators needed for the preregistered context models. Those hypotheses are flagged explicitly below.
+
+```{r}
+source("analysis_helpers.R")
+load_analysis_packages()
+
+input_file <- fs::path("data", "POLITSOLID_Pretest_interim_11032026.sav")
+context_file <- "context/core1_context.csv"
+
+analysis_data <- build_analysis_data(input_file)
+analysis_data <- attach_optional_context(analysis_data, context_file)
+
+has_context <- isTRUE(attr(analysis_data, "context_loaded"))
+
+controls <- c(
+  "age",
+  "gender_binary",
+  "factor(education_level)",
+  "migrant_background",
+  "factor(country)"
+)
+
+main_outcome <- "solidarity_territorial"
+
+hypothesis_map <- tibble::tribble(
+  ~hypothesis, ~status, ~proxy,
+  "H1 Ideology", "Tested now", "ideology_left_index",
+  "H2a Objective resources", "Tested now", "objective_resources_index",
+  "H2b Perceived capacity", "Tested now", "perceived_capacity_index",
+  "H3a Objective need/risk", "Tested now", "objective_need_index",
+  "H3b Perceived risk", "Tested now", "perceived_risk_index",
+  "H4 Norms and perceived contribution", "Tested now", "norms_legitimacy_index",
+  "H5a Generalized social trust", "Tested now", "social_trust_index",
+  "H5b Institutional trust", "Tested now", "institutional_trust_index",
+  "H5c Public-service evaluations", "Tested now", "service_quality_index",
+  "H6a Regional service quality", if (has_context) "Will run if `regional_service_quality` exists" else "Not testable from current pilot file", "Requires context file with regional_service_quality",
+  "H6b Relative regional prosperity", if (has_context) "Will run if `relative_regional_income` exists" else "Not testable from current pilot file", "Requires context file with relative_regional_income"
+)
+
+predictor_labels <- tibble::tribble(
+  ~term, ~term_label,
+  "ideology_left_index_z", "H1 Left ideology",
+  "objective_resources_index_z", "H2a Objective resources",
+  "perceived_capacity_index_z", "H2b Perceived capacity",
+  "objective_need_index_z", "H3a Objective need/risk",
+  "perceived_risk_index_z", "H3b Perceived risk",
+  "norms_legitimacy_index_z", "H4 Norms and legitimacy",
+  "social_trust_index_z", "H5a Social trust",
+  "institutional_trust_index_z", "H5b Institutional trust",
+  "service_quality_index_z", "H5c Service evaluations",
+  "regional_service_quality_z", "H6a Regional service quality",
+  "relative_regional_income_z", "H6b Relative regional prosperity"
+)
+```
+
+```{r}
+hypothesis_map %>%
+  render_table(digits = 2)
+```
+
+The cleaned pilot sample contains `r nrow(analysis_data)` interviews across `r dplyr::n_distinct(analysis_data$country)` countries. The main outcome is the preregistered territorial solidarity index, defined as the mean of the municipal, country, and EU willingness-to-pay items.
+
+## Outcome Distribution
+
+```{r}
+analysis_data %>%
+  ggplot(aes(x = solidarity_territorial)) +
+  geom_histogram(binwidth = 0.25, fill = "#2f6b8a", color = "white") +
+  facet_wrap(~ country) +
+  labs(
+    title = "Territorial solidarity index by country",
+    x = "General political solidarity index",
+    y = "Respondents"
+  ) +
+  theme_minimal(base_size = 12)
+```
+
+## Visual Hypothesis Checks
+
+The plots below use quintile-style bins for each preregistered micro-level predictor. They are descriptive checks rather than substitutes for the regression models.
+
+```{r}
+visual_data <- analysis_data %>%
+  dplyr::transmute(
+    solidarity_territorial,
+    `H1 Left ideology` = ideology_left_index,
+    `H2a Objective resources` = objective_resources_index,
+    `H2b Perceived capacity` = perceived_capacity_index,
+    `H3a Objective need/risk` = objective_need_index,
+    `H3b Perceived risk` = perceived_risk_index,
+    `H4 Norms and legitimacy` = norms_legitimacy_index,
+    `H5a Social trust` = social_trust_index,
+    `H5b Institutional trust` = institutional_trust_index,
+    `H5c Service evaluations` = service_quality_index
+  ) %>%
+  tidyr::pivot_longer(
+    cols = -solidarity_territorial,
+    names_to = "hypothesis",
+    values_to = "predictor"
+  ) %>%
+  dplyr::filter(!is.na(solidarity_territorial), !is.na(predictor)) %>%
+  dplyr::group_by(hypothesis) %>%
+  dplyr::mutate(bin = dplyr::ntile(predictor, 5)) %>%
+  dplyr::group_by(hypothesis, bin) %>%
+  dplyr::summarise(
+    predictor_mean = mean(predictor, na.rm = TRUE),
+    solidarity_mean = mean(solidarity_territorial, na.rm = TRUE),
+    n = dplyr::n(),
+    .groups = "drop"
+  )
+
+ggplot(visual_data, aes(x = predictor_mean, y = solidarity_mean)) +
+  geom_line(color = "#1d4e89", linewidth = 0.7) +
+  geom_point(aes(size = n), color = "#c45b12") +
+  facet_wrap(~ hypothesis, scales = "free_x") +
+  scale_size_continuous(range = c(1.5, 4), guide = "none") +
+  labs(
+    title = "Binned visual checks for Core 1 hypotheses",
+    x = "Predictor value",
+    y = "Mean territorial solidarity"
+  ) +
+  theme_minimal(base_size = 12)
+```
+
+## Main OLS Models
+
+```{r}
+block_a_predictors <- c(
+  "ideology_left_index_z",
+  "objective_resources_index_z",
+  "perceived_capacity_index_z",
+  "objective_need_index_z",
+  "perceived_risk_index_z"
+)
+
+block_b_predictors <- c(
+  "norms_legitimacy_index_z",
+  "social_trust_index_z",
+  "institutional_trust_index_z",
+  "service_quality_index_z"
+)
+
+full_predictors <- c(block_a_predictors, block_b_predictors)
+
+block_a_data <- model_sample(analysis_data, main_outcome, c(block_a_predictors, controls))
+block_b_data <- model_sample(analysis_data, main_outcome, c(block_b_predictors, controls))
+full_data <- model_sample(analysis_data, main_outcome, c(full_predictors, controls))
+
+model_block_a <- fit_ols(block_a_data, build_formula(main_outcome, block_a_predictors, controls))
+model_block_b <- fit_ols(block_b_data, build_formula(main_outcome, block_b_predictors, controls))
+model_full <- fit_ols(full_data, build_formula(main_outcome, full_predictors, controls))
+
+ols_results <- dplyr::bind_rows(
+  robust_tidy_lm(model_block_a) %>% dplyr::mutate(model = "Block A"),
+  robust_tidy_lm(model_block_b) %>% dplyr::mutate(model = "Block B"),
+  robust_tidy_lm(model_full) %>% dplyr::mutate(model = "Full")
+) %>%
+  coef_plot_data(label_map = predictor_labels, keep_terms = predictor_labels$term) %>%
+  dplyr::mutate(model = factor(model, levels = c("Block A", "Block B", "Full")))
+
+ols_results %>%
+  dplyr::select(model, term_label, estimate, conf.low, conf.high, p.value) %>%
+  dplyr::arrange(model, dplyr::desc(estimate)) %>%
+  render_table(digits = 3)
+```
+
+```{r}
+ggplot(ols_results, aes(x = estimate, y = forcats::fct_rev(term_label), xmin = conf.low, xmax = conf.high, color = model)) +
+  geom_vline(xintercept = 0, linetype = "dashed", color = "grey60") +
+  geom_errorbarh(height = 0.15, position = position_dodge(width = 0.6)) +
+  geom_point(position = position_dodge(width = 0.6), size = 2) +
+  labs(
+    title = "Robust OLS estimates for the preregistered Core 1 predictors",
+    x = "Coefficient estimate",
+    y = NULL,
+    color = "Model"
+  ) +
+  theme_minimal(base_size = 12)
+```
+
+## Item-Level Ordered Logit Robustness
+
+The preregistration also states that the territorial items should be checked separately. The models below use ordered logistic regressions with the full predictor set and the same controls.
+
+```{r}
+ordered_outcomes <- c("plsolmuni", "plsolcntry", "plsoleu")
+
+ordered_results <- purrr::map_dfr(
+  ordered_outcomes,
+  function(outcome_name) {
+    ordered_data <- model_sample(analysis_data, outcome_name, c(full_predictors, controls))
+    ordered_model <- fit_ordered(ordered_data, build_formula(outcome_name, full_predictors, controls))
+
+    ordered_tidy(ordered_model) %>%
+      coef_plot_data(label_map = predictor_labels, keep_terms = predictor_labels$term) %>%
+      dplyr::transmute(
+        outcome = outcome_name,
+        term_label,
+        estimate,
+        conf.low,
+        conf.high,
+        p.value
+      )
+  }
+)
+
+ordered_results %>%
+  dplyr::arrange(outcome, dplyr::desc(estimate)) %>%
+  render_table(digits = 3)
+```
+
+## Optional Context Models
+
+These hypotheses require an external region-level file, because the pilot `.sav` does not contain objective regional service quality or relative regional prosperity variables.
+
+Expected columns in `context/core1_context.csv`:
+
+- `country`
+- `region`
+- `regional_service_quality`
+- `relative_regional_income`
+
+```{r}
+if (has_context && all(c("regional_service_quality", "relative_regional_income") %in% names(analysis_data))) {
+  context_data <- analysis_data %>%
+    dplyr::mutate(
+      regional_service_quality_z = standardize(regional_service_quality),
+      relative_regional_income_z = standardize(relative_regional_income)
+    )
+
+  context_predictors <- c("regional_service_quality_z", "relative_regional_income_z")
+  context_sample <- model_sample(context_data, main_outcome, c(context_predictors, controls))
+  model_context <- fit_ols(context_sample, build_formula(main_outcome, context_predictors, controls))
+
+  robust_tidy_lm(model_context) %>%
+    coef_plot_data(label_map = predictor_labels, keep_terms = c("regional_service_quality_z", "relative_regional_income_z")) %>%
+    dplyr::select(term_label, estimate, conf.low, conf.high, p.value) %>%
+    render_table(digits = 3)
+} else {
+  tibble::tibble(
+    note = "Context models were not run. Add context/core1_context.csv with country, region, regional_service_quality, and relative_regional_income to activate H6."
+  ) %>%
+    render_table(digits = 2)
+}
+```
+
+## Notes
+
+- The pilot file does not include design or post-stratification weights, so all models here are unweighted.
+- The pilot file also does not include the external contextual indicators named in the preregistration. The report therefore separates the micro-level tests from the not-yet-runnable macro-level tests.
+- All results in this report should be read as pilot checks for coherence with the preregistered direction, not as final population estimates.

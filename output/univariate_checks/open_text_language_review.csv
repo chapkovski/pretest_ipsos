@@ -1,0 +1,100 @@
+country,respondent_id,text_field,text,text_length,expected_language,detected_language,token_n,detection_status,review_flag
+Croatia,NA,comment,"Moramo biti solidarni,prema sebi i drugima.",43,Croatian,NA,7,detected,possible_language_mismatch
+Croatia,NA,comment,"niste uklucili kljucno pitanje: -socijalna davanja DA onima koji su siromašni jer NE mogu raditi ( hendikepirani, bolesni..) -socijalna naknada NE onima koji Ne ŽELE raditi",172,Croatian,NA,25,detected,possible_language_mismatch
+Croatia,NA,comment,"Potrebno je i ispitivanje sigurnosti, pravednog postupanja institucija i pojedinaca kao ..slobode govora i kulture i demokracije manjinskih skupina u Hrvatskoj, na svim razinama vlasti i društva. To bi doprinijelo pravednosti života manjinskih skupina koje je zakonom zapisano, a u praksi velikom vecinom pravde nema.",317,Croatian,Croatian,45,detected,ok
+Croatia,NA,comment,Odlicna pitanja i zanimljiva anketa,35,Croatian,Croatian,5,detected,ok
+Croatia,NA,comment,"Dodala bih neka pitanja vezana npr za broj stanovnika Hrvatske i broj korisnika zdravstva, broj glasaca...",106,Croatian,Croatian,16,detected,ok
+Croatia,NA,comment,zanimljiva anketa...p.s. zanima me kada cu dobiti bon za Plodine koji mi je obecan prilikom registracije?!? ;),110,Croatian,Croatian,18,detected,ok
+Croatia,NA,comment,Nista posebno,13,Croatian,NA,2,too_short,manual_review_short_text
+Croatia,NA,comment,ne,2,Croatian,NA,1,too_short,manual_review_short_text
+Croatia,NA,comment,Ne,2,Croatian,NA,1,too_short,manual_review_short_text
+Croatia,NA,voteprsp_open,Fokus,5,Croatian,NA,1,too_short,manual_review_short_text
+France,NA,comment,"Il n'y a pas suffisamment de personnes actives en France. Il faut que tous les citoyens français et autres résidents en France travaillent beaucoup plus. L'effort national est porté massivement par les salariés ; La France se porterait beaucoup mieux si elle était sélective . Il faut briser le taboo de l'immigration. Oui, nous avons besoin d'immigrés en France, mais il faut qu'ils travaillent tous ; qu'ils contribuent eux aussi à l""effort national.",452,French,French,71,detected,ok
+France,NA,comment,Quelques questions avec une formulation interprétable,53,French,French,6,detected,ok
+France,NA,comment,Difficile pour certaines questions d'être limité par un degré sur une échelle. Certaines questions mériteraient une réponse nuancée.,132,French,French,18,detected,ok
+France,NA,comment,"La France dit changer bcp de choses et de lois pour se redresser et redevenir un pays respecté et attractif. Il faut arrêter ""l'état nounou"" et prendre des décisions concernant les retraites et notre protection médicale. Il faut réguler l'immigration et cesser les alloc pour les immigrés et le regroupement familial !!",319,French,French,51,detected,ok
+France,NA,comment,Sondage très utile surtout aujourd'hui.,39,French,French,5,detected,ok
+France,NA,comment,il faut parfois relire plusieurs fois les questions il y a des confusions.,74,French,French,13,detected,ok
+France,NA,comment,Difficile de répondre à certaines questions,43,French,French,6,detected,ok
+France,NA,comment,MCC,3,French,NA,1,too_short,manual_review_short_text
+France,NA,voteprsp_open,la france humaniste,19,French,NA,3,detected,possible_language_mismatch
+France,NA,voteprsp_open,UPR - Union Populaire Républicaine,34,French,French,4,detected,ok
+Germany,NA,comment,"Danke, alles ohne KI-Zdf",24,German,NA,5,detected,possible_language_mismatch
+Germany,NA,comment,"bei manchen Fragen wäre es gut gewesen, einen ergänzenden oder erklärenden Kurzkommentar beifügen zu können.",108,German,German,15,detected,ok
+Germany,NA,comment,Der ÖPNV ist auf dem Land eine Katastrophe. Bei Fahrten im Stundentakt dürfen keinerlei Ausfälle stattfinden.,109,German,German,16,detected,ok
+Germany,NA,comment,Teilweise sind fie Fragen zu undifferenziert. Deutschland braucht Migration. Aber nicht aus jeder Kultur und auch nicht von wenig gebildeten Schichten. Meine Frau ist Ausländerin. Das bedeutet aber nicht das ich es gut heiße völlig wahllos und ungrsteuert jeden nach Deutschland zu holen. Diese Aspekte finden sich in Ihrer Umfrage leider nicht wieder. Ebenfalls sehe ich viele Iherer Fragen sehr viel differenzierter.,418,German,German,62,detected,ok
+Germany,NA,comment,Wann und wo werden die Ergebnisse der Befragung veröffentlicht ?,64,German,German,9,detected,ok
+Germany,NA,comment,"Warum gibt es bei manchen Fragen 11, bei anderen nur 10 Antwortmöglichkeiten?",77,German,German,12,detected,ok
+Germany,NA,comment,"Es können weniger Steuergelder verschwendet werden. Auch im öffentlichen Dienst würde Effizienz nicht schaden und das Schulsystem bedarf einer Reform, es sollte darauf ausgerichtet werden Wissen und Kreativität zu vermitteln und fördern, statt zu langweilen",257,German,German,35,detected,ok
+Germany,NA,comment,"Ja, aber dafür reicht das Textfeld nicht!",41,German,German,7,detected,ok
+Germany,NA,comment,Nein,4,German,NA,1,too_short,manual_review_short_text
+Germany,NA,voteprsp_open,Die Partei,10,German,NA,2,too_short,manual_review_short_text
+Italy,NA,comment,"C'era una domanda circa l' utilizzo dei mezzi pubblici tipo tram e bus che però presentava risposte tra cui scegliere non pertinenti, riferite ad un' altra domanda. Inoltre nonostante sia di fascia di reddito non alta mi ritengo soddisfatta della mia vita perché la considero soprattutto dal punto di vista della libertà circa il tempo libero che ho per me, per la scelta culturale e l' interesse per le cose nuove, per esempio (ma non solo per questo) anche la varietà culturale apportata da persone non italiane che vengono a vivere da noi",541,Italian,Italian,93,detected,ok
+Italy,NA,comment,"Sondaggio non gradito , perché ha fatto domande un po’ troppo specifiche e personali",84,Italian,Italian,13,detected,ok
+Italy,NA,comment,In molti casi sarebbe necessario un commento,44,Italian,Italian,7,detected,ok
+Italy,NA,comment,Alcune domande non sono chiare,30,Italian,Italian,5,detected,ok
+Italy,NA,comment,CI sonó delle domande che possono essere risposte sea positiva che negativamente perché inglobano vari argomenti p.e. sonó soddisfato Della sanitá má non Della administrazione publica,183,Italian,Italian,27,detected,ok
+Italy,NA,comment,"Una pagina ha le risposte uguali per tutte le domande, sono sbagliate",69,Italian,Italian,12,detected,ok
+Italy,NA,comment,Nell’elenco dei partiti politici ne mancano alcuni,50,Italian,Italian,7,detected,ok
+Italy,NA,comment,Sondaggio interessante e molto approfondito.,44,Italian,Italian,5,detected,ok
+Italy,NA,comment,"C'è errore nel testo ripetuto delle risposte sui servizi assistenziali e centri dell'impiego, che si propaga anche nelle domande successive, pur essendo diverso l'argomento",172,Italian,Italian,24,detected,ok
+Italy,NA,comment,alcune risposte che avete predisposto sono incoerenti con le domande. Riguardo i servizi pubblici ci sono solo risposte inerenti i centri per l'impiego,151,Italian,Italian,23,detected,ok
+Italy,NA,comment,"A proposito del tema tasse, anziché domande sul fatto di essere d’accordo all’aumento delle tasse , andrebbero poste domande sull’opportunità’ di far pagare le tasse a tutti e non sempre agli stessi.",199,Italian,Italian,31,detected,ok
+Italy,NA,comment,Alcune domande erano poste in modo troppo generico; fossero state più specifiche sarebbe stato più facile dare un risposta. Alcune domande sembrano tendenziose.,160,Italian,Italian,23,detected,ok
+Italy,NA,comment,"Alzare le tasse non è l'unico strumento utilizzabile per cercare di migliorare la situazione. Per un modo di vivere COMPLESSO come quello italiano ci vogliono soluzioni molto intelligenti (non complicate!), oppure è necessario rendere la vita più semplice e lineare, riducendo la complessità fin dove si può e considerando le eccezioni a parte. Sono dell'idea che in Italia un governo tecnico potrebbe funzionare meglio di un governo politico.",443,Italian,Italian,68,detected,ok
+Italy,NA,comment,no,2,Italian,NA,1,too_short,manual_review_short_text
+Italy,NA,comment,no,2,Italian,NA,1,too_short,manual_review_short_text
+Italy,NA,comment,.,1,Italian,NA,0,too_short,manual_review_short_text
+Italy,NA,comment,Troppe simili,13,Italian,NA,2,too_short,manual_review_short_text
+Italy,NA,voteprsp_open,"Verdi, Sinistra italiana",24,Italian,NA,3,detected,ok
+Italy,NA,voteprsp_open,Alleanza Verdi Sinistra,23,Italian,Italian,3,detected,ok
+Italy,NA,voteprsp_open,AVS,3,Italian,NA,1,too_short,manual_review_short_text
+Italy,NA,voteprsp_open,AVS,3,Italian,NA,1,too_short,manual_review_short_text
+Italy,NA,voteprsp_open,Rifondazione comunista,22,Italian,NA,2,too_short,manual_review_short_text
+Italy,NA,voteprsp_open,AVS,3,Italian,NA,1,too_short,manual_review_short_text
+Poland,NA,comment,Ciekawa ankieta choc dluga,26,Polish,NA,4,detected,possible_language_mismatch
+Poland,NA,comment,"W jednym z pytan byla mowa o kwocie która zostala okreslona jako '150 zloty' - powinno byc 150 zlotych, ewidentnie nie chodzilo o fikcyjna walute, a o polskiego zlotego.",169,Polish,Polish,28,detected,ok
+Poland,NA,comment,"pytanie o pieniadzach nie mialo opcji, ze nie chce podac",56,Polish,Polish,10,detected,ok
+Poland,NA,comment,"wiele pytan tendencyjnie skonstruowanych, oraz i same odpowiedzi, zwlaszcza pytania polityczne, bo sa tez takie opcje jak zmiana w ogóle budzetowania srodków w panstwie, i uwazam ze to powinno sie znalezc w odpowiedziach, bo z tym nasze panstwo ma ogromny problem, plus nie ma doprecyzowanych informacji co to znaczy ze mamy placic za osoby spoza polski czy spoza UE, co to do konca znaczy, co wlicza, zero info w tych odpowiedziach, bo rozumiem ze na start sie to przyda, ale nie zeby otrzymywac takich ludzi non stop, bardziej dac im wedke i szkolenia niz same swiadczenia socjalne",583,Polish,Polish,97,detected,ok
+Poland,NA,comment,"Niktóre pytania nie wskazuja jasno o temacie. Np. osoby biedne i social, w zaleznosci od punktu widzenia moga wskazywac na osoby w potrzebie lub te, które zasilek „przepijaja"". Jesli chodzi o pytanie o zasilki dla obcokrajowców to nie ma podzialu na pracujacych i nie, co powoduje niescislosc w opdpowiedzi.",307,Polish,Polish,49,detected,ok
+Poland,NA,comment,"Niektóre pytania sa sformulowane tak, ze nie ma rozgraniczenia miedzy tym, co mozna uwazac za pewnego rodzaju moralny/etyczny obowiazek a obowiazek spoleczny/prawny - to sprawia, ze odpowiedz na pytanie jest plaska i niedokladna",228,Polish,Polish,34,detected,ok
+Poland,NA,comment,Nie,3,Polish,NA,1,too_short,manual_review_short_text
+Poland,NA,comment,Nie,3,Polish,NA,1,too_short,manual_review_short_text
+Spain,NA,comment,No he entendido bien la pregunta del premio. desconozco si jugabamos los tres números juntos. obligación del 33 % o si era un gesto de compañerismo,147,Spanish,Spanish,25,detected,ok
+Spain,NA,comment,Hay alguna respuesta que no está incluida en las opciones.,58,Spanish,Spanish,10,detected,ok
+Spain,NA,comment,"Si el gobierno interviene menos la economia, la encomia ganaria dinamismo, industria, la gente tendria mas trabajo, necesitarian menos ayudas, y podriamos bajar los impuestos reduciendo ayudas que ya no se necesitan. La clave no es reducir desigualdades de dinero, es reducir la pobreza, que todos vivamos cuanto mejor sea posible, que hayan algunos muy ricos no es un problema en sí mismo, de hecho, esos arriesgan dinero en mas industria para seguir invirtiendo. Lo contrario es tener a la gente pobre controladita captando votos con los subsidios y la falsa idea de que el problema es de los ricos",600,Spanish,Spanish,100,detected,ok
+Spain,NA,comment,"Algunos de los enunciados de la encuesta estaban redactados de forma confusa, la gradación entre las respuestas podía ser un poco imprecisa cuando había sólo cuatro opciones para marcar (saltos cualitativos muy grandes) y quizás sería de ayuda ser más directos evitando eufemismos. Las posiciones políticas fuera del proteccionismo nacionalista de derechas y el internacionalismo socialista de izquierdas son difíciles de representar en muchas de las preguntas.",461,Spanish,Spanish,67,detected,ok
+Spain,NA,comment,"Aunque mis ingresos sean más de 3.100€ al mes (porque tenemos dos sueldos aceptables, mi marido y yo), más de la mitad va destinado a pagar hipoteca, comida, gas, luz, seguros médicos (la seguridad social va MUY mal...). En Cataluña, el coste de vida es muy elevado, se pagan impuestos por todo, y eso no se aprecia en los servicios públicos. La mayoría de mis compañeros funcionarios docentes no pueden acceder ni siquiera a comprarse una vivienda, la gente se está acostumbrando a vivir al día. La clase media estamos totalmente empobrecidos. No es cuestión solo de subir o bajar impuestos, sino de cómo se gestionan! Desgraciadamente, no hay una relación directa entre más impuestos - más prestaciones, servicios.",716,Spanish,Spanish,118,detected,ok
+Spain,NA,comment,Es dificil contestar a algunas de las preguntas ya que en algunas he contestado pero hay matices que no puedo explicar en ella,126,Spanish,Spanish,23,detected,ok
+Spain,NA,comment,"Las personas que vienen de otros países a trabajar, deben venir ya con contrato de trabajo, vivienda, cotizando, etc. y prestaciones sociales. No de forma clandestina y fomentar la economía sumergida.",200,Spanish,Spanish,31,detected,ok
+Spain,NA,comment,"Pues en algunas preguntas me gustaria dar otro tipo de contestaciones, por ejemplo no apretarnos tanto a la ciudadania con impuestos y que los altos cargos dejen de robar y de beneficiarse solo ellos y me da igual del partido que sean porque son todos iguales",259,Spanish,Spanish,46,detected,ok
+Spain,NA,comment,"Muchas preguntas las he contestado con la valoración media porque no puedo matizar mi respuesta. Entiendo que es difícil elaborar una encuesta y que la respuesta matemática es más fácil de procesar, pero muchas respuestas 5 en una escala 1 a 10 no significan realmente una valoración neutra.",291,Spanish,Spanish,48,detected,ok
+Spain,NA,comment,"Es curioso que cuando se pregunta no se haga en femenino y que las preguntas vayan dirigidas por lo general al género ""hombre"". En alguna pregunta por mi condición de mujer parece como si esto no se tuviera en cuenta: por ello en una pregunta he puesto ""mujer"". Hay un sesgo un tanto machista, si me permiten, aunque no siempre, pero en general. Siento decirlo. Muchas gracias",376,Spanish,Spanish,67,detected,ok
+Spain,NA,comment,Menudas preguntas...,20,Spanish,NA,2,too_short,manual_review_short_text
+Spain,NA,comment,CATÓLICO PRACTICANTE,20,Spanish,NA,2,too_short,manual_review_short_text
+Spain,NA,voteprsp_open,Xav,3,Spanish,NA,1,too_short,manual_review_short_text
+Sweden,NA,comment,"Dåliga översättningar, plötsligt stod det tex Swedish Man kunde inte välja socialdemokraterna i listan av partier",113,Swedish,Swedish,16,detected,ok
+Sweden,NA,comment,Det är VÄLDIGT många frågor på en gång… svårt att hålla fokus. Hellre fler o kortare enkäter!,93,Swedish,Swedish,17,detected,ok
+Sweden,NA,comment,"Blev osäker på frågan om din totala utbilningslängden. Läst kandidat på universitetet, 1 år på komvux, och tvåårigt gymnasium.",126,Swedish,Swedish,19,detected,ok
+Sweden,NA,comment,"En fråga svarade jag fel på i hastigheten, upptäckte det precis när jag klickade på ’nästa’. Men minns inte vilken…",115,Swedish,Swedish,20,detected,ok
+Sweden,NA,comment,Kolla översättningarna. Finns en del swinglish som borde kunna städas bort även om ni använder autotranslate,108,Swedish,Swedish,16,detected,ok
+Sweden,NA,comment,I de första frågorna hade bokstäver och ord fallit bort så det var svårt att läsa och förstå.,93,Swedish,Swedish,18,detected,ok
+Sweden,NA,comment,Vi behöver nya insikter om att den industriella perioden är över och därmed är höger vänster skalorna förlegade! Så även partisystem . Jag är övertygad om att de lärande strukturerna kan ersätta de gamla och förnya samhällets demokrati att bli mer inriktad in i framtiden??,273,Swedish,Swedish,44,detected,ok
+Sweden,NA,comment,"Vissa frågor borde splittas i två, så att man kan svara mer nyanserat. Ex de som kommer från annat icke-EU-kand som flyktingar eller vanliga invandrare.",152,Swedish,Swedish,27,detected,ok
+Sweden,NA,voteprsp_open,Socialdemokratiska arbetarepartiet,34,Swedish,NA,2,too_short,manual_review_short_text
+Sweden,NA,voteprsp_open,socialdemokraterna,18,Swedish,NA,1,too_short,manual_review_short_text
+Sweden,NA,voteprsp_open,Socialdemokraterna,18,Swedish,NA,1,too_short,manual_review_short_text
+Sweden,NA,voteprsp_open,Socialdemokraterna,18,Swedish,NA,1,too_short,manual_review_short_text
+Sweden,NA,voteprsp_open,Socialdemokraterna,18,Swedish,NA,1,too_short,manual_review_short_text
+Sweden,NA,voteprsp_open,Socialdemokraterna,18,Swedish,NA,1,too_short,manual_review_short_text
+Sweden,NA,voteprsp_open,Socialdemokraterna,18,Swedish,NA,1,too_short,manual_review_short_text
+Sweden,NA,voteprsp_open,Sverigedemokraterna,19,Swedish,NA,1,too_short,manual_review_short_text
+Sweden,NA,voteprsp_open,Socialdemokratiska,18,Swedish,NA,1,too_short,manual_review_short_text
+Sweden,NA,voteprsp_open,Socialdemokraterna,18,Swedish,NA,1,too_short,manual_review_short_text
+Sweden,NA,voteprsp_open,Sverigedemokraterna,19,Swedish,NA,1,too_short,manual_review_short_text
+Sweden,NA,voteprsp_open,Socialdemokraterna,18,Swedish,NA,1,too_short,manual_review_short_text
+Sweden,NA,voteprsp_open,Socialdemokraterna,18,Swedish,NA,1,too_short,manual_review_short_text
+Sweden,NA,voteprsp_open,Socialdemokraterna,18,Swedish,NA,1,too_short,manual_review_short_text
+Sweden,NA,voteprsp_open,Socialdemokraterna,18,Swedish,NA,1,too_short,manual_review_short_text
+Sweden,NA,voteprsp_open,Socialdemokraterna,18,Swedish,NA,1,too_short,manual_review_short_text
+Sweden,NA,voteprsp_open,socialdemokraterna,18,Swedish,NA,1,too_short,manual_review_short_text

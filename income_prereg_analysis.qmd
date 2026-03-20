@@ -1,0 +1,378 @@
+---
+title: "PEPS-Y Income: Resources and Political Solidarity"
+format:
+  html:
+    toc: true
+    number-sections: true
+    theme: cosmo
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+## Setup
+
+This report follows `preregs/income_prereg` using the pilot file `POLITSOLID_Pretest_interim_11032026.sav`. The pilot supports the main individual-level resource analyses, interaction checks, secondary solidarity outcomes, and item-level ordered-model robustness. The preregistered weighted specification cannot be run yet because the pilot `.sav` does not contain design weights.
+
+```{r}
+source("analysis_helpers.R")
+load_analysis_packages()
+
+input_file <- fs::path("data", "POLITSOLID_Pretest_interim_11032026.sav")
+analysis_data <- build_analysis_data(input_file)
+
+controls <- c(
+  "age",
+  "gender_binary",
+  "factor(education_level)",
+  "factor(employment_status)",
+  "factor(country)"
+)
+
+main_outcome <- "solidarity_territorial"
+secondary_outcomes <- c(
+  "solidarity_group",
+  "welfare_chauvinism",
+  "solidarity_deserving",
+  "solidarity_migrant"
+)
+
+resource_terms <- c(
+  "income_rank_country_z",
+  "fresil_z",
+  "ecohhld_z"
+)
+
+interaction_terms <- c(
+  "income_rank_country_z:ideology_right_z",
+  "fresil_z:ideology_right_z",
+  "ecohhld_z:ideology_right_z",
+  "income_rank_country_z:dependants",
+  "fresil_z:dependants",
+  "ecohhld_z:dependants"
+)
+
+main_predictors <- c(
+  resource_terms,
+  "ideology_right_z",
+  "dependants",
+  interaction_terms
+)
+
+predictor_labels <- tibble::tribble(
+  ~term, ~term_label,
+  "income_rank_country_z", "Income rank within country",
+  "fresil_z", "Financial resilience",
+  "ecohhld_z", "Subjective household finances",
+  "ideology_right_z", "Right ideology",
+  "dependants", "Dependants in household",
+  "income_rank_country_z:ideology_right_z", "Income × ideology",
+  "fresil_z:ideology_right_z", "Resilience × ideology",
+  "ecohhld_z:ideology_right_z", "Subjective finances × ideology",
+  "income_rank_country_z:dependants", "Income × dependants",
+  "fresil_z:dependants", "Resilience × dependants",
+  "ecohhld_z:dependants", "Subjective finances × dependants"
+)
+```
+
+## Outcome and Construct Checks
+
+The preregistration asks whether territorial and group solidarity form one construct or two related dimensions. The section below reports simple reliability checks and a PCA-style eigenvalue summary.
+
+```{r}
+construct_items <- analysis_data %>%
+  dplyr::select(
+    plsolmuni,
+    plsolcntry,
+    plsoleu,
+    plsolchld,
+    plsolold,
+    plsolpoor,
+    plsolimmeu,
+    plsolimmnoneu
+  )
+
+alpha_table <- tibble::tribble(
+  ~scale, ~alpha,
+  "Territorial solidarity", cohens_alpha(analysis_data, c("plsolmuni", "plsolcntry", "plsoleu")),
+  "Group solidarity", cohens_alpha(analysis_data, c("plsolchld", "plsolold", "plsolpoor", "plsolimmeu", "plsolimmnoneu")),
+  "All solidarity items", cohens_alpha(analysis_data, names(construct_items))
+)
+
+cor_mat <- stats::cor(construct_items, use = "pairwise.complete.obs")
+eigen_table <- tibble::tibble(
+  component = seq_along(eigen(cor_mat)$values),
+  eigenvalue = eigen(cor_mat)$values
+)
+
+alpha_table %>%
+  render_table(digits = 3)
+```
+
+```{r}
+ggplot(eigen_table, aes(x = component, y = eigenvalue)) +
+  geom_col(fill = "#6c584c") +
+  geom_hline(yintercept = 1, linetype = "dashed", color = "grey50") +
+  labs(
+    title = "Eigenvalues for the eight solidarity items",
+    x = "Principal component",
+    y = "Eigenvalue"
+  ) +
+  theme_minimal(base_size = 12)
+```
+
+## Visual Checks for the Main Resource Hypotheses
+
+```{r}
+visual_data <- analysis_data %>%
+  dplyr::transmute(
+    solidarity_territorial,
+    `Income rank` = income_rank_country,
+    `Financial resilience` = fresil,
+    `Subjective finances` = ecohhld
+  ) %>%
+  tidyr::pivot_longer(
+    cols = -solidarity_territorial,
+    names_to = "resource",
+    values_to = "predictor"
+  ) %>%
+  dplyr::filter(!is.na(solidarity_territorial), !is.na(predictor)) %>%
+  dplyr::group_by(resource) %>%
+  dplyr::mutate(bin = dplyr::ntile(predictor, 5)) %>%
+  dplyr::group_by(resource, bin) %>%
+  dplyr::summarise(
+    predictor_mean = mean(predictor, na.rm = TRUE),
+    solidarity_mean = mean(solidarity_territorial, na.rm = TRUE),
+    n = dplyr::n(),
+    .groups = "drop"
+  )
+
+ggplot(visual_data, aes(x = predictor_mean, y = solidarity_mean)) +
+  geom_line(color = "#355070", linewidth = 0.8) +
+  geom_point(aes(size = n), color = "#e56b6f") +
+  facet_wrap(~ resource, scales = "free_x") +
+  scale_size_continuous(range = c(1.5, 4), guide = "none") +
+  labs(
+    title = "Binned descriptive checks for the main resource predictors",
+    x = "Predictor value",
+    y = "Mean territorial solidarity"
+  ) +
+  theme_minimal(base_size = 12)
+```
+
+## Main OLS Model
+
+```{r}
+analysis_main <- analysis_data %>%
+  dplyr::mutate(
+    `income_rank_country_z:ideology_right_z` = income_rank_country_z * ideology_right_z,
+    `fresil_z:ideology_right_z` = fresil_z * ideology_right_z,
+    `ecohhld_z:ideology_right_z` = ecohhld_z * ideology_right_z,
+    `income_rank_country_z:dependants` = income_rank_country_z * dependants,
+    `fresil_z:dependants` = fresil_z * dependants,
+    `ecohhld_z:dependants` = ecohhld_z * dependants
+  )
+
+main_sample <- model_sample(analysis_main, main_outcome, c(main_predictors, controls))
+main_model <- fit_ols(main_sample, build_formula(main_outcome, main_predictors, controls))
+
+main_results <- robust_tidy_lm(main_model) %>%
+  coef_plot_data(label_map = predictor_labels, keep_terms = predictor_labels$term)
+
+main_results %>%
+  dplyr::select(term_label, estimate, conf.low, conf.high, p.value) %>%
+  dplyr::arrange(dplyr::desc(estimate)) %>%
+  render_table(digits = 3)
+```
+
+```{r}
+ggplot(main_results, aes(x = estimate, y = forcats::fct_rev(term_label), xmin = conf.low, xmax = conf.high)) +
+  geom_vline(xintercept = 0, linetype = "dashed", color = "grey60") +
+  geom_errorbarh(height = 0.15, color = "#6d597a") +
+  geom_point(size = 2, color = "#b56576") +
+  labs(
+    title = "Income prereg: robust OLS coefficients",
+    x = "Coefficient estimate",
+    y = NULL
+  ) +
+  theme_minimal(base_size = 12)
+```
+
+## Interaction Plots
+
+```{r}
+mode_country <- analysis_data %>%
+  dplyr::count(country, sort = TRUE) %>%
+  dplyr::slice(1) %>%
+  dplyr::pull(country)
+
+mode_education <- analysis_data %>%
+  dplyr::count(education_level, sort = TRUE) %>%
+  dplyr::slice(1) %>%
+  dplyr::pull(education_level)
+
+mode_employment <- analysis_data %>%
+  dplyr::count(employment_status, sort = TRUE) %>%
+  dplyr::slice(1) %>%
+  dplyr::pull(employment_status)
+
+interaction_grid_ideology <- tidyr::expand_grid(
+  income_rank_country_z = seq(-2, 2, length.out = 60),
+  ideology_right_z = c(-1, 0, 1)
+) %>%
+  dplyr::mutate(
+    fresil_z = 0,
+    ecohhld_z = 0,
+    dependants = 0,
+    `income_rank_country_z:ideology_right_z` = income_rank_country_z * ideology_right_z,
+    `fresil_z:ideology_right_z` = 0,
+    `ecohhld_z:ideology_right_z` = 0,
+    `income_rank_country_z:dependants` = 0,
+    `fresil_z:dependants` = 0,
+    `ecohhld_z:dependants` = 0,
+    age = mean(analysis_data$age, na.rm = TRUE),
+    gender_binary = 0,
+    education_level = mode_education,
+    employment_status = mode_employment,
+    country = mode_country,
+    ideology_group = dplyr::case_when(
+      ideology_right_z == -1 ~ "Left-leaning",
+      ideology_right_z == 0 ~ "Center",
+      TRUE ~ "Right-leaning"
+    ),
+    predicted = stats::predict(main_model, newdata = ., type = "response")
+  )
+
+plot_ideology <- ggplot(interaction_grid_ideology, aes(x = income_rank_country_z, y = predicted, color = ideology_group)) +
+  geom_line(linewidth = 1) +
+  labs(
+    title = "Income rank by ideology",
+    x = "Income rank within country (z)",
+    y = "Predicted territorial solidarity",
+    color = NULL
+  ) +
+  theme_minimal(base_size = 12)
+
+interaction_grid_dependants <- tidyr::expand_grid(
+  fresil_z = seq(-2, 2, length.out = 60),
+  dependants = c(0, 1)
+) %>%
+  dplyr::mutate(
+    income_rank_country_z = 0,
+    ecohhld_z = 0,
+    ideology_right_z = 0,
+    `income_rank_country_z:ideology_right_z` = 0,
+    `fresil_z:ideology_right_z` = 0,
+    `ecohhld_z:ideology_right_z` = 0,
+    `income_rank_country_z:dependants` = 0,
+    `fresil_z:dependants` = fresil_z * dependants,
+    `ecohhld_z:dependants` = 0,
+    age = mean(analysis_data$age, na.rm = TRUE),
+    gender_binary = 0,
+    education_level = mode_education,
+    employment_status = mode_employment,
+    country = mode_country,
+    dependant_group = dplyr::if_else(dependants == 1, "Dependants", "No dependants"),
+    predicted = stats::predict(main_model, newdata = ., type = "response")
+  )
+
+plot_dependants <- ggplot(interaction_grid_dependants, aes(x = fresil_z, y = predicted, color = dependant_group)) +
+  geom_line(linewidth = 1) +
+  labs(
+    title = "Financial resilience by dependants",
+    x = "Financial resilience (z)",
+    y = "Predicted territorial solidarity",
+    color = NULL
+  ) +
+  theme_minimal(base_size = 12)
+
+plot_ideology + plot_dependants
+```
+
+## Secondary Outcomes and FDR Correction
+
+```{r}
+outcome_family <- c(main_outcome, secondary_outcomes)
+
+family_results <- purrr::map_dfr(
+  outcome_family,
+  function(outcome_name) {
+    sample_data <- model_sample(analysis_main, outcome_name, c(main_predictors, controls))
+    model_fit <- fit_ols(sample_data, build_formula(outcome_name, main_predictors, controls))
+
+    robust_tidy_lm(model_fit) %>%
+      dplyr::filter(term %in% resource_terms) %>%
+      dplyr::mutate(outcome = outcome_name)
+  }
+) %>%
+  dplyr::group_by(term) %>%
+  dplyr::mutate(p.value.fdr = stats::p.adjust(p.value, method = "BH")) %>%
+  dplyr::ungroup() %>%
+  coef_plot_data(label_map = predictor_labels)
+
+family_results %>%
+  dplyr::select(outcome, term_label, estimate, conf.low, conf.high, p.value, p.value.fdr) %>%
+  dplyr::arrange(term_label, p.value.fdr) %>%
+  render_table(digits = 3)
+```
+
+```{r}
+ggplot(family_results, aes(x = estimate, y = forcats::fct_rev(outcome), xmin = conf.low, xmax = conf.high, color = term_label)) +
+  geom_vline(xintercept = 0, linetype = "dashed", color = "grey60") +
+  geom_errorbarh(height = 0.15, position = position_dodge(width = 0.6)) +
+  geom_point(position = position_dodge(width = 0.6), size = 2) +
+  labs(
+    title = "Main resource terms across preregistered outcome family",
+    x = "Coefficient estimate",
+    y = NULL,
+    color = NULL
+  ) +
+  theme_minimal(base_size = 12)
+```
+
+## Ordered Logit Item-Level Robustness
+
+```{r}
+ordered_items <- c(
+  "plsolmuni",
+  "plsolcntry",
+  "plsoleu",
+  "plsolchld",
+  "plsolold",
+  "plsolpoor",
+  "plsolimmeu",
+  "plsolimmnoneu"
+)
+
+ordered_predictors <- c("income_rank_country_z", "fresil_z", "ecohhld_z", "ideology_right_z", "dependants")
+
+ordered_results <- purrr::map_dfr(
+  ordered_items,
+  function(outcome_name) {
+    ordered_data <- model_sample(analysis_data, outcome_name, c(ordered_predictors, controls))
+    ordered_model <- fit_ordered(ordered_data, build_formula(outcome_name, ordered_predictors, controls))
+
+    ordered_tidy(ordered_model) %>%
+      coef_plot_data(label_map = predictor_labels, keep_terms = ordered_predictors) %>%
+      dplyr::transmute(
+        outcome = outcome_name,
+        term_label,
+        estimate,
+        conf.low,
+        conf.high,
+        p.value
+      )
+  }
+)
+
+ordered_results %>%
+  dplyr::arrange(outcome, dplyr::desc(estimate)) %>%
+  render_table(digits = 3)
+```
+
+## Notes
+
+- `welfare_chauvinism` is operationalized here as the deserving-target solidarity mean minus the migrant-target solidarity mean, which matches the logic of the preregistration given the current pilot items.
+- `income_rank_country` is built as a within-country percentile rank from the country-specific household income variables to respect the preregistered cross-country comparability logic.
+- The pilot file does not contain weights, so the weighted specification is not run here. The current report is therefore best treated as a prereg-consistent pilot analysis rather than a final confirmatory model set.

@@ -1,0 +1,316 @@
+---
+title: "PEPS-Y Core 2: Governance and Redistribution"
+format:
+  html:
+    toc: true
+    number-sections: true
+    theme: cosmo
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+## Setup
+
+This report follows `preregs/core2_prereg`. The pilot `.sav` contains the perception, trust, and solidarity items required for the individual-level governance tests. It does not contain the preregistered external governance indicators such as EQI or EQI change, so those models are included as optional hooks that activate if a context file is added.
+
+```{r}
+source("analysis_helpers.R")
+load_analysis_packages()
+
+input_file <- fs::path("data", "POLITSOLID_Pretest_interim_11032026.sav")
+context_file <- "context/core2_context.csv"
+
+analysis_data <- build_analysis_data(input_file)
+analysis_data <- attach_optional_context(analysis_data, context_file)
+
+has_context <- isTRUE(attr(analysis_data, "context_loaded"))
+
+controls <- c(
+  "age",
+  "gender_binary",
+  "factor(education_level)",
+  "migrant_background",
+  "factor(country)"
+)
+
+main_outcome <- "solidarity_territorial"
+
+hypothesis_map <- tibble::tribble(
+  ~hypothesis, ~status, ~proxy,
+  "H1 Regional governance quality", if (has_context) "Will run if `regional_governance_quality` exists" else "Not testable from current pilot file", "Requires context file",
+  "H2 Perceived governance quality", "Tested now", "perceived_governance_index, service_quality_index, institutional_trust_index",
+  "H3 Attenuation after adding perceptions", if (has_context) "Will run if `regional_governance_quality` exists" else "Not testable from current pilot file", "Compare objective-context models with and without perceptions",
+  "H4 Ideology moderation", "Tested now", "perceived_governance_index × ideology_right",
+  "H5 Regional governance change", if (has_context) "Will run if `regional_governance_change` exists" else "Not testable from current pilot file", "Requires context file",
+  "Additional prereg step: welfare-state moderation", if (has_context) "Will run if `welfare_state_size` exists" else "Not testable from current pilot file", "Optional context interaction"
+)
+
+predictor_labels <- tibble::tribble(
+  ~term, ~term_label,
+  "perceived_governance_index_z", "Perceived governance composite",
+  "service_quality_index_z", "Service quality component",
+  "institutional_trust_index_z", "Institutional trust component",
+  "ideology_right_z", "Right ideology",
+  "perceived_governance_index_z:ideology_right_z", "Governance × ideology",
+  "regional_governance_quality_z", "Regional governance quality",
+  "regional_governance_change_z", "Regional governance change",
+  "welfare_state_size_z", "Welfare-state size",
+  "regional_governance_quality_z:welfare_state_size_z", "Governance × welfare-state size"
+)
+```
+
+```{r}
+hypothesis_map %>%
+  render_table(digits = 2)
+```
+
+## Visual Checks
+
+```{r}
+visual_data <- analysis_data %>%
+  dplyr::transmute(
+    solidarity_territorial,
+    `Perceived governance composite` = perceived_governance_index,
+    `Service quality component` = service_quality_index,
+    `Institutional trust component` = institutional_trust_index
+  ) %>%
+  tidyr::pivot_longer(
+    cols = -solidarity_territorial,
+    names_to = "measure",
+    values_to = "predictor"
+  ) %>%
+  dplyr::filter(!is.na(solidarity_territorial), !is.na(predictor)) %>%
+  dplyr::group_by(measure) %>%
+  dplyr::mutate(bin = dplyr::ntile(predictor, 5)) %>%
+  dplyr::group_by(measure, bin) %>%
+  dplyr::summarise(
+    predictor_mean = mean(predictor, na.rm = TRUE),
+    solidarity_mean = mean(solidarity_territorial, na.rm = TRUE),
+    n = dplyr::n(),
+    .groups = "drop"
+  )
+
+ggplot(visual_data, aes(x = predictor_mean, y = solidarity_mean)) +
+  geom_line(color = "#386641", linewidth = 0.8) +
+  geom_point(aes(size = n), color = "#bc6c25") +
+  facet_wrap(~ measure, scales = "free_x") +
+  scale_size_continuous(range = c(1.5, 4), guide = "none") +
+  labs(
+    title = "Descriptive association between governance perceptions and solidarity",
+    x = "Predictor value",
+    y = "Mean territorial solidarity"
+  ) +
+  theme_minimal(base_size = 12)
+```
+
+## OLS Models for H2 and H4
+
+```{r}
+h2_predictors <- c("perceived_governance_index_z")
+h2_components <- c("service_quality_index_z", "institutional_trust_index_z")
+h4_predictors <- c("perceived_governance_index_z", "ideology_right_z", "perceived_governance_index_z:ideology_right_z")
+
+h2_data <- model_sample(analysis_data, main_outcome, c(h2_predictors, controls))
+h2_components_data <- model_sample(analysis_data, main_outcome, c(h2_components, controls))
+h4_data <- model_sample(
+  analysis_data %>% dplyr::mutate(`perceived_governance_index_z:ideology_right_z` = perceived_governance_index_z * ideology_right_z),
+  main_outcome,
+  c("perceived_governance_index_z", "ideology_right_z", "perceived_governance_index_z:ideology_right_z", controls)
+)
+
+model_h2 <- fit_ols(h2_data, build_formula(main_outcome, h2_predictors, controls))
+model_h2_components <- fit_ols(h2_components_data, build_formula(main_outcome, h2_components, controls))
+model_h4 <- fit_ols(h4_data, build_formula(main_outcome, h4_predictors, controls))
+
+ols_results <- dplyr::bind_rows(
+  robust_tidy_lm(model_h2) %>% dplyr::mutate(model = "H2 composite"),
+  robust_tidy_lm(model_h2_components) %>% dplyr::mutate(model = "H2 components"),
+  robust_tidy_lm(model_h4) %>% dplyr::mutate(model = "H4 moderation")
+) %>%
+  coef_plot_data(label_map = predictor_labels, keep_terms = predictor_labels$term) %>%
+  dplyr::mutate(model = factor(model, levels = c("H2 composite", "H2 components", "H4 moderation")))
+
+ols_results %>%
+  dplyr::select(model, term_label, estimate, conf.low, conf.high, p.value) %>%
+  dplyr::arrange(model, dplyr::desc(estimate)) %>%
+  render_table(digits = 3)
+```
+
+```{r}
+ggplot(ols_results, aes(x = estimate, y = forcats::fct_rev(term_label), xmin = conf.low, xmax = conf.high, color = model)) +
+  geom_vline(xintercept = 0, linetype = "dashed", color = "grey60") +
+  geom_errorbarh(height = 0.15, position = position_dodge(width = 0.6)) +
+  geom_point(position = position_dodge(width = 0.6), size = 2) +
+  labs(
+    title = "Governance models with robust OLS standard errors",
+    x = "Coefficient estimate",
+    y = NULL,
+    color = "Model"
+  ) +
+  theme_minimal(base_size = 12)
+```
+
+## Interaction Plot for H4
+
+```{r}
+mode_country <- analysis_data %>%
+  dplyr::count(country, sort = TRUE) %>%
+  dplyr::slice(1) %>%
+  dplyr::pull(country)
+
+mode_education <- analysis_data %>%
+  dplyr::count(education_level, sort = TRUE) %>%
+  dplyr::slice(1) %>%
+  dplyr::pull(education_level)
+
+prediction_grid <- tidyr::expand_grid(
+  perceived_governance_index_z = seq(-2, 2, length.out = 60),
+  ideology_right_z = c(-1, 0, 1)
+) %>%
+  dplyr::mutate(
+    `perceived_governance_index_z:ideology_right_z` = perceived_governance_index_z * ideology_right_z,
+    age = mean(analysis_data$age, na.rm = TRUE),
+    gender_binary = 0,
+    education_level = mode_education,
+    migrant_background = 0,
+    country = mode_country,
+    ideology_group = dplyr::case_when(
+      ideology_right_z == -1 ~ "Left-leaning",
+      ideology_right_z == 0 ~ "Center",
+      TRUE ~ "Right-leaning"
+    ),
+    predicted = stats::predict(model_h4, newdata = ., type = "response")
+  )
+
+ggplot(prediction_grid, aes(x = perceived_governance_index_z, y = predicted, color = ideology_group)) +
+  geom_line(linewidth = 1) +
+  labs(
+    title = "Predicted solidarity by governance perception and ideology",
+    subtitle = "Predictions from the H4 interaction model, holding controls constant",
+    x = "Perceived governance index (z)",
+    y = "Predicted territorial solidarity",
+    color = NULL
+  ) +
+  theme_minimal(base_size = 12)
+```
+
+## Ordered Logit Robustness
+
+```{r}
+ordered_outcomes <- c("plsolmuni", "plsolcntry", "plsoleu")
+ordered_terms <- c("perceived_governance_index_z", "ideology_right_z", "perceived_governance_index_z:ideology_right_z")
+
+ordered_results <- purrr::map_dfr(
+  ordered_outcomes,
+  function(outcome_name) {
+    ordered_data <- model_sample(
+      analysis_data %>% dplyr::mutate(`perceived_governance_index_z:ideology_right_z` = perceived_governance_index_z * ideology_right_z),
+      outcome_name,
+      c(ordered_terms, controls)
+    )
+    ordered_model <- fit_ordered(ordered_data, build_formula(outcome_name, ordered_terms, controls))
+
+    ordered_tidy(ordered_model) %>%
+      coef_plot_data(label_map = predictor_labels, keep_terms = ordered_terms) %>%
+      dplyr::transmute(
+        outcome = outcome_name,
+        term_label,
+        estimate,
+        conf.low,
+        conf.high,
+        p.value
+      )
+  }
+)
+
+ordered_results %>%
+  dplyr::arrange(outcome, dplyr::desc(estimate)) %>%
+  render_table(digits = 3)
+```
+
+## Optional Objective-Context Models
+
+Expected columns in `context/core2_context.csv`:
+
+- `country`
+- `region`
+- `regional_governance_quality`
+- `regional_governance_change`
+- `welfare_state_size` if you want the extra welfare interaction
+
+```{r}
+if (has_context && "regional_governance_quality" %in% names(analysis_data)) {
+  has_change <- "regional_governance_change" %in% names(analysis_data)
+  has_welfare <- "welfare_state_size" %in% names(analysis_data)
+
+  context_data <- analysis_data %>%
+    dplyr::mutate(
+      regional_governance_quality_z = standardize(regional_governance_quality),
+      regional_governance_change_z = if (has_change) standardize(regional_governance_change) else NA_real_,
+      welfare_state_size_z = if (has_welfare) standardize(welfare_state_size) else NA_real_
+    )
+
+  context_only_data <- model_sample(context_data, main_outcome, c("regional_governance_quality_z", controls))
+  model_context_only <- fit_ols(context_only_data, build_formula(main_outcome, "regional_governance_quality_z", controls))
+
+  context_plus_data <- model_sample(context_data, main_outcome, c("regional_governance_quality_z", "perceived_governance_index_z", controls))
+  model_context_plus <- fit_ols(context_plus_data, build_formula(main_outcome, c("regional_governance_quality_z", "perceived_governance_index_z"), controls))
+
+  attenuation_table <- dplyr::bind_rows(
+    robust_tidy_lm(model_context_only) %>% dplyr::mutate(model = "Objective governance only"),
+    robust_tidy_lm(model_context_plus) %>% dplyr::mutate(model = "Objective governance + perceptions")
+  ) %>%
+    dplyr::filter(term == "regional_governance_quality_z") %>%
+    dplyr::select(model, estimate, conf.low, conf.high, p.value)
+
+  attenuation_table %>%
+    render_table(digits = 3)
+
+  if (has_change) {
+    change_data <- model_sample(context_data, main_outcome, c("regional_governance_quality_z", "regional_governance_change_z", controls))
+    model_change <- fit_ols(change_data, build_formula(main_outcome, c("regional_governance_quality_z", "regional_governance_change_z"), controls))
+
+    robust_tidy_lm(model_change) %>%
+      coef_plot_data(label_map = predictor_labels, keep_terms = c("regional_governance_quality_z", "regional_governance_change_z")) %>%
+      dplyr::select(term_label, estimate, conf.low, conf.high, p.value) %>%
+      render_table(digits = 3)
+  }
+
+  if (has_welfare) {
+    welfare_data <- model_sample(
+      context_data %>% dplyr::mutate(`regional_governance_quality_z:welfare_state_size_z` = regional_governance_quality_z * welfare_state_size_z),
+      main_outcome,
+      c("regional_governance_quality_z", "welfare_state_size_z", "regional_governance_quality_z:welfare_state_size_z", controls)
+    )
+    model_welfare <- fit_ols(
+      welfare_data,
+      build_formula(
+        main_outcome,
+        c("regional_governance_quality_z", "welfare_state_size_z", "regional_governance_quality_z:welfare_state_size_z"),
+        controls
+      )
+    )
+
+    robust_tidy_lm(model_welfare) %>%
+      coef_plot_data(
+        label_map = predictor_labels,
+        keep_terms = c("regional_governance_quality_z", "welfare_state_size_z", "regional_governance_quality_z:welfare_state_size_z")
+      ) %>%
+      dplyr::select(term_label, estimate, conf.low, conf.high, p.value) %>%
+      render_table(digits = 3)
+  }
+} else {
+  tibble::tibble(
+    note = "Objective governance models were not run. Add context/core2_context.csv with country, region, and regional governance variables to activate H1, H3, H5, and the optional welfare interaction."
+  ) %>%
+    render_table(digits = 2)
+}
+```
+
+## Notes
+
+- The preregistration text uses inconsistent numbering between the hypothesis list and the later analysis steps. This report follows the main hypothesis numbering H1-H5 and then treats welfare-state moderation as an additional preregistered analysis step when context data are available.
+- The current pilot file does not include the external governance indicators or weights mentioned in the preregistration, so those analyses are either skipped or run only if a context file is provided.
+- The results here are best used as pilot checks of directional coherence and measurement behavior.
